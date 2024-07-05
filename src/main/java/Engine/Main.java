@@ -35,7 +35,6 @@ public class Main {
             (-0.5,-0.5) └─────────┘ (0.5,-0.5)
             */
 
-
         RawModel model = loader.loadToVAO(vertices);
 
         long window = DisplayManager.getWindow();
