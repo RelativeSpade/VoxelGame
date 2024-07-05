@@ -28,6 +28,6 @@ public class Main {
 
         }
 
+        DisplayManager.closeDisplay();
     }
-
 }
