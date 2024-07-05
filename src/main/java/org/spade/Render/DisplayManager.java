@@ -1,19 +1,15 @@
 package org.spade.Render;
 
-import org.lwjgl.*;
-import org.lwjgl.glfw.*;
-import org.lwjgl.opengl.*;
-import org.lwjgl.system.*;
+import org.lwjgl.BufferUtils;
+import org.lwjgl.opengl.GL;
+import org.lwjgl.opengl.GL11;
 
-import java.nio.*;
+import java.nio.IntBuffer;
 
 import static java.sql.Types.NULL;
-import static org.lwjgl.glfw.Callbacks.*;
 import static org.lwjgl.glfw.GLFW.*;
-import static org.lwjgl.opengl.GL11.*;
-import static org.lwjgl.system.MemoryStack.*;
-import static org.lwjgl.system.MemoryUtil.*;
 
+@SuppressWarnings("unused")
 public class DisplayManager {
     private static final int WIDTH = 1280;
     private static final int HEIGHT = 720;
@@ -50,8 +46,21 @@ public class DisplayManager {
         glfwFocusWindow(window);
     }
 
-    public static void updateDisplay() {}
+    public static void updateDisplay() {
 
-    public static void closeDisplay() {}
+        glfwSwapInterval(1); // Cap fps to screen refresh rate
+        glfwSwapBuffers(window); //Update the screen
 
+    }
+
+    public static void closeDisplay() {
+
+        glfwTerminate();
+        System.exit(0);
+
+    }
+
+    public static long getWindow(){
+        return window;
+    }
 }
