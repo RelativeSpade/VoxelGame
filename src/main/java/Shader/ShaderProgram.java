@@ -14,6 +14,7 @@ public abstract class ShaderProgram {
 
         StringBuilder shaderSource = new StringBuilder();
         InputStream in = Class.class.getResourceAsStream(file);
+        assert in != null;
         BufferedReader reader = new BufferedReader(new InputStreamReader(in));
 
         String line;
