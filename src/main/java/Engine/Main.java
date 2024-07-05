@@ -4,12 +4,15 @@ import Models.RawModel;
 import Render.DisplayManager;
 import Render.Loader;
 import Render.MasterRender;
+import Shaders.ShaderProgram;
+import Shaders.StaticShader;
 
 import static org.lwjgl.glfw.GLFW.*;
 
 public class Main {
 
     public static Loader loader1 = null;
+    public static StaticShader shader1 = null;
 
     public static void main(String[] args){
 
@@ -18,6 +21,8 @@ public class Main {
         MasterRender renderer = new MasterRender();
         Loader loader = new Loader();
         loader1 = loader;
+        StaticShader shader = new StaticShader();
+        shader1 = shader;
 
         float[] vertices = {
                 -0.5f, 0.5f, 0,  // Top-left corner (0)
@@ -48,8 +53,9 @@ public class Main {
 
             glfwPollEvents();
             renderer.prepare();
-
+            shader.start();
             renderer.render(model);
+            shader.stop();
 
             if(glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS){
                 DisplayManager.closeDisplay();

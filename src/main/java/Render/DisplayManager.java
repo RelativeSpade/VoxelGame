@@ -56,6 +56,7 @@ public class DisplayManager {
 
     public static void closeDisplay() {
         Main.loader1.cleanUp();
+        Main.shader1.cleanUp();
 
         glfwTerminate();
         System.exit(0);
