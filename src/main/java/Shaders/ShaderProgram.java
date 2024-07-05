@@ -58,8 +58,14 @@ public abstract class ShaderProgram {
     private int loadShader(String file, int type) {
 
         StringBuilder shaderSource = new StringBuilder();
+
         InputStream in = Class.class.getResourceAsStream(file);
-        assert in != null;
+
+        if (in == null) {
+            System.err.println("Could not find shader file: " + file);
+            System.exit(-1);
+        }
+
         BufferedReader reader = new BufferedReader(new InputStreamReader(in));
 
         String line;

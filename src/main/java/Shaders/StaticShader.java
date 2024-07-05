@@ -2,8 +2,8 @@ package Shaders;
 
 public class StaticShader extends ShaderProgram{
 
-    private static final String vertexFile = "/Shaders/vertexShader.txt";
-    private static final String fragmentFile = "/Shaders/fragmentShader.txt";
+    private static final String vertexFile = "Shaders/vertexShader.txt";
+    private static final String fragmentFile = "Shaders/fragmentShader.txt";
 
     public StaticShader() {
         super(vertexFile, fragmentFile);
