@@ -4,12 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="840c9104-0bc0-421b-aa50-14bd951f9721" name="Changes" comment="change: added null check">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Shaders/ShaderProgram.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Shaders/ShaderProgram.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Shaders/StaticShader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Shaders/StaticShader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Shaders/fragmentShader.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/shaders/fragmentShader.glsl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Shaders/vertexShader.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/shaders/vertexShader.glsl" afterDir="false" />
+    <list default="true" id="840c9104-0bc0-421b-aa50-14bd951f9721" name="Changes" comment="fix: got shader working, had to change alot around">
+      <change beforePath="$PROJECT_DIR$/src/main/resources/shaders/vertexShader.glsl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/shaders/vertexShader.glsl" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -359,11 +355,18 @@
       <option name="project" value="LOCAL" />
       <updated>1720188080111</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="fix: got shader working, had to change alot around">
+      <option name="closed" value="true" />
+      <created>1720190052245</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1720190052245</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add: window close on exit" />
     <MESSAGE value="add: window close on x button" />
     <MESSAGE value="add: raw model class" />
     <MESSAGE value="add: loader class" />
@@ -388,6 +391,7 @@
     <MESSAGE value="added: basic shader support" />
     <MESSAGE value="change: removed excess import" />
     <MESSAGE value="change: added null check" />
-    <option name="LAST_COMMIT_MESSAGE" value="change: added null check" />
+    <MESSAGE value="fix: got shader working, had to change alot around" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: got shader working, had to change alot around" />
   </component>
 </project>
