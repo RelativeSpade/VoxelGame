@@ -20,27 +20,27 @@ public class Main {
         loader1 = loader;
 
         float[] vertices = {
-                // First triangle
-                -0.5f, 0.5f, 0,  // Top-left corner
-                -0.5f, -0.5f, 0, // Bottom-left corner
-                0.5f, -0.5f, 0,  // Bottom-right corner
-
-                // Second triangle
-                0.5f, -0.5f, 0,  // Bottom-right corner
-                0.5f, 0.5f, 0,   // Top-right corner
-                -0.5f, 0.5f, 0   // Top-left corner
+                -0.5f, 0.5f, 0,  // Top-left corner (0)
+                -0.5f, -0.5f, 0, // Bottom-left corner (1)
+                0.5f, -0.5f, 0,  // Bottom-right corner (2)
+                0.5f, 0.5f, 0,   // Top-right corner (3)
         };
 
             /*
-            (-0.5, 0.5) ┌────────────┐ (0.5, 0.5)
-                        │            │
-                        │            │
-                        │            │
-                        │            │
-            (-0.5,-0.5) └────────────┘ (0.5,-0.5)
+            (-0.5, 0.5) (0) ┌────────────┐ (3) (0.5, 0.5)
+                            │            │
+                            │            │
+                            │            │
+                            │            │
+            (-0.5,-0.5) (1) └────────────┘ (2) (0.5,-0.5)
             */
 
-        RawModel model = loader.loadToVAO(vertices);
+        int[] indices = {
+                0, 1, 2,
+                2, 3, 0
+        };
+
+        RawModel model = loader.loadToVAO(vertices, indices);
 
         long window = DisplayManager.getWindow();
 
