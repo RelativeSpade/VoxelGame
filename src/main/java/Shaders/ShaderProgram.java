@@ -1,4 +1,4 @@
-package Shader;
+package Shaders;
 
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GL20;
