@@ -17,6 +17,7 @@ public class Main {
 
         while (!glfwWindowShouldClose(window)) {
 
+            glfwPollEvents();
             renderer.prepare();
             DisplayManager.updateDisplay();
 
