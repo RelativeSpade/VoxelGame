@@ -13,8 +13,8 @@ import java.util.List;
 
 public class Loader {
 
-    static List<Integer> vaos = new ArrayList<Integer>();
-    static List<Integer> vbos = new ArrayList<Integer>();
+    static List<Integer> vaos = new ArrayList<>();
+    static List<Integer> vbos = new ArrayList<>();
 
     public RawModel loadToVAO(float[] vertices) {
         int vaoID = createVAO();
