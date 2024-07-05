@@ -1,5 +1,6 @@
 package Render;
 
+import Models.RawModel;
 import org.lwjgl.opengl.GL11;
 
 public class MasterRender {
@@ -10,4 +11,11 @@ public class MasterRender {
         GL11.glClear(GL11.GL_COLOR_BUFFER_BIT);
 
     }
+
+    public void render(RawModel model) {
+
+        EntityRender.render(model);
+
+    }
+
 }
