@@ -1,6 +1,6 @@
 #version 400 core
 
-in vec3 color
+in vec3 color;
 
 out vec4 out_Color;
 

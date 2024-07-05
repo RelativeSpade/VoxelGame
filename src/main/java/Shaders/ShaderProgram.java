@@ -3,10 +3,7 @@ package Shaders;
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GL20;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import java.io.*;
 
 public abstract class ShaderProgram {
 
@@ -59,7 +56,7 @@ public abstract class ShaderProgram {
 
         StringBuilder shaderSource = new StringBuilder();
 
-        InputStream in = Class.class.getResourceAsStream(file);
+        InputStream in = getClass().getResourceAsStream(file);
 
         if (in == null) {
             System.err.println("Could not find shader file: " + file);
