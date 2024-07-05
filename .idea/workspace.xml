@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="840c9104-0bc0-421b-aa50-14bd951f9721" name="Changes" comment="fix: forgot to add vao and vbo to list">
+    <list default="true" id="840c9104-0bc0-421b-aa50-14bd951f9721" name="Changes" comment="fix: code cleanup">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Render/EntityRender.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Render/Loader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Render/Loader.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -182,7 +182,23 @@
       <option name="project" value="LOCAL" />
       <updated>1720173234965</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="fix: spelling mistakes">
+      <option name="closed" value="true" />
+      <created>1720173514626</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1720173514626</updated>
+    </task>
+    <task id="LOCAL-00018" summary="fix: code cleanup">
+      <option name="closed" value="true" />
+      <created>1720173664169</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1720173664169</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -201,6 +217,8 @@
     <MESSAGE value="add: raw model class" />
     <MESSAGE value="add: loader class" />
     <MESSAGE value="fix: forgot to add vao and vbo to list" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: forgot to add vao and vbo to list" />
+    <MESSAGE value="fix: spelling mistakes" />
+    <MESSAGE value="fix: code cleanup" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: code cleanup" />
   </component>
 </project>
