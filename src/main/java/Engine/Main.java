@@ -20,15 +20,21 @@ public class Main {
         loader1 = loader;
 
         float[] vertices = {
-
-                -0.5f, 0.5f, 0,
-                -0.5f, -0.5f, 0,
-                0.5f, -0.5f, 0,
-                0.5f, -0.5f, 0,
-                0.5f, 0.5f, 0,
-                -0.5f, 0.5f, 0
-
+                -0.5f, 0.5f, 0,  // Top-left corner
+                -0.5f, -0.5f, 0, // Bottom-left corner
+                0.5f, -0.5f, 0,  // Bottom-right corner
+                0.5f, 0.5f, 0    // Top-right corner
         };
+
+            /*
+            (-0.5, 0.5) ┌─────────┐ (0.5, 0.5)
+                        │         │
+                        │         │
+                        │         │
+                        │         │
+            (-0.5,-0.5) └─────────┘ (0.5,-0.5)
+            */
+
 
         RawModel model = loader.loadToVAO(vertices);
 
