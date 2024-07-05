@@ -13,51 +13,49 @@ import java.util.List;
 
 public class Loader {
 
-    static List<Integer> vaos = new ArrayList<>();
-    static List<Integer> vbos = new ArrayList<>();
+    static List<Integer> vaos = new ArrayList<>(); // List to store VAO IDs; a VAO holds VBOs, essentially a list of VBOs
+    static List<Integer> vbos = new ArrayList<>(); // List to store VBO IDs; a VBO holds model data such as vertices
 
     public RawModel loadToVAO(float[] vertices) {
-        int vaoID = createVAO();
-        storeDataInAttributeList(vertices, 0, 3);
-        GL30.glBindVertexArray(0);
+        int vaoID = createVAO(); // Create and bind a new VAO
+        storeDataInAttributeList(vertices, 0, 3); // Store vertex data in a VBO and link to VAO attribute 0
+        GL30.glBindVertexArray(0); // Unbind the current VAO
 
-        return new RawModel(vaoID, vertices.length);
+        return new RawModel(vaoID, vertices.length); // Return the model with its VAO ID and vertex count
     }
 
     private int createVAO() {
-        int vaoID = GL30.glGenVertexArrays();
-        vaos.add(vaoID);
-        GL30.glBindVertexArray(vaoID);
+        int vaoID = GL30.glGenVertexArrays(); // Generate a new VAO ID
+        vaos.add(vaoID); // Add the new VAO ID to the list
+        GL30.glBindVertexArray(vaoID); // Bind the new VAO for use
         return vaoID;
     }
 
     private void storeDataInAttributeList(float[] data, int attributeNumber, int dimensions) {
-        int vboID = GL15.glGenBuffers();
-        vbos.add(vboID);
-        GL15.glBindBuffer(GL15.GL_ARRAY_BUFFER, vboID);
-        FloatBuffer buffer = storeDataInFloatBuffer(data);
-        GL15.glBufferData(GL15.GL_ARRAY_BUFFER, buffer, GL15.GL_STATIC_DRAW);
-        GL20.glVertexAttribPointer(attributeNumber, dimensions, GL11.GL_FLOAT, false, 0, 0);
-        GL15.glBindBuffer(GL15.GL_ARRAY_BUFFER, 0);
+        int vboID = GL15.glGenBuffers(); // Generate a new VBO ID
+        vbos.add(vboID); // Add the new VBO ID to the list
+        GL15.glBindBuffer(GL15.GL_ARRAY_BUFFER, vboID); // Bind the new VBO for use
+        FloatBuffer buffer = storeDataInFloatBuffer(data); // Convert the float array to a FloatBuffer
+        GL15.glBufferData(GL15.GL_ARRAY_BUFFER, buffer, GL15.GL_STATIC_DRAW); // Store the data in the VBO
+        GL20.glVertexAttribPointer(attributeNumber, dimensions, GL11.GL_FLOAT, false, 0, 0); // Link the VBO to the specified attribute of the VAO
+        GL15.glBindBuffer(GL15.GL_ARRAY_BUFFER, 0); // Unbind the current VBO
     }
 
     private FloatBuffer storeDataInFloatBuffer(float[] data) {
-        FloatBuffer buffer = BufferUtils.createFloatBuffer(data.length);
-        buffer.put(data);
-        buffer.flip();
+        FloatBuffer buffer = BufferUtils.createFloatBuffer(data.length); // Create a FloatBuffer with the specified length
+        buffer.put(data); // Put the data into the buffer
+        buffer.flip(); // Prepare the buffer for reading (flip it)
 
-        return  buffer;
+        return buffer; // Return the prepared buffer
     }
 
     public void cleanUp() {
-
-        for(int vao : vaos){
-            GL30.glDeleteVertexArrays(vao);
+        for (int vao : vaos) {
+            GL30.glDeleteVertexArrays(vao); // Delete each VAO stored in the list
         }
 
-        for(int vbo : vbos){
-            GL15.glDeleteBuffers(vbo);
+        for (int vbo : vbos) {
+            GL15.glDeleteBuffers(vbo); // Delete each VBO stored in the list
         }
-
     }
 }
