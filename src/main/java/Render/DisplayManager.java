@@ -1,5 +1,6 @@
 package Render;
 
+import Engine.Main;
 import org.lwjgl.BufferUtils;
 import org.lwjgl.opengl.GL;
 import org.lwjgl.opengl.GL11;
@@ -54,6 +55,7 @@ public class DisplayManager {
     }
 
     public static void closeDisplay() {
+        Main.loader1.cleanUp();
 
         glfwTerminate();
         System.exit(0);
