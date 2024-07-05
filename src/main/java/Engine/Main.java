@@ -4,7 +4,6 @@ import Models.RawModel;
 import Render.DisplayManager;
 import Render.Loader;
 import Render.MasterRender;
-import Shaders.ShaderProgram;
 import Shaders.StaticShader;
 
 import static org.lwjgl.glfw.GLFW.*;
