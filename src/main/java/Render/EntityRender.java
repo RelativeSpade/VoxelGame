@@ -7,7 +7,7 @@ import org.lwjgl.opengl.GL30;
 
 public class EntityRender {
 
-    public void render(RawModel model) {
+    public static void render(RawModel model) {
 
         GL30.glBindVertexArray(model.getVaoID()); // Bind Vertex Array to VaoID
         GL20.glEnableVertexAttribArray(0); // Enable Vertex Attribute Array
