@@ -19,6 +19,11 @@ public class Main {
 
             glfwPollEvents();
             renderer.prepare();
+
+            if(glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS){
+                DisplayManager.closeDisplay();
+            }
+
             DisplayManager.updateDisplay();
 
         }
