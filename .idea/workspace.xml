@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="840c9104-0bc0-421b-aa50-14bd951f9721" name="Changes" comment="add: raw model class">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Render/Loader.java" afterDir="false" />
+    <list default="true" id="840c9104-0bc0-421b-aa50-14bd951f9721" name="Changes" comment="fix: forgot to add vao and vbo to list">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Render/Loader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Render/Loader.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -174,7 +174,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720172599536</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="add: loader class">
+      <option name="closed" value="true" />
+      <created>1720173234965</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1720173234965</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -191,6 +199,8 @@
     <MESSAGE value="add: window close on exit" />
     <MESSAGE value="add: window close on x button" />
     <MESSAGE value="add: raw model class" />
-    <option name="LAST_COMMIT_MESSAGE" value="add: raw model class" />
+    <MESSAGE value="add: loader class" />
+    <MESSAGE value="fix: forgot to add vao and vbo to list" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: forgot to add vao and vbo to list" />
   </component>
 </project>
