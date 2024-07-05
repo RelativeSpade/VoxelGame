@@ -1,4 +1,4 @@
-package org.spade.Render;
+package Render;
 
 import org.lwjgl.opengl.GL11;
 

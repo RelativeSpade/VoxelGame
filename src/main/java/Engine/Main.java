@@ -1,6 +1,6 @@
 package Engine;
 
-import org.spade.Render.DisplayManager;
+import Render.DisplayManager;
 
 public class Main {
 
