@@ -1,11 +1,13 @@
 #version 400 core
 
-in vec3 color;
+in vec2 textureCoords;
 
-out vec4 out_Color;
+uniform sampler2D textureSampler;
+
+out vec4 out_color;
 
 void main(void) {
 
-    out_Color = vec4(color, 1.0);
+    out_Color = texture(textureSampler, textureCoords);
 
 }

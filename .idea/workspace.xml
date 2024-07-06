@@ -4,7 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="840c9104-0bc0-421b-aa50-14bd951f9721" name="Changes" comment="fix: got shader working, had to change alot around">
+    <list default="true" id="840c9104-0bc0-421b-aa50-14bd951f9721" name="Changes" comment="change: aesthetic change">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Models/TextureModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Textures/ModelTexture.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Engine/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Engine/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Render/EntityRender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Render/EntityRender.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Render/Loader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Render/Loader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Render/MasterRender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Render/MasterRender.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Shaders/StaticShader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Shaders/StaticShader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/shaders/fragmentShader.glsl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/shaders/fragmentShader.glsl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/shaders/vertexShader.glsl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/shaders/vertexShader.glsl" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -31,16 +41,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/Spade/Documents/Voxel/src/main/java/org/example/Main.java&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;settings.sync&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
+    "onboarding.tips.debug.path": "C:/Users/Spade/Documents/Voxel/src/main/java/org/example/Main.java",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.17",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "settings.sync"
   }
-}</component>
+}]]></component>
   <component name="RebelAgentSelection">
     <selection>jr</selection>
   </component>
@@ -363,12 +376,26 @@
       <option name="project" value="LOCAL" />
       <updated>1720190052245</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="change: made shader slightly brighter">
+      <option name="closed" value="true" />
+      <created>1720190138429</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1720190138429</updated>
+    </task>
+    <task id="LOCAL-00040" summary="change: aesthetic change">
+      <option name="closed" value="true" />
+      <created>1720190216356</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1720190216356</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add: window close on x button" />
-    <MESSAGE value="add: raw model class" />
     <MESSAGE value="add: loader class" />
     <MESSAGE value="fix: forgot to add vao and vbo to list" />
     <MESSAGE value="fix: spelling mistakes" />
@@ -392,6 +419,8 @@
     <MESSAGE value="change: removed excess import" />
     <MESSAGE value="change: added null check" />
     <MESSAGE value="fix: got shader working, had to change alot around" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: got shader working, had to change alot around" />
+    <MESSAGE value="change: made shader slightly brighter" />
+    <MESSAGE value="change: aesthetic change" />
+    <option name="LAST_COMMIT_MESSAGE" value="change: aesthetic change" />
   </component>
 </project>

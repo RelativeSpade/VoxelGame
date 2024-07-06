@@ -1,10 +1,12 @@
 package Engine;
 
 import Models.RawModel;
+import Models.TextureModel;
 import Render.DisplayManager;
 import Render.Loader;
 import Render.MasterRender;
 import Shaders.StaticShader;
+import Textures.ModelTexture;
 
 import static org.lwjgl.glfw.GLFW.*;
 
@@ -44,7 +46,16 @@ public class Main {
                 2, 3, 0
         };
 
-        RawModel model = loader.loadToVAO(vertices, indices);
+        float[] uvs = {
+                0, 0,
+                0, 1,
+                1, 1,
+                1, 0,
+        };
+
+        RawModel model = loader.loadToVAO(vertices, indices, uvs);
+        ModelTexture texture = new ModelTexture(loader.loadTexture("/textures/grass.png"));
+        TextureModel textureModel = new TextureModel(model, texture);
 
         long window = DisplayManager.getWindow();
 
@@ -53,7 +64,7 @@ public class Main {
             glfwPollEvents();
             renderer.prepare();
             shader.start();
-            renderer.render(model);
+            renderer.render(textureModel);
             shader.stop();
 
             if(glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS){

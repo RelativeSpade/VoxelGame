@@ -6,20 +6,25 @@ import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GL15;
 import org.lwjgl.opengl.GL20;
 import org.lwjgl.opengl.GL30;
+import org.newdawn.slick.opengl.*;
 
+import java.io.IOException;
 import java.nio.FloatBuffer;
 import java.nio.IntBuffer;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Loader {
 
+    static List<Integer> textures = new ArrayList<>(); // List to store textures
     static List<Integer> vaos = new ArrayList<>(); // List to store VAO IDs; a VAO holds VBOs, essentially a list of VBOs
     static List<Integer> vbos = new ArrayList<>(); // List to store VBO IDs; a VBO holds model data such as vertices
 
-    public RawModel loadToVAO(float[] vertices, int[] indices) {
+    public RawModel loadToVAO(float[] vertices, int[] indices, float[] uv) {
         int vaoID = createVAO(); // Create and bind a new VAO
         storeDataInAttributeList(vertices, 0, 3); // Store vertex data in a VBO and link to VAO attribute 0
+        storeDataInAttributeList(uv, 1, 1); // Store texture mapping data in VBO and link to VAO attribute 1
         bindIndicesBuffer(indices); // Bind the indices to the buffer
         GL30.glBindVertexArray(0); // Unbind the current VAO
 
@@ -31,6 +36,23 @@ public class Loader {
         vaos.add(vaoID); // Add the new VAO ID to the list
         GL30.glBindVertexArray(vaoID); // Bind the new VAO for use
         return vaoID;
+    }
+
+    public int loadTexture(String fileName) {
+
+        Texture texture = null;
+        try {
+            texture = TextureLoader.getTexture("PNG", Objects.requireNonNull(Class.class.getResourceAsStream(fileName)));
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.err.println("Could not load texture file!");
+            System.exit(-1);
+        }
+
+        int textureID = texture.getTextureID();
+        textures.add(textureID);
+
+        return textureID;
     }
 
     private void storeDataInAttributeList(float[] data, int attributeNumber, int dimensions) {
@@ -76,6 +98,10 @@ public class Loader {
 
         for (int vbo : vbos) {
             GL15.glDeleteBuffers(vbo); // Delete each VBO stored in the list
+        }
+
+        for (int texture : textures) {
+            GL11.glDeleteTextures(texture);
         }
     }
 }

@@ -1,6 +1,6 @@
 package Render;
 
-import Models.RawModel;
+import Models.TextureModel;
 import org.lwjgl.opengl.GL11;
 
 public class MasterRender {
@@ -12,7 +12,7 @@ public class MasterRender {
 
     }
 
-    public void render(RawModel model) {
+    public void render(TextureModel model) {
 
         EntityRender.render(model);
 
