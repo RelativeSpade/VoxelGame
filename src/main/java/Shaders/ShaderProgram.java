@@ -5,6 +5,8 @@ import org.lwjgl.opengl.GL20;
 
 import java.io.*;
 import Math.*;
+
+@SuppressWarnings("unused")
 public abstract class ShaderProgram {
 
     int programID;
