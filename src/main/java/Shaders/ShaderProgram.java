@@ -1,9 +1,12 @@
 package Shaders;
 
+import org.lwjgl.BufferUtils;
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GL20;
 
 import java.io.*;
+import java.nio.FloatBuffer;
+
 import Math.*;
 
 @SuppressWarnings("unused")
@@ -12,6 +15,8 @@ public abstract class ShaderProgram {
     int programID;
     int vertexShaderID;
     int fragmentShaderID;
+
+    FloatBuffer matrixBuffer = BufferUtils.createFloatBuffer(16);
 
     public ShaderProgram(String vertexFile, String fragmentFile) {
 
@@ -44,11 +49,24 @@ public abstract class ShaderProgram {
     }
 
     protected void load2DVector(int location, Vec2D vec) {
+
         GL20.glUniform2f(location, vec.x, vec.y);
+
     }
 
     protected void load3DVector(int location, Vec3D vec) {
+
         GL20.glUniform3f(location, vec.x, vec.y, vec.z);
+
+    }
+
+    protected void loadMatrix(int location, Matrix4D matrix) {
+
+        matrix.store(matrixBuffer);
+        matrixBuffer.flip();
+
+        GL20.glUniformMatrix4fv(location, false, matrixBuffer);
+
     }
 
 
@@ -61,11 +79,15 @@ public abstract class ShaderProgram {
     }
 
     public void start() {
+
         GL20.glUseProgram(programID);
+
     }
 
     public void stop() {
+
         GL20.glUseProgram(0);
+
     }
 
     public void cleanUp() {
@@ -98,6 +120,7 @@ public abstract class ShaderProgram {
                 shaderSource.append(line).append("//\n");
             }
             reader.close();
+
         } catch (IOException e) {
             e.printStackTrace();
             System.err.println("Could not load shader file!");
