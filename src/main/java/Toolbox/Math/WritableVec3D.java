@@ -1,4 +1,4 @@
-package Math;
+package Toolbox.Math;
 
 public interface WritableVec3D extends WritableVec2D {
 

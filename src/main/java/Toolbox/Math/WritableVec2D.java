@@ -1,4 +1,4 @@
-package Math;
+package Toolbox.Math;
 
 @SuppressWarnings("unused")
 public interface WritableVec2D {

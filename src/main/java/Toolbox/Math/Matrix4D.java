@@ -1,4 +1,4 @@
-package Math;
+package Toolbox.Math;
 
 import java.io.Serializable;
 import java.nio.FloatBuffer;

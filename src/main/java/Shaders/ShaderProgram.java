@@ -1,13 +1,14 @@
 package Shaders;
 
+import Toolbox.Math.Matrix4D;
+import Toolbox.Math.Vec2D;
+import Toolbox.Math.Vec3D;
 import org.lwjgl.BufferUtils;
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GL20;
 
 import java.io.*;
 import java.nio.FloatBuffer;
-
-import Math.*;
 
 @SuppressWarnings("unused")
 public abstract class ShaderProgram {

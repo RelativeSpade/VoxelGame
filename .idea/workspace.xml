@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="840c9104-0bc0-421b-aa50-14bd951f9721" name="Changes" comment="add: 4d matrix">
+    <list default="true" id="840c9104-0bc0-421b-aa50-14bd951f9721" name="Changes" comment="add: bool">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Shaders/ShaderProgram.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Shaders/ShaderProgram.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Shaders/StaticShader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Shaders/StaticShader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/shaders/vertexShader.glsl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/shaders/vertexShader.glsl" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,14 +64,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1720146061769</updated>
-    </task>
-    <task id="LOCAL-00004" summary="createDisplay finished">
-      <option name="closed" value="true" />
-      <created>1720153309695</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1720153309695</updated>
     </task>
     <task id="LOCAL-00005" summary="DisplayManager finished">
       <option name="closed" value="true" />
@@ -456,11 +449,18 @@
       <option name="project" value="LOCAL" />
       <updated>1720340472584</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="add: bool">
+      <option name="closed" value="true" />
+      <created>1720340973069</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1720340973069</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added: implemented indices &amp; added comments" />
     <MESSAGE value="added: shader class" />
     <MESSAGE value="change: finished shader class" />
     <MESSAGE value="change: error suppression" />
@@ -485,6 +485,7 @@
     <MESSAGE value="add: 2d matrix (math please spare me)" />
     <MESSAGE value="add: 3d matrix &amp; vec 4d (kill me)" />
     <MESSAGE value="add: 4d matrix" />
-    <option name="LAST_COMMIT_MESSAGE" value="add: 4d matrix" />
+    <MESSAGE value="add: bool" />
+    <option name="LAST_COMMIT_MESSAGE" value="add: bool" />
   </component>
 </project>

@@ -1,27 +1,27 @@
-package Math;
+package Toolbox.Math;
 
 import java.io.Serial;
 import java.io.Serializable;
 import java.nio.FloatBuffer;
 
 @SuppressWarnings("unused")
-public class Vec4D extends Vec1D implements Serializable, ReadableVec4D, WritableVec4D {
+public class Vec3D extends Vec1D implements Serializable, ReadableVec3D, WritableVec3D {
 
     @Serial
     private static final long serialVersionUID = 1L;
 
-    public float x, y, z, w;
+    public float x, y, z;
 
-    public Vec4D() {
+    public Vec3D() {
         super();
     }
 
-    public Vec4D(ReadableVec4D src) {
+    public Vec3D(ReadableVec3D src) {
         set(src);
     }
 
-    public Vec4D(float x, float y, float z, float w) {
-        set(x, y, z, w);
+    public Vec3D(float x, float y, float z) {
+        set(x, y, z);
     }
 
     public void set(float x, float y) {
@@ -35,85 +35,92 @@ public class Vec4D extends Vec1D implements Serializable, ReadableVec4D, Writabl
         this.z = z;
     }
 
-    public void set(float x, float y, float z, float w) {
-        this.x = x;
-        this.y = y;
-        this.z = z;
-        this.w = w;
-    }
-
-    public Vec4D set(ReadableVec4D src) {
+    public Vec3D set(ReadableVec3D src) {
         x = src.getX();
         y = src.getY();
         z = src.getZ();
-        w = src.getW();
         return this;
     }
 
     public float lengthSquared() {
-        return x * x + y * y + z * z + w * w;
+        return x * x + y * y + z * z;
     }
 
-    public Vec4D translate(float x, float y, float z, float w) {
+    public Vec3D translate(float x, float y, float z) {
         this.x += x;
         this.y += y;
         this.z += z;
-        this.w += w;
         return this;
     }
 
-    public static Vec4D add(Vec4D left, Vec4D right, Vec4D dest) {
+    public static Vec3D add(Vec3D left, Vec3D right, Vec3D dest) {
         if (dest == null)
-            return new Vec4D(left.x + right.x, left.y + right.y, left.z + right.z, left.w + right.w);
+            return new Vec3D(left.x + right.x, left.y + right.y, left.z + right.z);
         else {
-            dest.set(left.x + right.x, left.y + right.y, left.z + right.z, left.w + right.w);
+            dest.set(left.x + right.x, left.y + right.y, left.z + right.z);
             return dest;
         }
     }
 
-    public static Vec4D sub(Vec4D left, Vec4D right, Vec4D dest) {
+    public static Vec3D sub(Vec3D left, Vec3D right, Vec3D dest) {
         if (dest == null)
-            return new Vec4D(left.x - right.x, left.y - right.y, left.z - right.z, left.w - right.w);
+            return new Vec3D(left.x - right.x, left.y - right.y, left.z - right.z);
         else {
-            dest.set(left.x - right.x, left.y - right.y, left.z - right.z, left.w - right.w);
+            dest.set(left.x - right.x, left.y - right.y, left.z - right.z);
             return dest;
         }
+    }
+
+    public static Vec3D cross(
+            Vec3D left,
+            Vec3D right,
+            Vec3D dest)
+    {
+
+        if (dest == null)
+            dest = new Vec3D();
+
+        dest.set(
+                left.y * right.z - left.z * right.y,
+                right.x * left.z - right.z * left.x,
+                left.x * right.y - left.y * right.x
+        );
+
+        return dest;
     }
 
     public Vec1D negate() {
         x = -x;
         y = -y;
         z = -z;
-        w = -w;
         return this;
     }
 
-    public Vec4D negate(Vec4D dest) {
+    public Vec3D negate(Vec3D dest) {
         if (dest == null)
-            dest = new Vec4D();
+            dest = new Vec3D();
         dest.x = -x;
         dest.y = -y;
         dest.z = -z;
-        dest.w = -w;
         return dest;
     }
 
-    public Vec4D normalise(Vec4D dest) {
+    public Vec3D normalise(Vec3D dest) {
         float l = length();
 
         if (dest == null)
-            dest = new Vec4D(x / l, y / l, z / l, w / l);
+            dest = new Vec3D(x / l, y / l, z / l);
         else
-            dest.set(x / l, y / l, z / l, w / l);
+            dest.set(x / l, y / l, z / l);
 
         return dest;
     }
 
-    public static float dot(Vec4D left, Vec4D right) {
-        return left.x * right.x + left.y * right.y + left.z * right.z + left.w * right.w;
+    public static float dot(Vec3D left, Vec3D right) {
+        return left.x * right.x + left.y * right.y + left.z * right.z;
     }
 
-    public static float angle(Vec4D a, Vec4D b) {
+    public static float angle(Vec3D a, Vec3D b) {
         float dls = dot(a, b) / (a.length() * b.length());
         if (dls < -1f)
             dls = -1f;
@@ -126,30 +133,39 @@ public class Vec4D extends Vec1D implements Serializable, ReadableVec4D, Writabl
         x = buf.get();
         y = buf.get();
         z = buf.get();
-        w = buf.get();
         return this;
     }
 
     public Vec1D scale(float scale) {
+
         x *= scale;
         y *= scale;
         z *= scale;
-        w *= scale;
+
         return this;
+
     }
 
-    public Vec1D store(FloatBuffer buf) {
+    public Vec3D store(FloatBuffer buf) {
 
         buf.put(x);
         buf.put(y);
         buf.put(z);
-        buf.put(w);
 
         return this;
     }
 
     public String toString() {
-        return "Vector4f: " + x + " " + y + " " + z + " " + w;
+        StringBuilder sb = new StringBuilder(64);
+
+        sb.append("Vector3f[");
+        sb.append(x);
+        sb.append(", ");
+        sb.append(y);
+        sb.append(", ");
+        sb.append(z);
+        sb.append(']');
+        return sb.toString();
     }
 
     public final float getX() {
@@ -176,21 +192,13 @@ public class Vec4D extends Vec1D implements Serializable, ReadableVec4D, Writabl
         return z;
     }
 
-    public void setW(float w) {
-        this.w = w;
-    }
-
-    public float getW() {
-        return w;
-    }
-
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
         if (getClass() != obj.getClass()) return false;
-        Vec4D other = (Vec4D)obj;
+        Vec3D other = (Vec3D)obj;
 
-        if (x == other.x && y == other.y && z == other.z && w == other.w) return true;
+        if (x == other.x && y == other.y && z == other.z) return true;
 
         return false;
     }
