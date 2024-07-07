@@ -5,12 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="840c9104-0bc0-421b-aa50-14bd951f9721" name="Changes" comment="add: matrix &amp; 3D Vector Support">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Math/Matrix.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Math/ReadableVec3D.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Math/Vec3D.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Math/WritableVec3D.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Math/Matrix2D.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Math/Matrix3D.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Math/Vec2D.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Math/Vec2D.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -452,7 +449,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720338382225</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="add: matrix &amp; 3D Vector Support">
+      <option name="closed" value="true" />
+      <created>1720339101876</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1720339101876</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
