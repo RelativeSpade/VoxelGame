@@ -4,8 +4,7 @@ import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GL20;
 
 import java.io.*;
-import java.util.Vector;
-
+import Math.*;
 public abstract class ShaderProgram {
 
     int programID;
@@ -42,10 +41,14 @@ public abstract class ShaderProgram {
 
     }
 
-    protected void load2DVector(int location, Vector vec) {
-
-
+    protected void load2DVector(int location, Vec2D vec) {
+        GL20.glUniform2f(location, vec.x, vec.y);
     }
+
+    protected void load3DVector(int location, Vec3D vec) {
+        GL20.glUniform2f(location, vec.x, vec.y, vec.z);
+    }
+
 
     protected abstract void bindAttributes();
 
