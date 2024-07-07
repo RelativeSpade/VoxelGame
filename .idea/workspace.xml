@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="840c9104-0bc0-421b-aa50-14bd951f9721" name="Changes" comment="add: matrix &amp; 3D Vector Support">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Math/Matrix2D.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Math/Matrix3D.java" afterDir="false" />
+    <list default="true" id="840c9104-0bc0-421b-aa50-14bd951f9721" name="Changes" comment="add: 4d matrix">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Shaders/ShaderProgram.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Shaders/ShaderProgram.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,30 +63,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1720146061769</updated>
-    </task>
-    <task id="LOCAL-00001" summary="base upload">
-      <option name="closed" value="true" />
-      <created>1720146089553</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1720146089553</updated>
-    </task>
-    <task id="LOCAL-00002" summary="base upload">
-      <option name="closed" value="true" />
-      <created>1720146655540</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1720146655540</updated>
-    </task>
-    <task id="LOCAL-00003" summary="added dependencies">
-      <option name="closed" value="true" />
-      <created>1720147040414</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1720147040414</updated>
     </task>
     <task id="LOCAL-00004" summary="createDisplay finished">
       <option name="closed" value="true" />
@@ -457,13 +432,34 @@
       <option name="project" value="LOCAL" />
       <updated>1720339101876</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="add: 2d matrix (math please spare me)">
+      <option name="closed" value="true" />
+      <created>1720339422579</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1720339422579</updated>
+    </task>
+    <task id="LOCAL-00051" summary="add: 3d matrix &amp; vec 4d (kill me)">
+      <option name="closed" value="true" />
+      <created>1720339933299</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1720339933300</updated>
+    </task>
+    <task id="LOCAL-00052" summary="add: 4d matrix">
+      <option name="closed" value="true" />
+      <created>1720340472584</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1720340472584</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="change: aesthetic modifications" />
-    <MESSAGE value="add: added comments for clarity’s sake" />
-    <MESSAGE value="fixed: square wasnt equal" />
     <MESSAGE value="added: implemented indices &amp; added comments" />
     <MESSAGE value="added: shader class" />
     <MESSAGE value="change: finished shader class" />
@@ -486,6 +482,9 @@
     <MESSAGE value="change: suppressed unused" />
     <MESSAGE value="add: 3D Vector" />
     <MESSAGE value="add: matrix &amp; 3D Vector Support" />
-    <option name="LAST_COMMIT_MESSAGE" value="add: matrix &amp; 3D Vector Support" />
+    <MESSAGE value="add: 2d matrix (math please spare me)" />
+    <MESSAGE value="add: 3d matrix &amp; vec 4d (kill me)" />
+    <MESSAGE value="add: 4d matrix" />
+    <option name="LAST_COMMIT_MESSAGE" value="add: 4d matrix" />
   </component>
 </project>

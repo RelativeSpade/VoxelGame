@@ -69,6 +69,13 @@ public abstract class ShaderProgram {
 
     }
 
+    protected void loadBool(int location, Boolean val) {
+
+        float value = (val) ? 1 : 0;
+        GL20.glUniform1f(location, value);
+
+    }
+
 
     protected abstract void bindAttributes();
 
