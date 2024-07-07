@@ -7,6 +7,7 @@ import Render.Loader;
 import Render.MasterRender;
 import Shaders.StaticShader;
 import Textures.ModelTexture;
+import com.badlogic.gdx.backends.lwjgl3.Lwjgl3NativesLoader;
 
 import static org.lwjgl.glfw.GLFW.*;
 
@@ -54,7 +55,7 @@ public class Main {
         };
 
         RawModel model = loader.loadToVAO(vertices, indices, uvs);
-        ModelTexture texture = new ModelTexture(loader.loadTexture("/textures/grass.png"));
+        ModelTexture texture = new ModelTexture(loader.loadTexture("C:\\Users\\Spade\\Documents\\Voxel\\src\\main\\resources\\textures\\dirt.png"));
         TextureModel textureModel = new TextureModel(model, texture);
 
         long window = DisplayManager.getWindow();

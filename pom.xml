@@ -409,10 +409,16 @@
             <classifier>${lwjgl.natives}</classifier>
         </dependency>
         <dependency>
-            <groupId>org.slick2d</groupId>
-            <artifactId>slick2d-core</artifactId>
-            <version>1.0.2</version>
+            <groupId>com.badlogicgames.gdx</groupId>
+            <artifactId>gdx</artifactId>
+            <version>1.12.1</version>
         </dependency>
+        <dependency>
+            <groupId>com.badlogicgames.gdx</groupId>
+            <artifactId>gdx-backend-lwjgl3</artifactId>
+            <version>1.12.1</version> <!-- Or your preferred version -->
+        </dependency>
+
 
     </dependencies>
 </project>
