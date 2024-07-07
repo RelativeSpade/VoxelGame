@@ -4,6 +4,7 @@ import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GL20;
 
 import java.io.*;
+import java.util.Vector;
 
 public abstract class ShaderProgram {
 
@@ -22,6 +23,27 @@ public abstract class ShaderProgram {
         bindAttributes();
         GL20.glLinkProgram(programID);
         GL20.glValidateProgram(programID);
+
+        getAllUniformLocations();
+
+    }
+
+    protected abstract void getAllUniformLocations();
+
+    protected int getUniformLocation(String varName) {
+
+        return GL20.glGetUniformLocation(programID, varName);
+
+    }
+
+    protected void loadFloat(int location, float value) {
+
+        GL20.glUniform1f(location,value);
+
+    }
+
+    protected void load2DVector(int location, Vector vec) {
+
 
     }
 
