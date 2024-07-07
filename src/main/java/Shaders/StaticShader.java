@@ -10,6 +10,11 @@ public class StaticShader extends ShaderProgram {
     }
 
     @Override
+    protected void getAllUniformLocations() {
+
+    }
+
+    @Override
     protected void bindAttributes() {
 
         super.bindAttribute("position", 0);
