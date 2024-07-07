@@ -1,6 +1,7 @@
 package Render;
 
-import Models.TextureModel;
+import Entities.Entity;
+import Shaders.StaticShader;
 import org.lwjgl.opengl.GL11;
 
 public class MasterRender {
@@ -12,9 +13,9 @@ public class MasterRender {
 
     }
 
-    public void render(TextureModel model) {
+    public void render(Entity model, StaticShader shader) {
 
-        EntityRender.render(model);
+        EntityRender.render(model, shader);
 
     }
 

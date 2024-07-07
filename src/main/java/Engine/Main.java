@@ -1,5 +1,6 @@
 package Engine;
 
+import Entities.Entity;
 import Models.RawModel;
 import Models.TextureModel;
 import Render.DisplayManager;
@@ -7,6 +8,7 @@ import Render.Loader;
 import Render.MasterRender;
 import Shaders.StaticShader;
 import Textures.ModelTexture;
+import Toolbox.Math.Vec3D;
 
 import static org.lwjgl.glfw.GLFW.*;
 
@@ -56,6 +58,7 @@ public class Main {
         RawModel model = loader.loadToVAO(vertices, indices, uvs);
         ModelTexture texture = new ModelTexture(loader.loadTexture("C:\\Users\\Spade\\Documents\\Voxel\\src\\main\\resources\\textures\\dirt.png"));
         TextureModel textureModel = new TextureModel(model, texture);
+        Entity entity = new Entity(textureModel, new Vec3D(0, 0, 0), 0, 0, 0, 1);
 
         long window = DisplayManager.getWindow();
 
@@ -64,7 +67,7 @@ public class Main {
             glfwPollEvents();
             renderer.prepare();
             shader.start();
-            renderer.render(textureModel);
+            renderer.render(entity, shader);
             shader.stop();
 
             if(glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS){
