@@ -100,7 +100,7 @@ public class Vec2D extends Vec1D implements Serializable, ReadableVec2D, Writabl
         }
     }
 
-    public Vec1D store(FloatBuffer buf) {
+    public Vec2D store(FloatBuffer buf) {
         buf.put(x);
         buf.put(y);
         return this;

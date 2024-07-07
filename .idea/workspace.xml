@@ -4,15 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="840c9104-0bc0-421b-aa50-14bd951f9721" name="Changes" comment="added: basic 1D vector logic">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Math/ReadableVec2D.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Math/ReadableVector3f.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Math/Vec2D.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Math/Vector3f.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Math/WritableVec2D.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Math/WritableVector3f.java" afterDir="false" />
+    <list default="true" id="840c9104-0bc0-421b-aa50-14bd951f9721" name="Changes" comment="add: matrix &amp; 3D Vector Support">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Math/Matrix.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Math/ReadableVec3D.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Math/Vec3D.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Math/WritableVec3D.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Shaders/ShaderProgram.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Shaders/ShaderProgram.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Math/Vec2D.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Math/Vec2D.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -422,15 +420,42 @@
       <option name="project" value="LOCAL" />
       <updated>1720337870482</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="added: basic 2D vector logic">
+      <option name="closed" value="true" />
+      <created>1720338301787</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1720338301787</updated>
+    </task>
+    <task id="LOCAL-00046" summary="change: fixed error accidentally pushed">
+      <option name="closed" value="true" />
+      <created>1720338328433</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1720338328433</updated>
+    </task>
+    <task id="LOCAL-00047" summary="change: fixed error accidentally pushed">
+      <option name="closed" value="true" />
+      <created>1720338349910</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1720338349910</updated>
+    </task>
+    <task id="LOCAL-00048" summary="change: suppressed unused">
+      <option name="closed" value="true" />
+      <created>1720338382225</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1720338382225</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add: Entity Render" />
-    <MESSAGE value="fix: should be static" />
-    <MESSAGE value="add: call to EntityRender in MasterRender" />
-    <MESSAGE value="add: basic quadrilateral rendered" />
-    <MESSAGE value="add: little diagram &amp; some comments" />
     <MESSAGE value="change: aesthetic modifications" />
     <MESSAGE value="add: added comments for clarity’s sake" />
     <MESSAGE value="fixed: square wasnt equal" />
@@ -451,6 +476,11 @@
     <MESSAGE value="changed: fixed texture support and replaced depreciated lib" />
     <MESSAGE value="changed: cleaned up dependencies &amp; error removal" />
     <MESSAGE value="added: basic 1D vector logic" />
-    <option name="LAST_COMMIT_MESSAGE" value="added: basic 1D vector logic" />
+    <MESSAGE value="added: basic 2D vector logic" />
+    <MESSAGE value="change: fixed error accidentally pushed" />
+    <MESSAGE value="change: suppressed unused" />
+    <MESSAGE value="add: 3D Vector" />
+    <MESSAGE value="add: matrix &amp; 3D Vector Support" />
+    <option name="LAST_COMMIT_MESSAGE" value="add: matrix &amp; 3D Vector Support" />
   </component>
 </project>
