@@ -7,7 +7,6 @@ import Render.Loader;
 import Render.MasterRender;
 import Shaders.StaticShader;
 import Textures.ModelTexture;
-import com.badlogic.gdx.backends.lwjgl3.Lwjgl3NativesLoader;
 
 import static org.lwjgl.glfw.GLFW.*;
 

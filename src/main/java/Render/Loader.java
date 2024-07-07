@@ -69,6 +69,8 @@ public class Loader {
         STBImage.stbi_image_free(image);
     } catch (Exception e) {
         e.printStackTrace();
+        System.err.println("Failed to load texture: " + filePath);
+        System.exit(-1);
     }
 
         return textureId;
