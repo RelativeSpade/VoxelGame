@@ -16,16 +16,19 @@ public class StaticShader extends ShaderProgram {
     @Override
     protected void getAllUniformLocations() {
 
+        location_transformationMatrix = super.getUniformLocation("transformationMatrix");
+
     }
 
     @Override
     protected void bindAttributes() {
 
-        location_transformationMatrix = super.getUniformLocation("transformationMatrix");
+        super.bindAttribute("position", 0);
+        super.bindAttribute("textureCoords", 1);
 
     }
 
-    public void loadTranformationMatrix(Matrix4D matrix) {
+    public void loadTransformationMatrix(Matrix4D matrix) {
 
         super.loadMatrix(location_transformationMatrix, matrix);
 

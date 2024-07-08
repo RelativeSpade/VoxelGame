@@ -1,7 +1,6 @@
 package Render;
 
 import Entities.Entity;
-import Models.TextureModel;
 import Shaders.StaticShader;
 import Toolbox.Math.Matrix4D;
 import org.lwjgl.opengl.GL11;
@@ -20,7 +19,7 @@ public class EntityRender {
         GL20.glEnableVertexAttribArray(1); // Enable UV Attribute Array
 
         Matrix4D transformationMatrix = createTransformationMatrix(model.getPosition(), model.getrX(), model.getrY(), model.getrZ(), model.getScale());
-        shader.loadTranformationMatrix(transformationMatrix);
+        shader.loadTransformationMatrix(transformationMatrix);
 
         GL13.glActiveTexture(GL13.GL_TEXTURE0); // Set active texture
         GL11.glBindTexture(GL11.GL_TEXTURE_2D, model.getModel().getTexture().getTextureID());
