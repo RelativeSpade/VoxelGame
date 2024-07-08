@@ -6,8 +6,8 @@ import org.lwjgl.glfw.GLFWCursorPosCallback;
 public class Mouse {
     private static double lastX;
     private static double lastY;
-    private static double dx;
-    private static double dy;
+    private static float dx;
+    private static float dy;
     private static long window;
 
     public static void init(long window) {
@@ -21,22 +21,22 @@ public class Mouse {
                     lastX = xpos;
                     lastY = ypos;
                 }
-                dx = xpos - lastX;
-                dy = ypos - lastY;
+                dx = (float) (xpos - lastX);
+                dy = (float) (ypos - lastY);
                 lastX = xpos;
                 lastY = ypos;
             }
         });
     }
 
-    public static double getDX() {
-        double delta = dx;
+    public static float getDX() {
+        float delta = dx;
         dx = 0;
         return delta;
     }
 
-    public static double getDY() {
-        double delta = dy;
+    public static float getDY() {
+        float delta = dy;
         dy = 0;
         return delta;
     }

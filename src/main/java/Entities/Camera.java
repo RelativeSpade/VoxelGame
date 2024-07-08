@@ -12,7 +12,7 @@ public class Camera {
     float rX;
     float rY;
     float rZ;
-    float speed = 0.01f;
+    float speed = 0.1f;
 
     public Camera(Vec3 position, float rX, float rY, float rZ) {
 
@@ -32,9 +32,8 @@ public class Camera {
             position.z += speed;
         }
 
-        System.out.println(position.x);
-        rX += (float) Mouse.getDY();
-        rY += (float) Mouse.getDX();
+        rX += Mouse.getDY();
+        rY += Mouse.getDX();
     }
 
     public Vec3 getPosition() {
