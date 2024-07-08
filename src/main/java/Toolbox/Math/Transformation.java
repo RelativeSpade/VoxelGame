@@ -24,9 +24,9 @@ public class Transformation {
         Matrix4 matrix = new Matrix4();
         matrix.setIdentity();
 
-        Matrix4.rotate((float) Math.toRadians(camera.getrX()), new Vec3(1, 0, 0), matrix, matrix);
-        Matrix4.rotate((float) Math.toRadians(camera.getrY()), new Vec3(0, 1, 0), matrix, matrix);
-        Matrix4.rotate((float) Math.toRadians(camera.getrZ()), new Vec3(0, 0, 1), matrix, matrix);
+        Matrix4.rotate((float) Math.toRadians(camera.getRX()), new Vec3(1, 0, 0), matrix, matrix);
+        Matrix4.rotate((float) Math.toRadians(camera.getRY()), new Vec3(0, 1, 0), matrix, matrix);
+        Matrix4.rotate((float) Math.toRadians(camera.getRZ()), new Vec3(0, 0, 1), matrix, matrix);
         Matrix4.translate(new Vec3(-camera.getPosition().x, -camera.getPosition().y, -camera.getPosition().z), matrix, matrix);
 
         return matrix;

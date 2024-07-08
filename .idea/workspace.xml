@@ -4,16 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="840c9104-0bc0-421b-aa50-14bd951f9721" name="Changes" comment="change: error suppression">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Entities/Camera.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Toolbox/Necessities/Mouse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Engine/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Engine/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Render/DisplayManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Render/DisplayManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Render/MasterRender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Render/MasterRender.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Shaders/StaticShader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Shaders/StaticShader.java" afterDir="false" />
+    <list default="true" id="840c9104-0bc0-421b-aa50-14bd951f9721" name="Changes" comment="add: basic (albeit buggy) camera movement">
+      <change beforePath="$PROJECT_DIR$/src/main/java/Entities/Camera.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Entities/Camera.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Toolbox/Math/Transformation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toolbox/Math/Transformation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/shaders/vertexShader.glsl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/shaders/vertexShader.glsl" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,14 +63,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1720146061769</updated>
-    </task>
-    <task id="LOCAL-00013" summary="add: window close on exit">
-      <option name="closed" value="true" />
-      <created>1720172267405</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1720172267405</updated>
     </task>
     <task id="LOCAL-00014" summary="add: window close on x button">
       <option name="closed" value="true" />
@@ -463,11 +448,18 @@
       <option name="project" value="LOCAL" />
       <updated>1720427718292</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="add: basic (albeit buggy) camera movement">
+      <option name="closed" value="true" />
+      <created>1720467710573</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1720467710573</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="change: added null check" />
     <MESSAGE value="fix: got shader working, had to change alot around" />
     <MESSAGE value="change: made shader slightly brighter" />
     <MESSAGE value="change: aesthetic change" />
@@ -492,6 +484,7 @@
     <MESSAGE value="change: removed &quot;d&quot; from math lib name, was annoying me." />
     <MESSAGE value="change: added fps count" />
     <MESSAGE value="change: error suppression" />
-    <option name="LAST_COMMIT_MESSAGE" value="change: error suppression" />
+    <MESSAGE value="add: basic (albeit buggy) camera movement" />
+    <option name="LAST_COMMIT_MESSAGE" value="add: basic (albeit buggy) camera movement" />
   </component>
 </project>

@@ -41,15 +41,15 @@ public class Camera {
         return position;
     }
 
-    public float getrX() {
+    public float getRX() {
         return rX;
     }
 
-    public float getrY() {
+    public float getRY() {
         return rY;
     }
 
-    public float getrZ() {
+    public float getRZ() {
         return rZ;
     }
 }
