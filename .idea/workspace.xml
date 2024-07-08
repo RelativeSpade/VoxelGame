@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="840c9104-0bc0-421b-aa50-14bd951f9721" name="Changes" comment="add: entity rotation, scale, and size change methods">
+    <list default="true" id="840c9104-0bc0-421b-aa50-14bd951f9721" name="Changes" comment="change: removed &quot;d&quot; from math lib name, was annoying me.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Engine/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Engine/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Render/DisplayManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Render/DisplayManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Shaders/StaticShader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Shaders/StaticShader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/shaders/vertexShader.glsl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/shaders/vertexShader.glsl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Render/MasterRender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Render/MasterRender.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,14 +65,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1720146061769</updated>
-    </task>
-    <task id="LOCAL-00010" summary="organization changes">
-      <option name="closed" value="true" />
-      <created>1720169605967</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1720169605967</updated>
     </task>
     <task id="LOCAL-00011" summary="empty window">
       <option name="closed" value="true" />
@@ -458,11 +450,18 @@
       <option name="project" value="LOCAL" />
       <updated>1720426064293</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="change: removed &quot;d&quot; from math lib name, was annoying me.">
+      <option name="closed" value="true" />
+      <created>1720426901316</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1720426901316</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="change: aesthetic rename" />
     <MESSAGE value="added: basic shader support" />
     <MESSAGE value="change: removed excess import" />
     <MESSAGE value="change: added null check" />
@@ -487,6 +486,7 @@
     <MESSAGE value="add: finish transformation (kinda, doesnt work)" />
     <MESSAGE value="change: fixed translation" />
     <MESSAGE value="add: entity rotation, scale, and size change methods" />
-    <option name="LAST_COMMIT_MESSAGE" value="add: entity rotation, scale, and size change methods" />
+    <MESSAGE value="change: removed &quot;d&quot; from math lib name, was annoying me." />
+    <option name="LAST_COMMIT_MESSAGE" value="change: removed &quot;d&quot; from math lib name, was annoying me." />
   </component>
 </project>

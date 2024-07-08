@@ -16,6 +16,8 @@ public class Main {
 
     public static Loader loader1 = null;
     public static StaticShader shader1 = null;
+    public static int FPS = -1;
+    public static double previousTime = glfwGetTime();
 
     public static void main(String[] args){
 
@@ -63,6 +65,16 @@ public class Main {
         long window = DisplayManager.getWindow();
 
         while (!glfwWindowShouldClose(window)) {
+
+            double currentTime = glfwGetTime();
+            FPS++;
+
+            if(currentTime - previousTime >= 1.0) {
+
+                DisplayManager.updateWinName(FPS);
+                FPS = 0;
+                previousTime = currentTime;
+            }
 
             glfwPollEvents();
             renderer.prepare();

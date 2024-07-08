@@ -56,6 +56,7 @@ public class DisplayManager {
     }
 
     public static void closeDisplay() {
+
         Main.loader1.cleanUp();
         Main.shader1.cleanUp();
 
@@ -66,5 +67,11 @@ public class DisplayManager {
 
     public static long getWindow(){
         return window;
+    }
+
+    public static void updateWinName(int fps) {
+
+        glfwSetWindowTitle(window, NAME + " FPS: " + fps);
+
     }
 }
