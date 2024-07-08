@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="840c9104-0bc0-421b-aa50-14bd951f9721" name="Changes" comment="add: finish transformation (kinda, doesnt work)">
+    <list default="true" id="840c9104-0bc0-421b-aa50-14bd951f9721" name="Changes" comment="change: fixed translation">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Render/EntityRender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Render/EntityRender.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Shaders/StaticShader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Shaders/StaticShader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Engine/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Engine/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Entities/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Entities/Entity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Render/Loader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Render/Loader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Toolbox/Math/Transformation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toolbox/Math/Transformation.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,14 +66,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1720146061769</updated>
-    </task>
-    <task id="LOCAL-00008" summary="main">
-      <option name="closed" value="true" />
-      <created>1720169234252</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1720169234252</updated>
     </task>
     <task id="LOCAL-00009" summary="organization changes">
       <option name="closed" value="true" />
@@ -457,11 +451,18 @@
       <option name="project" value="LOCAL" />
       <updated>1720343318397</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="change: fixed translation">
+      <option name="closed" value="true" />
+      <created>1720405069187</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1720405069187</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="change: Shader constructor finished" />
     <MESSAGE value="change: ShaderProgram finished" />
     <MESSAGE value="change: aesthetic rename" />
     <MESSAGE value="added: basic shader support" />
@@ -486,6 +487,7 @@
     <MESSAGE value="change: moved stuff around" />
     <MESSAGE value="add: transformation stuff." />
     <MESSAGE value="add: finish transformation (kinda, doesnt work)" />
-    <option name="LAST_COMMIT_MESSAGE" value="add: finish transformation (kinda, doesnt work)" />
+    <MESSAGE value="change: fixed translation" />
+    <option name="LAST_COMMIT_MESSAGE" value="change: fixed translation" />
   </component>
 </project>

@@ -22,6 +22,28 @@ public class Entity{
 
     }
 
+    public void changePosition(float dx, float dy, float dz) {
+
+        this.position.x += dx;
+        this.position.y += dy;
+        this.position.z += dz;
+
+    }
+
+    public void changeRotation(float dx, float dy, float dz) {
+
+        this.rX += dx;
+        this.rY += dy;
+        this.rZ += dz;
+
+    }
+
+    public void changeScale(float scale) {
+
+        this.scale += scale;
+
+    }
+
     public TextureModel getModel() {
         return model;
     }

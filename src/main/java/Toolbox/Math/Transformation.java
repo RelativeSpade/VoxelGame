@@ -8,12 +8,13 @@ public class Transformation {
         matrix.setIdentity();
 
         Matrix4D.translate(translation, matrix, matrix);
-        Matrix4D.rotate(rX, new Vec3D(1, 0, 0), matrix, matrix);
-        Matrix4D.rotate(rY, new Vec3D(0, 1, 0), matrix, matrix);
-        Matrix4D.rotate(rZ, new Vec3D(0, 0, 1), matrix, matrix);
+        Matrix4D.rotate((float) Math.toRadians(rX), new Vec3D(1, 0, 0), matrix, matrix);
+        Matrix4D.rotate((float) Math.toRadians(rY), new Vec3D(0, 1, 0), matrix, matrix);
+        Matrix4D.rotate((float) Math.toRadians(rZ), new Vec3D(0, 0, 1), matrix, matrix);
         Matrix4D.scale(new Vec3D(scale, scale, scale), matrix, matrix);
 
         return matrix;
 
     }
+
 }

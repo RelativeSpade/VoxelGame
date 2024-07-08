@@ -21,6 +21,7 @@ public class Loader {
     static List<Integer> textures = new ArrayList<>(); // List to store textures
     static List<Integer> vaos = new ArrayList<>(); // List to store VAO IDs; a VAO holds VBOs, essentially a list of VBOs
     static List<Integer> vbos = new ArrayList<>(); // List to store VBO IDs; a VBO holds model data such as vertices
+    static String absPath = "C:/Users/Spade/Documents/Voxel/src/main/resources/textures/";
 
     public RawModel loadToVAO(float[] vertices, int[] indices, float[] uv) {
         int vaoID = createVAO(); // Create and bind a new VAO
@@ -49,7 +50,7 @@ public class Loader {
         IntBuffer channelsBuffer = stack.mallocInt(1);
 
         // Load image data
-        ByteBuffer image = STBImage.stbi_load(filePath, widthBuffer, heightBuffer, channelsBuffer, 4);
+        ByteBuffer image = STBImage.stbi_load(absPath + filePath, widthBuffer, heightBuffer, channelsBuffer, 4);
         if (image == null) {
             throw new RuntimeException("Failed to load texture file: " + STBImage.stbi_failure_reason());
         }

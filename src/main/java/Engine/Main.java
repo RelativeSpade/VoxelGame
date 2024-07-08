@@ -56,7 +56,7 @@ public class Main {
         };
 
         RawModel model = loader.loadToVAO(vertices, indices, uvs);
-        ModelTexture texture = new ModelTexture(loader.loadTexture("C:\\Users\\Spade\\Documents\\Voxel\\src\\main\\resources\\textures\\dirt.png"));
+        ModelTexture texture = new ModelTexture(loader.loadTexture("dirt.png"));
         TextureModel textureModel = new TextureModel(model, texture);
         Entity entity = new Entity(textureModel, new Vec3D(0, 0, 0), 0, 0, 0, 1);
 
@@ -66,6 +66,10 @@ public class Main {
 
             glfwPollEvents();
             renderer.prepare();
+
+            entity.changeScale(-0.001f);
+            entity.changeRotation(0, 0, 0.1f);
+
             shader.start();
             renderer.render(entity, shader);
             shader.stop();
