@@ -5,7 +5,7 @@ import java.io.Serializable;
 import java.nio.FloatBuffer;
 
 @SuppressWarnings("unused")
-public class Matrix3D extends Matrix implements Serializable {
+public class Matrix3 extends Matrix implements Serializable {
 
     @Serial
     private static final long serialVersionUID = 1L;
@@ -20,18 +20,18 @@ public class Matrix3D extends Matrix implements Serializable {
             m21,
             m22;
 
-    public Matrix3D() {
+    public Matrix3() {
         super();
         setIdentity();
     }
 
-    public Matrix3D load(Matrix3D src) {
+    public Matrix3 load(Matrix3 src) {
         return load(src, this);
     }
 
-    public static Matrix3D load(Matrix3D src, Matrix3D dest) {
+    public static Matrix3 load(Matrix3 src, Matrix3 dest) {
         if (dest == null)
-            dest = new Matrix3D();
+            dest = new Matrix3();
 
         dest.m00 = src.m00;
         dest.m10 = src.m10;
@@ -102,9 +102,9 @@ public class Matrix3D extends Matrix implements Serializable {
         return this;
     }
 
-    public static Matrix3D add(Matrix3D left, Matrix3D right, Matrix3D dest) {
+    public static Matrix3 add(Matrix3 left, Matrix3 right, Matrix3 dest) {
         if (dest == null)
-            dest = new Matrix3D();
+            dest = new Matrix3();
 
         dest.m00 = left.m00 + right.m00;
         dest.m01 = left.m01 + right.m01;
@@ -119,9 +119,9 @@ public class Matrix3D extends Matrix implements Serializable {
         return dest;
     }
 
-    public static Matrix3D sub(Matrix3D left, Matrix3D right, Matrix3D dest) {
+    public static Matrix3 sub(Matrix3 left, Matrix3 right, Matrix3 dest) {
         if (dest == null)
-            dest = new Matrix3D();
+            dest = new Matrix3();
 
         dest.m00 = left.m00 - right.m00;
         dest.m01 = left.m01 - right.m01;
@@ -136,9 +136,9 @@ public class Matrix3D extends Matrix implements Serializable {
         return dest;
     }
 
-    public static Matrix3D mul(Matrix3D left, Matrix3D right, Matrix3D dest) {
+    public static Matrix3 mul(Matrix3 left, Matrix3 right, Matrix3 dest) {
         if (dest == null)
-            dest = new Matrix3D();
+            dest = new Matrix3();
 
         float m00 =
                 left.m00 * right.m00 + left.m10 * right.m01 + left.m20 * right.m02;
@@ -172,9 +172,9 @@ public class Matrix3D extends Matrix implements Serializable {
         return dest;
     }
 
-    public static Vec3D transform(Matrix3D left, Vec3D right, Vec3D dest) {
+    public static Vec3 transform(Matrix3 left, Vec3 right, Vec3 dest) {
         if (dest == null)
-            dest = new Vec3D();
+            dest = new Vec3();
 
         float x = left.m00 * right.x + left.m10 * right.y + left.m20 * right.z;
         float y = left.m01 * right.x + left.m11 * right.y + left.m21 * right.z;
@@ -191,7 +191,7 @@ public class Matrix3D extends Matrix implements Serializable {
         return transpose(this, this);
     }
 
-    public Matrix3D transpose(Matrix3D dest) {
+    public Matrix3 transpose(Matrix3 dest) {
         return transpose(this, dest);
     }
 
@@ -201,9 +201,9 @@ public class Matrix3D extends Matrix implements Serializable {
      * @param dest The destination matrix or null if a new matrix is to be created
      * @return the transposed matrix
      */
-    public static Matrix3D transpose(Matrix3D src, Matrix3D dest) {
+    public static Matrix3 transpose(Matrix3 src, Matrix3 dest) {
         if (dest == null)
-            dest = new Matrix3D();
+            dest = new Matrix3();
         float m00 = src.m00;
         float m01 = src.m10;
         float m02 = src.m20;
@@ -246,12 +246,12 @@ public class Matrix3D extends Matrix implements Serializable {
         return invert(this, this);
     }
 
-    public static Matrix3D invert(Matrix3D src, Matrix3D dest) {
+    public static Matrix3 invert(Matrix3 src, Matrix3 dest) {
         float determinant = src.determinant();
 
         if (determinant != 0) {
             if (dest == null)
-                dest = new Matrix3D();
+                dest = new Matrix3();
 
             float determinant_inv = 1f/determinant;
 
@@ -283,13 +283,13 @@ public class Matrix3D extends Matrix implements Serializable {
         return negate(this);
     }
 
-    public Matrix3D negate(Matrix3D dest) {
+    public Matrix3 negate(Matrix3 dest) {
         return negate(this, dest);
     }
 
-    public static Matrix3D negate(Matrix3D src, Matrix3D dest) {
+    public static Matrix3 negate(Matrix3 src, Matrix3 dest) {
         if (dest == null)
-            dest = new Matrix3D();
+            dest = new Matrix3();
 
         dest.m00 = -src.m00;
         dest.m01 = -src.m02;
@@ -307,7 +307,7 @@ public class Matrix3D extends Matrix implements Serializable {
         return setIdentity(this);
     }
 
-    public static Matrix3D setIdentity(Matrix3D m) {
+    public static Matrix3 setIdentity(Matrix3 m) {
         m.m00 = 1.0f;
         m.m01 = 0.0f;
         m.m02 = 0.0f;
@@ -324,7 +324,7 @@ public class Matrix3D extends Matrix implements Serializable {
         return setZero(this);
     }
 
-    public static Matrix3D setZero(Matrix3D m) {
+    public static Matrix3 setZero(Matrix3 m) {
         m.m00 = 0.0f;
         m.m01 = 0.0f;
         m.m02 = 0.0f;

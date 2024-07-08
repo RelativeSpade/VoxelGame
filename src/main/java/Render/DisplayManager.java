@@ -32,6 +32,7 @@ public class DisplayManager {
             throw new RuntimeException("Failed to create the GLFW window");
         }
 
+        glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
         glfwMakeContextCurrent(window);
         glfwSwapInterval(1);
 

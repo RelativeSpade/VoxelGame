@@ -4,17 +4,17 @@ import java.io.Serializable;
 import java.nio.FloatBuffer;
 
 @SuppressWarnings("unused")
-public class Matrix4D extends Matrix implements Serializable {
+public class Matrix4 extends Matrix implements Serializable {
     private static final long serialVersionUID = 1L;
 
     public float m00, m01, m02, m03, m10, m11, m12, m13, m20, m21, m22, m23, m30, m31, m32, m33;
 
-    public Matrix4D() {
+    public Matrix4() {
         super();
         setIdentity();
     }
 
-    public Matrix4D(final Matrix4D src) {
+    public Matrix4(final Matrix4 src) {
         super();
         load(src);
     }
@@ -32,7 +32,7 @@ public class Matrix4D extends Matrix implements Serializable {
         return setIdentity(this);
     }
 
-    public static Matrix4D setIdentity(Matrix4D m) {
+    public static Matrix4 setIdentity(Matrix4 m) {
         m.m00 = 1.0f;
         m.m01 = 0.0f;
         m.m02 = 0.0f;
@@ -57,7 +57,7 @@ public class Matrix4D extends Matrix implements Serializable {
         return setZero(this);
     }
 
-    public static Matrix4D setZero(Matrix4D m) {
+    public static Matrix4 setZero(Matrix4 m) {
         m.m00 = 0.0f;
         m.m01 = 0.0f;
         m.m02 = 0.0f;
@@ -78,13 +78,13 @@ public class Matrix4D extends Matrix implements Serializable {
         return m;
     }
 
-    public Matrix4D load(Matrix4D src) {
+    public Matrix4 load(Matrix4 src) {
         return load(src, this);
     }
 
-    public static Matrix4D load(Matrix4D src, Matrix4D dest) {
+    public static Matrix4 load(Matrix4 src, Matrix4 dest) {
         if (dest == null)
-            dest = new Matrix4D();
+            dest = new Matrix4();
         dest.m00 = src.m00;
         dest.m01 = src.m01;
         dest.m02 = src.m02;
@@ -202,9 +202,9 @@ public class Matrix4D extends Matrix implements Serializable {
         return this;
     }
 
-    public static Matrix4D add(Matrix4D left, Matrix4D right, Matrix4D dest) {
+    public static Matrix4 add(Matrix4 left, Matrix4 right, Matrix4 dest) {
         if (dest == null)
-            dest = new Matrix4D();
+            dest = new Matrix4();
 
         dest.m00 = left.m00 + right.m00;
         dest.m01 = left.m01 + right.m01;
@@ -226,9 +226,9 @@ public class Matrix4D extends Matrix implements Serializable {
         return dest;
     }
 
-    public static Matrix4D sub(Matrix4D left, Matrix4D right, Matrix4D dest) {
+    public static Matrix4 sub(Matrix4 left, Matrix4 right, Matrix4 dest) {
         if (dest == null)
-            dest = new Matrix4D();
+            dest = new Matrix4();
 
         dest.m00 = left.m00 - right.m00;
         dest.m01 = left.m01 - right.m01;
@@ -250,9 +250,9 @@ public class Matrix4D extends Matrix implements Serializable {
         return dest;
     }
 
-    public static Matrix4D mul(Matrix4D left, Matrix4D right, Matrix4D dest) {
+    public static Matrix4 mul(Matrix4 left, Matrix4 right, Matrix4 dest) {
         if (dest == null)
-            dest = new Matrix4D();
+            dest = new Matrix4();
 
         float m00 = left.m00 * right.m00 + left.m10 * right.m01 + left.m20 * right.m02 + left.m30 * right.m03;
         float m01 = left.m01 * right.m00 + left.m11 * right.m01 + left.m21 * right.m02 + left.m31 * right.m03;
@@ -291,9 +291,9 @@ public class Matrix4D extends Matrix implements Serializable {
         return dest;
     }
 
-    public static Vec4D transform(Matrix4D left, Vec4D right, Vec4D dest) {
+    public static Vec4 transform(Matrix4 left, Vec4 right, Vec4 dest) {
         if (dest == null)
-            dest = new Vec4D();
+            dest = new Vec4();
 
         float x = left.m00 * right.x + left.m10 * right.y + left.m20 * right.z + left.m30 * right.w;
         float y = left.m01 * right.x + left.m11 * right.y + left.m21 * right.z + left.m31 * right.w;
@@ -312,7 +312,7 @@ public class Matrix4D extends Matrix implements Serializable {
         return transpose(this);
     }
 
-    public Matrix4D translate(Vec2D vec) {
+    public Matrix4 translate(Vec2 vec) {
         return translate(vec, this);
     }
 
@@ -321,17 +321,17 @@ public class Matrix4D extends Matrix implements Serializable {
      * @param vec The vector to translate by
      * @return this
      */
-    public Matrix4D translate(Vec3D vec) {
+    public Matrix4 translate(Vec3 vec) {
         return translate(vec, this);
     }
 
-    public Matrix4D scale(Vec3D vec) {
+    public Matrix4 scale(Vec3 vec) {
         return scale(vec, this, this);
     }
 
-    public static Matrix4D scale(Vec3D vec, Matrix4D src, Matrix4D dest) {
+    public static Matrix4 scale(Vec3 vec, Matrix4 src, Matrix4 dest) {
         if (dest == null)
-            dest = new Matrix4D();
+            dest = new Matrix4();
         dest.m00 = src.m00 * vec.x;
         dest.m01 = src.m01 * vec.x;
         dest.m02 = src.m02 * vec.x;
@@ -347,17 +347,17 @@ public class Matrix4D extends Matrix implements Serializable {
         return dest;
     }
 
-    public Matrix4D rotate(float angle, Vec3D axis) {
+    public Matrix4 rotate(float angle, Vec3 axis) {
         return rotate(angle, axis, this);
     }
 
-    public Matrix4D rotate(float angle, Vec3D axis, Matrix4D dest) {
+    public Matrix4 rotate(float angle, Vec3 axis, Matrix4 dest) {
         return rotate(angle, axis, this, dest);
     }
 
-    public static Matrix4D rotate(float angle, Vec3D axis, Matrix4D src, Matrix4D dest) {
+    public static Matrix4 rotate(float angle, Vec3 axis, Matrix4 src, Matrix4 dest) {
         if (dest == null)
-            dest = new Matrix4D();
+            dest = new Matrix4();
         float c = (float) Math.cos(angle);
         float s = (float) Math.sin(angle);
         float oneminusc = 1.0f - c;
@@ -403,13 +403,13 @@ public class Matrix4D extends Matrix implements Serializable {
         return dest;
     }
 
-    public Matrix4D translate(Vec3D vec, Matrix4D dest) {
+    public Matrix4 translate(Vec3 vec, Matrix4 dest) {
         return translate(vec, this, dest);
     }
 
-    public static Matrix4D translate(Vec3D vec, Matrix4D src, Matrix4D dest) {
+    public static Matrix4 translate(Vec3 vec, Matrix4 src, Matrix4 dest) {
         if (dest == null)
-            dest = new Matrix4D();
+            dest = new Matrix4();
 
         dest.m30 += src.m00 * vec.x + src.m10 * vec.y + src.m20 * vec.z;
         dest.m31 += src.m01 * vec.x + src.m11 * vec.y + src.m21 * vec.z;
@@ -419,13 +419,13 @@ public class Matrix4D extends Matrix implements Serializable {
         return dest;
     }
 
-    public Matrix4D translate(Vec2D vec, Matrix4D dest) {
+    public Matrix4 translate(Vec2 vec, Matrix4 dest) {
         return translate(vec, this, dest);
     }
 
-    public static Matrix4D translate(Vec2D vec, Matrix4D src, Matrix4D dest) {
+    public static Matrix4 translate(Vec2 vec, Matrix4 src, Matrix4 dest) {
         if (dest == null)
-            dest = new Matrix4D();
+            dest = new Matrix4();
 
         dest.m30 += src.m00 * vec.x + src.m10 * vec.y;
         dest.m31 += src.m01 * vec.x + src.m11 * vec.y;
@@ -435,13 +435,13 @@ public class Matrix4D extends Matrix implements Serializable {
         return dest;
     }
 
-    public Matrix4D transpose(Matrix4D dest) {
+    public Matrix4 transpose(Matrix4 dest) {
         return transpose(this, dest);
     }
 
-    public static Matrix4D transpose(Matrix4D src, Matrix4D dest) {
+    public static Matrix4 transpose(Matrix4 src, Matrix4 dest) {
         if (dest == null)
-            dest = new Matrix4D();
+            dest = new Matrix4();
         float m00 = src.m00;
         float m01 = src.m10;
         float m02 = src.m20;
@@ -521,13 +521,13 @@ public class Matrix4D extends Matrix implements Serializable {
         return invert(this, this);
     }
 
-    public static Matrix4D invert(Matrix4D src, Matrix4D dest) {
+    public static Matrix4 invert(Matrix4 src, Matrix4 dest) {
         float determinant = src.determinant();
 
         if (determinant != 0) {
 
             if (dest == null)
-                dest = new Matrix4D();
+                dest = new Matrix4();
             float determinant_inv = 1f/determinant;
 
             // first
@@ -576,13 +576,13 @@ public class Matrix4D extends Matrix implements Serializable {
         return negate(this);
     }
 
-    public Matrix4D negate(Matrix4D dest) {
+    public Matrix4 negate(Matrix4 dest) {
         return negate(this, dest);
     }
 
-    public static Matrix4D negate(Matrix4D src, Matrix4D dest) {
+    public static Matrix4 negate(Matrix4 src, Matrix4 dest) {
         if (dest == null)
-            dest = new Matrix4D();
+            dest = new Matrix4();
 
         dest.m00 = -src.m00;
         dest.m01 = -src.m01;

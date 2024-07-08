@@ -1,6 +1,6 @@
 package Toolbox.Math;
 
-public interface WritableVec3D extends WritableVec2D {
+public interface WritableVec3 extends WritableVec2 {
 
     void setZ(float z);
 

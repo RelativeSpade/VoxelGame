@@ -5,22 +5,22 @@ import java.io.Serializable;
 import java.nio.FloatBuffer;
 
 @SuppressWarnings("unused")
-public class Vec4D extends Vec1D implements Serializable, ReadableVec4D, WritableVec4D {
+public class Vec4 extends Vec1 implements Serializable, ReadableVec4, WritableVec4 {
 
     @Serial
     private static final long serialVersionUID = 1L;
 
     public float x, y, z, w;
 
-    public Vec4D() {
+    public Vec4() {
         super();
     }
 
-    public Vec4D(ReadableVec4D src) {
+    public Vec4(ReadableVec4 src) {
         set(src);
     }
 
-    public Vec4D(float x, float y, float z, float w) {
+    public Vec4(float x, float y, float z, float w) {
         set(x, y, z, w);
     }
 
@@ -42,7 +42,7 @@ public class Vec4D extends Vec1D implements Serializable, ReadableVec4D, Writabl
         this.w = w;
     }
 
-    public Vec4D set(ReadableVec4D src) {
+    public Vec4 set(ReadableVec4 src) {
         x = src.getX();
         y = src.getY();
         z = src.getZ();
@@ -54,7 +54,7 @@ public class Vec4D extends Vec1D implements Serializable, ReadableVec4D, Writabl
         return x * x + y * y + z * z + w * w;
     }
 
-    public Vec4D translate(float x, float y, float z, float w) {
+    public Vec4 translate(float x, float y, float z, float w) {
         this.x += x;
         this.y += y;
         this.z += z;
@@ -62,25 +62,25 @@ public class Vec4D extends Vec1D implements Serializable, ReadableVec4D, Writabl
         return this;
     }
 
-    public static Vec4D add(Vec4D left, Vec4D right, Vec4D dest) {
+    public static Vec4 add(Vec4 left, Vec4 right, Vec4 dest) {
         if (dest == null)
-            return new Vec4D(left.x + right.x, left.y + right.y, left.z + right.z, left.w + right.w);
+            return new Vec4(left.x + right.x, left.y + right.y, left.z + right.z, left.w + right.w);
         else {
             dest.set(left.x + right.x, left.y + right.y, left.z + right.z, left.w + right.w);
             return dest;
         }
     }
 
-    public static Vec4D sub(Vec4D left, Vec4D right, Vec4D dest) {
+    public static Vec4 sub(Vec4 left, Vec4 right, Vec4 dest) {
         if (dest == null)
-            return new Vec4D(left.x - right.x, left.y - right.y, left.z - right.z, left.w - right.w);
+            return new Vec4(left.x - right.x, left.y - right.y, left.z - right.z, left.w - right.w);
         else {
             dest.set(left.x - right.x, left.y - right.y, left.z - right.z, left.w - right.w);
             return dest;
         }
     }
 
-    public Vec1D negate() {
+    public Vec1 negate() {
         x = -x;
         y = -y;
         z = -z;
@@ -88,9 +88,9 @@ public class Vec4D extends Vec1D implements Serializable, ReadableVec4D, Writabl
         return this;
     }
 
-    public Vec4D negate(Vec4D dest) {
+    public Vec4 negate(Vec4 dest) {
         if (dest == null)
-            dest = new Vec4D();
+            dest = new Vec4();
         dest.x = -x;
         dest.y = -y;
         dest.z = -z;
@@ -98,22 +98,22 @@ public class Vec4D extends Vec1D implements Serializable, ReadableVec4D, Writabl
         return dest;
     }
 
-    public Vec4D normalise(Vec4D dest) {
+    public Vec4 normalise(Vec4 dest) {
         float l = length();
 
         if (dest == null)
-            dest = new Vec4D(x / l, y / l, z / l, w / l);
+            dest = new Vec4(x / l, y / l, z / l, w / l);
         else
             dest.set(x / l, y / l, z / l, w / l);
 
         return dest;
     }
 
-    public static float dot(Vec4D left, Vec4D right) {
+    public static float dot(Vec4 left, Vec4 right) {
         return left.x * right.x + left.y * right.y + left.z * right.z + left.w * right.w;
     }
 
-    public static float angle(Vec4D a, Vec4D b) {
+    public static float angle(Vec4 a, Vec4 b) {
         float dls = dot(a, b) / (a.length() * b.length());
         if (dls < -1f)
             dls = -1f;
@@ -122,7 +122,7 @@ public class Vec4D extends Vec1D implements Serializable, ReadableVec4D, Writabl
         return (float)Math.acos(dls);
     }
 
-    public Vec1D load(FloatBuffer buf) {
+    public Vec1 load(FloatBuffer buf) {
         x = buf.get();
         y = buf.get();
         z = buf.get();
@@ -130,7 +130,7 @@ public class Vec4D extends Vec1D implements Serializable, ReadableVec4D, Writabl
         return this;
     }
 
-    public Vec1D scale(float scale) {
+    public Vec1 scale(float scale) {
         x *= scale;
         y *= scale;
         z *= scale;
@@ -138,7 +138,7 @@ public class Vec4D extends Vec1D implements Serializable, ReadableVec4D, Writabl
         return this;
     }
 
-    public Vec1D store(FloatBuffer buf) {
+    public Vec1 store(FloatBuffer buf) {
 
         buf.put(x);
         buf.put(y);
@@ -188,7 +188,7 @@ public class Vec4D extends Vec1D implements Serializable, ReadableVec4D, Writabl
         if (this == obj) return true;
         if (obj == null) return false;
         if (getClass() != obj.getClass()) return false;
-        Vec4D other = (Vec4D)obj;
+        Vec4 other = (Vec4)obj;
 
         if (x == other.x && y == other.y && z == other.z && w == other.w) return true;
 

@@ -1,8 +1,8 @@
 package Shaders;
 
-import Toolbox.Math.Matrix4D;
-import Toolbox.Math.Vec2D;
-import Toolbox.Math.Vec3D;
+import Toolbox.Math.Matrix4;
+import Toolbox.Math.Vec2;
+import Toolbox.Math.Vec3;
 import org.lwjgl.BufferUtils;
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GL20;
@@ -49,19 +49,19 @@ public abstract class ShaderProgram {
 
     }
 
-    protected void load2DVector(int location, Vec2D vec) {
+    protected void load2DVector(int location, Vec2 vec) {
 
         GL20.glUniform2f(location, vec.x, vec.y);
 
     }
 
-    protected void load3DVector(int location, Vec3D vec) {
+    protected void load3DVector(int location, Vec3 vec) {
 
         GL20.glUniform3f(location, vec.x, vec.y, vec.z);
 
     }
 
-    protected void loadMatrix(int location, Matrix4D matrix) {
+    protected void loadMatrix(int location, Matrix4 matrix) {
 
         matrix.store(matrixBuffer);
         matrixBuffer.flip();

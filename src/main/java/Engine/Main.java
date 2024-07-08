@@ -8,7 +8,7 @@ import Render.Loader;
 import Render.MasterRender;
 import Shaders.StaticShader;
 import Textures.ModelTexture;
-import Toolbox.Math.Vec3D;
+import Toolbox.Math.Vec3;
 
 import static org.lwjgl.glfw.GLFW.*;
 
@@ -58,7 +58,7 @@ public class Main {
         RawModel model = loader.loadToVAO(vertices, indices, uvs);
         ModelTexture texture = new ModelTexture(loader.loadTexture("dirt.png"));
         TextureModel textureModel = new TextureModel(model, texture);
-        Entity entity = new Entity(textureModel, new Vec3D(0, 0, 0), 0, 0, 0, 1);
+        Entity entity = new Entity(textureModel, new Vec3(0, 0, 0), 0, 0, 0, 1);
 
         long window = DisplayManager.getWindow();
 

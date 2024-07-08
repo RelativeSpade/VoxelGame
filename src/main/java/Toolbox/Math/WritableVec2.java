@@ -1,7 +1,7 @@
 package Toolbox.Math;
 
 @SuppressWarnings("unused")
-public interface WritableVec2D {
+public interface WritableVec2 {
 
     void setX(float x);
 

@@ -2,8 +2,8 @@ package Toolbox.Math;
 import java.nio.FloatBuffer;
 
 @SuppressWarnings("unused")
-public interface ReadableVec1D {
+public interface ReadableVec1 {
     float length();
     float lengthSquared();
-    Vec1D store(FloatBuffer buf);
+    Vec1 store(FloatBuffer buf);
 }

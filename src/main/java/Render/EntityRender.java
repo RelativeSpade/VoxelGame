@@ -2,7 +2,7 @@ package Render;
 
 import Entities.Entity;
 import Shaders.StaticShader;
-import Toolbox.Math.Matrix4D;
+import Toolbox.Math.Matrix4;
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GL13;
 import org.lwjgl.opengl.GL20;
@@ -18,7 +18,7 @@ public class EntityRender {
         GL20.glEnableVertexAttribArray(0); // Enable Vertex Attribute Array
         GL20.glEnableVertexAttribArray(1); // Enable UV Attribute Array
 
-        Matrix4D transformationMatrix = createTransformationMatrix(model.getPosition(), model.getrX(), model.getrY(), model.getrZ(), model.getScale());
+        Matrix4 transformationMatrix = createTransformationMatrix(model.getPosition(), model.getrX(), model.getrY(), model.getrZ(), model.getScale());
         shader.loadTransformationMatrix(transformationMatrix);
 
         GL13.glActiveTexture(GL13.GL_TEXTURE0); // Set active texture

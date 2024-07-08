@@ -4,9 +4,9 @@ import java.io.Serializable;
 import java.nio.FloatBuffer;
 
 @SuppressWarnings("unused")
-public abstract class Vec1D implements Serializable, ReadableVec1D {
+public abstract class Vec1 implements Serializable, ReadableVec1 {
 
-    protected Vec1D() {
+    protected Vec1() {
         super();
     }
 
@@ -16,11 +16,11 @@ public abstract class Vec1D implements Serializable, ReadableVec1D {
 
     public abstract float lengthSquared();
 
-    public abstract Vec1D load(FloatBuffer buf);
+    public abstract Vec1 load(FloatBuffer buf);
 
-    public abstract Vec1D negate();
+    public abstract Vec1 negate();
 
-    public final Vec1D normalise() {
+    public final Vec1 normalise() {
         float len = length();
         if (len != 0.0f) {
             float l = 1.0f / len;
@@ -29,8 +29,8 @@ public abstract class Vec1D implements Serializable, ReadableVec1D {
             throw new IllegalStateException("Vector Length Zero");
     }
 
-    public abstract Vec1D store(FloatBuffer buf);
+    public abstract Vec1 store(FloatBuffer buf);
 
-    public abstract Vec1D scale(float scale);
+    public abstract Vec1 scale(float scale);
 
 }

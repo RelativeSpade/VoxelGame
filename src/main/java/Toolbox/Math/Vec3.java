@@ -5,22 +5,22 @@ import java.io.Serializable;
 import java.nio.FloatBuffer;
 
 @SuppressWarnings("unused")
-public class Vec3D extends Vec1D implements Serializable, ReadableVec3D, WritableVec3D {
+public class Vec3 extends Vec1 implements Serializable, ReadableVec3, WritableVec3 {
 
     @Serial
     private static final long serialVersionUID = 1L;
 
     public float x, y, z;
 
-    public Vec3D() {
+    public Vec3() {
         super();
     }
 
-    public Vec3D(ReadableVec3D src) {
+    public Vec3(ReadableVec3 src) {
         set(src);
     }
 
-    public Vec3D(float x, float y, float z) {
+    public Vec3(float x, float y, float z) {
         set(x, y, z);
     }
 
@@ -35,7 +35,7 @@ public class Vec3D extends Vec1D implements Serializable, ReadableVec3D, Writabl
         this.z = z;
     }
 
-    public Vec3D set(ReadableVec3D src) {
+    public Vec3 set(ReadableVec3 src) {
         x = src.getX();
         y = src.getY();
         z = src.getZ();
@@ -46,39 +46,39 @@ public class Vec3D extends Vec1D implements Serializable, ReadableVec3D, Writabl
         return x * x + y * y + z * z;
     }
 
-    public Vec3D translate(float x, float y, float z) {
+    public Vec3 translate(float x, float y, float z) {
         this.x += x;
         this.y += y;
         this.z += z;
         return this;
     }
 
-    public static Vec3D add(Vec3D left, Vec3D right, Vec3D dest) {
+    public static Vec3 add(Vec3 left, Vec3 right, Vec3 dest) {
         if (dest == null)
-            return new Vec3D(left.x + right.x, left.y + right.y, left.z + right.z);
+            return new Vec3(left.x + right.x, left.y + right.y, left.z + right.z);
         else {
             dest.set(left.x + right.x, left.y + right.y, left.z + right.z);
             return dest;
         }
     }
 
-    public static Vec3D sub(Vec3D left, Vec3D right, Vec3D dest) {
+    public static Vec3 sub(Vec3 left, Vec3 right, Vec3 dest) {
         if (dest == null)
-            return new Vec3D(left.x - right.x, left.y - right.y, left.z - right.z);
+            return new Vec3(left.x - right.x, left.y - right.y, left.z - right.z);
         else {
             dest.set(left.x - right.x, left.y - right.y, left.z - right.z);
             return dest;
         }
     }
 
-    public static Vec3D cross(
-            Vec3D left,
-            Vec3D right,
-            Vec3D dest)
+    public static Vec3 cross(
+            Vec3 left,
+            Vec3 right,
+            Vec3 dest)
     {
 
         if (dest == null)
-            dest = new Vec3D();
+            dest = new Vec3();
 
         dest.set(
                 left.y * right.z - left.z * right.y,
@@ -89,38 +89,38 @@ public class Vec3D extends Vec1D implements Serializable, ReadableVec3D, Writabl
         return dest;
     }
 
-    public Vec1D negate() {
+    public Vec1 negate() {
         x = -x;
         y = -y;
         z = -z;
         return this;
     }
 
-    public Vec3D negate(Vec3D dest) {
+    public Vec3 negate(Vec3 dest) {
         if (dest == null)
-            dest = new Vec3D();
+            dest = new Vec3();
         dest.x = -x;
         dest.y = -y;
         dest.z = -z;
         return dest;
     }
 
-    public Vec3D normalise(Vec3D dest) {
+    public Vec3 normalise(Vec3 dest) {
         float l = length();
 
         if (dest == null)
-            dest = new Vec3D(x / l, y / l, z / l);
+            dest = new Vec3(x / l, y / l, z / l);
         else
             dest.set(x / l, y / l, z / l);
 
         return dest;
     }
 
-    public static float dot(Vec3D left, Vec3D right) {
+    public static float dot(Vec3 left, Vec3 right) {
         return left.x * right.x + left.y * right.y + left.z * right.z;
     }
 
-    public static float angle(Vec3D a, Vec3D b) {
+    public static float angle(Vec3 a, Vec3 b) {
         float dls = dot(a, b) / (a.length() * b.length());
         if (dls < -1f)
             dls = -1f;
@@ -129,14 +129,14 @@ public class Vec3D extends Vec1D implements Serializable, ReadableVec3D, Writabl
         return (float)Math.acos(dls);
     }
 
-    public Vec1D load(FloatBuffer buf) {
+    public Vec1 load(FloatBuffer buf) {
         x = buf.get();
         y = buf.get();
         z = buf.get();
         return this;
     }
 
-    public Vec1D scale(float scale) {
+    public Vec1 scale(float scale) {
 
         x *= scale;
         y *= scale;
@@ -146,7 +146,7 @@ public class Vec3D extends Vec1D implements Serializable, ReadableVec3D, Writabl
 
     }
 
-    public Vec3D store(FloatBuffer buf) {
+    public Vec3 store(FloatBuffer buf) {
 
         buf.put(x);
         buf.put(y);
@@ -196,7 +196,7 @@ public class Vec3D extends Vec1D implements Serializable, ReadableVec3D, Writabl
         if (this == obj) return true;
         if (obj == null) return false;
         if (getClass() != obj.getClass()) return false;
-        Vec3D other = (Vec3D)obj;
+        Vec3 other = (Vec3)obj;
 
         if (x == other.x && y == other.y && z == other.z) return true;
 

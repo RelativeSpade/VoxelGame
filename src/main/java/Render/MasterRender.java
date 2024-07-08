@@ -2,9 +2,12 @@ package Render;
 
 import Entities.Entity;
 import Shaders.StaticShader;
+import Toolbox.Math.Matrix4;
 import org.lwjgl.opengl.GL11;
 
 public class MasterRender {
+
+    Matrix4 projectionMatrix;
 
     public void prepare() {
 
@@ -16,6 +19,10 @@ public class MasterRender {
     public void render(Entity model, StaticShader shader) {
 
         EntityRender.render(model, shader);
+
+    }
+
+    public void createProjectionMatrix() {
 
     }
 

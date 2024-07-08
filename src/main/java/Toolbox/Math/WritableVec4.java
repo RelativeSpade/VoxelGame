@@ -1,7 +1,7 @@
 package Toolbox.Math;
 
 @SuppressWarnings("unused")
-public interface WritableVec4D extends WritableVec3D {
+public interface WritableVec4 extends WritableVec3 {
 
     void setW(float w);
 

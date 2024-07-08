@@ -1,17 +1,17 @@
 package Entities;
 
 import Models.TextureModel;
-import Toolbox.Math.Vec3D;
+import Toolbox.Math.Vec3;
 
 @SuppressWarnings("unused")
 public class Entity{
 
     TextureModel model;
-    Vec3D position;
+    Vec3 position;
     float rX, rY, rZ;
     float scale;
 
-    public Entity(TextureModel model, Vec3D position, float rX, float rY, float rZ, float scale) {
+    public Entity(TextureModel model, Vec3 position, float rX, float rY, float rZ, float scale) {
 
         this.model = model;
         this.position = position;
@@ -52,11 +52,11 @@ public class Entity{
         this.model = model;
     }
 
-    public Vec3D getPosition() {
+    public Vec3 getPosition() {
         return position;
     }
 
-    public void setPosition(Vec3D position) {
+    public void setPosition(Vec3 position) {
         this.position = position;
     }
 
