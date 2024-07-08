@@ -66,15 +66,16 @@ public class Main {
 
         long window = DisplayManager.getWindow();
 
-        Mouse.init(window);
+        Mouse.init();
+
         Camera camera = new Camera(new Vec3(0, 0, 0), 0, 0, 0);
 
         while (!glfwWindowShouldClose(window)) {
 
-            camera.move();
-
             double currentTime = glfwGetTime();
             FPS++;
+
+            camera.move();
 
             if(currentTime - previousTime >= 1.0) {
 

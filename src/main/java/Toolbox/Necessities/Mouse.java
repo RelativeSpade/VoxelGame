@@ -1,5 +1,6 @@
 package Toolbox.Necessities;
 
+import Render.DisplayManager;
 import org.lwjgl.glfw.GLFW;
 import org.lwjgl.glfw.GLFWCursorPosCallback;
 
@@ -8,10 +9,9 @@ public class Mouse {
     private static double lastY;
     private static float dx;
     private static float dy;
-    private static long window;
 
-    public static void init(long window) {
-        Mouse.window = window;
+    public static void init() {
+        long window = DisplayManager.getWindow();
         GLFW.glfwSetInputMode(window, GLFW.GLFW_CURSOR, GLFW.GLFW_CURSOR_DISABLED);
 
         GLFW.glfwSetCursorPosCallback(window, new GLFWCursorPosCallback() {
@@ -39,10 +39,5 @@ public class Mouse {
         float delta = dy;
         dy = 0;
         return delta;
-    }
-
-    public static void resetDeltas() {
-        dx = 0;
-        dy = 0;
     }
 }

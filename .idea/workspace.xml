@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="840c9104-0bc0-421b-aa50-14bd951f9721" name="Changes" comment="change: method name change">
+    <list default="true" id="840c9104-0bc0-421b-aa50-14bd951f9721" name="Changes" comment="change: fixed casting precision issue (hopefully)">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Toolbox/Math/Clamp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Engine/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Engine/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Entities/Camera.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Entities/Camera.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Toolbox/Necessities/Mouse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toolbox/Necessities/Mouse.java" afterDir="false" />
     </list>
@@ -64,14 +66,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1720146061769</updated>
-    </task>
-    <task id="LOCAL-00015" summary="add: raw model class">
-      <option name="closed" value="true" />
-      <created>1720172599536</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1720172599536</updated>
     </task>
     <task id="LOCAL-00016" summary="add: loader class">
       <option name="closed" value="true" />
@@ -457,12 +451,18 @@
       <option name="project" value="LOCAL" />
       <updated>1720467769380</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="change: fixed casting precision issue (hopefully)">
+      <option name="closed" value="true" />
+      <created>1720468124481</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1720468124481</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="change: made shader slightly brighter" />
-    <MESSAGE value="change: aesthetic change" />
     <MESSAGE value="added: basic texture support" />
     <MESSAGE value="changed: fixed texture support and replaced depreciated lib" />
     <MESSAGE value="changed: cleaned up dependencies &amp; error removal" />
@@ -486,6 +486,8 @@
     <MESSAGE value="change: error suppression" />
     <MESSAGE value="add: basic (albeit buggy) camera movement" />
     <MESSAGE value="change: method name change" />
-    <option name="LAST_COMMIT_MESSAGE" value="change: method name change" />
+    <MESSAGE value="change: fixed casting precision issue" />
+    <MESSAGE value="change: fixed casting precision issue (hopefully)" />
+    <option name="LAST_COMMIT_MESSAGE" value="change: fixed casting precision issue (hopefully)" />
   </component>
 </project>
