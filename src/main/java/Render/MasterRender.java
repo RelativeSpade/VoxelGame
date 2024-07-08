@@ -5,6 +5,7 @@ import Shaders.StaticShader;
 import Toolbox.Math.Matrix4;
 import org.lwjgl.opengl.GL11;
 
+@SuppressWarnings("unused")
 public class MasterRender {
 
     Matrix4 projectionMatrix;
