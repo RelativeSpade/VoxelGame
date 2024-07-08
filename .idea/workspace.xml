@@ -4,8 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="840c9104-0bc0-421b-aa50-14bd951f9721" name="Changes" comment="change: added fps count">
+    <list default="true" id="840c9104-0bc0-421b-aa50-14bd951f9721" name="Changes" comment="change: error suppression">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Entities/Camera.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Toolbox/Necessities/Mouse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Engine/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Engine/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Render/DisplayManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Render/DisplayManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Render/MasterRender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Render/MasterRender.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Shaders/StaticShader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Shaders/StaticShader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Toolbox/Math/Transformation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toolbox/Math/Transformation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/shaders/vertexShader.glsl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/shaders/vertexShader.glsl" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,14 +70,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1720146061769</updated>
-    </task>
-    <task id="LOCAL-00012" summary="fix: display not respond">
-      <option name="closed" value="true" />
-      <created>1720172236942</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1720172236942</updated>
     </task>
     <task id="LOCAL-00013" summary="add: window close on exit">
       <option name="closed" value="true" />
@@ -455,11 +455,18 @@
       <option name="project" value="LOCAL" />
       <updated>1720427660458</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="change: error suppression">
+      <option name="closed" value="true" />
+      <created>1720427718292</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1720427718292</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="change: removed excess import" />
     <MESSAGE value="change: added null check" />
     <MESSAGE value="fix: got shader working, had to change alot around" />
     <MESSAGE value="change: made shader slightly brighter" />
@@ -484,6 +491,7 @@
     <MESSAGE value="add: entity rotation, scale, and size change methods" />
     <MESSAGE value="change: removed &quot;d&quot; from math lib name, was annoying me." />
     <MESSAGE value="change: added fps count" />
-    <option name="LAST_COMMIT_MESSAGE" value="change: added fps count" />
+    <MESSAGE value="change: error suppression" />
+    <option name="LAST_COMMIT_MESSAGE" value="change: error suppression" />
   </component>
 </project>

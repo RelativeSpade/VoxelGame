@@ -1,6 +1,9 @@
 package Shaders;
 
+import Entities.Camera;
 import Toolbox.Math.Matrix4;
+
+import static Toolbox.Math.Transformation.createViewMatrix;
 
 public class StaticShader extends ShaderProgram {
 
@@ -9,6 +12,7 @@ public class StaticShader extends ShaderProgram {
 
     int location_transformationMatrix;
     int location_projectionMatrix;
+    int location_viewMatrix;
 
     public StaticShader() {
         super(VERTEX_FILE, FRAGMENT_FILE);
@@ -19,6 +23,7 @@ public class StaticShader extends ShaderProgram {
 
         location_transformationMatrix = super.getUniformLocation("transformationMatrix");
         location_projectionMatrix = super.getUniformLocation("projectionMatrix");
+        location_viewMatrix = super.getUniformLocation("viewMatrix");
 
     }
 
@@ -39,6 +44,12 @@ public class StaticShader extends ShaderProgram {
     public void loadTransformationMatrix(Matrix4 matrix) {
 
         super.loadMatrix(location_transformationMatrix, matrix);
+
+    }
+
+    public void loadViewMatrix(Camera camera) {
+
+        super.loadMatrix(location_viewMatrix, createViewMatrix(camera));
 
     }
 }

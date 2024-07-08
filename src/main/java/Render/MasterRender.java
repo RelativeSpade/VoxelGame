@@ -4,9 +4,19 @@ import Entities.Entity;
 import Shaders.StaticShader;
 import Toolbox.Math.Matrix4;
 import org.lwjgl.opengl.GL11;
+import org.lwjgl.glfw.GLFW;
 
 @SuppressWarnings("unused")
 public class MasterRender {
+
+    public MasterRender(StaticShader shader) {
+
+        createProjectionMatrix();
+        shader.start();
+        shader.loadProjectionMatrix(projectionMatrix);
+        shader.stop();
+
+    }
 
     Matrix4 projectionMatrix;
 
@@ -29,7 +39,20 @@ public class MasterRender {
 
     public void createProjectionMatrix() {
 
+        projectionMatrix = new Matrix4();
 
+        float aspect = DisplayManager.getAspectRatio();
+        float yScale = (float) (1f / Math.tan(Math.toRadians(FOV / 2f)));
+        float xScale = yScale / aspect;
+        float zp = FAR_PLANE + NEAR_PLANE;
+        float zm = FAR_PLANE - NEAR_PLANE;
+
+        projectionMatrix.m00 = xScale;
+        projectionMatrix.m11 = yScale;
+        projectionMatrix.m22 = -zp/zm;
+        projectionMatrix.m23 = -1;
+        projectionMatrix.m32 = -(2*FAR_PLANE*NEAR_PLANE)/zm;
+        projectionMatrix.m33 = 0;
 
     }
 

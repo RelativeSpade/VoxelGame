@@ -2,9 +2,11 @@ package Render;
 
 import Engine.Main;
 import org.lwjgl.BufferUtils;
+import org.lwjgl.glfw.GLFWVidMode;
 import org.lwjgl.opengl.GL;
 import org.lwjgl.opengl.GL11;
 
+import java.io.IOException;
 import java.nio.IntBuffer;
 
 import static java.sql.Types.NULL;
@@ -31,6 +33,14 @@ public class DisplayManager {
             glfwTerminate();
             throw new RuntimeException("Failed to create the GLFW window");
         }
+
+        GLFWVidMode vidmode = glfwGetVideoMode(glfwGetPrimaryMonitor());
+        assert vidmode != null;
+        glfwSetWindowPos(
+                window,
+                (vidmode.width() - WIDTH) / 2,
+                (vidmode.height() - HEIGHT) / 2
+        );
 
         glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
         glfwMakeContextCurrent(window);
@@ -63,6 +73,13 @@ public class DisplayManager {
         glfwTerminate();
         System.exit(0);
 
+    }
+
+    public static float getAspectRatio() {
+        int[] width = new int[1];
+        int[] height = new int[1];
+        glfwGetWindowSize(window, width, height);
+        return (float) width[0] / (float) height[0];
     }
 
     public static long getWindow(){
