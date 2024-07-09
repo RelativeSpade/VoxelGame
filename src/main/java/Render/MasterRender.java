@@ -4,7 +4,6 @@ import Entities.Entity;
 import Shaders.StaticShader;
 import Toolbox.Math.Matrix4;
 import org.lwjgl.opengl.GL11;
-import org.lwjgl.glfw.GLFW;
 
 @SuppressWarnings("unused")
 public class MasterRender {
