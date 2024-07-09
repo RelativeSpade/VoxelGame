@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="840c9104-0bc0-421b-aa50-14bd951f9721" name="Changes" comment="change: tried to fix mouse movement (I failed)">
+    <list default="true" id="840c9104-0bc0-421b-aa50-14bd951f9721" name="Changes" comment="change: fixed camera rotation flicker">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Engine/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Engine/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Entities/Camera.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Entities/Camera.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Toolbox/Necessities/Mouse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toolbox/Necessities/Mouse.java" afterDir="false" />
     </list>
@@ -64,14 +65,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1720146061769</updated>
-    </task>
-    <task id="LOCAL-00017" summary="fix: spelling mistakes">
-      <option name="closed" value="true" />
-      <created>1720173514626</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1720173514626</updated>
     </task>
     <task id="LOCAL-00018" summary="fix: code cleanup">
       <option name="closed" value="true" />
@@ -457,12 +450,18 @@
       <option name="project" value="LOCAL" />
       <updated>1720482381607</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="change: added side to side movement">
+      <option name="closed" value="true" />
+      <created>1720483868211</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1720483868211</updated>
+    </task>
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="changed: fixed texture support and replaced depreciated lib" />
-    <MESSAGE value="changed: cleaned up dependencies &amp; error removal" />
     <MESSAGE value="added: basic 1D vector logic" />
     <MESSAGE value="added: basic 2D vector logic" />
     <MESSAGE value="change: fixed error accidentally pushed" />
@@ -486,6 +485,8 @@
     <MESSAGE value="change: fixed casting precision issue" />
     <MESSAGE value="change: fixed casting precision issue (hopefully)" />
     <MESSAGE value="change: tried to fix mouse movement (I failed)" />
-    <option name="LAST_COMMIT_MESSAGE" value="change: tried to fix mouse movement (I failed)" />
+    <MESSAGE value="change: added side to side movement" />
+    <MESSAGE value="change: fixed camera rotation flicker" />
+    <option name="LAST_COMMIT_MESSAGE" value="change: fixed camera rotation flicker" />
   </component>
 </project>

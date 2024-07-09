@@ -75,6 +75,7 @@ public class Main {
             double currentTime = glfwGetTime();
             FPS++;
 
+            Mouse.update();
             camera.move();
 
             if(currentTime - previousTime >= 1.0) {

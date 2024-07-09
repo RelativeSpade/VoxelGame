@@ -62,8 +62,6 @@ public class Camera {
         deltaX = clamp(deltaX, -maxTurnSpeed, maxTurnSpeed);
         deltaY = clamp(deltaY, -maxTurnSpeed, maxTurnSpeed);
 
-        System.out.println("Mouse DX: " + deltaX + ", Mouse DY: " + deltaY);
-
         rX += deltaY;
         rY += deltaX;
     }
