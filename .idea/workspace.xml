@@ -7,8 +7,7 @@
     <list default="true" id="840c9104-0bc0-421b-aa50-14bd951f9721" name="Changes" comment="change: fixed camera rotation flicker">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Engine/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Engine/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Entities/Camera.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Entities/Camera.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Toolbox/Necessities/Mouse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toolbox/Necessities/Mouse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Render/MasterRender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Render/MasterRender.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,14 +64,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1720146061769</updated>
-    </task>
-    <task id="LOCAL-00018" summary="fix: code cleanup">
-      <option name="closed" value="true" />
-      <created>1720173664169</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1720173664169</updated>
     </task>
     <task id="LOCAL-00019" summary="add: Entity Render">
       <option name="closed" value="true" />
@@ -458,7 +449,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720483868211</updated>
     </task>
-    <option name="localTasksCounter" value="67" />
+    <task id="LOCAL-00067" summary="change: fixed camera rotation flicker">
+      <option name="closed" value="true" />
+      <created>1720490165795</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1720490165795</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
