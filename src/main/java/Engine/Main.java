@@ -144,6 +144,7 @@ public class Main {
             glfwPollEvents();
             renderer.prepare();
 
+            entity.setScale(0.1f);
             entity.changeRotation(1f,1f,0);
 
             shader.start();
