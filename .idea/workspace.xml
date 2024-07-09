@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="840c9104-0bc0-421b-aa50-14bd951f9721" name="Changes" comment="change: fixed casting precision issue (hopefully)">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Toolbox/Math/Clamp.java" afterDir="false" />
+    <list default="true" id="840c9104-0bc0-421b-aa50-14bd951f9721" name="Changes" comment="change: tried to fix mouse movement (I failed)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Engine/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Engine/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Entities/Camera.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Entities/Camera.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Toolbox/Necessities/Mouse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toolbox/Necessities/Mouse.java" afterDir="false" />
     </list>
@@ -66,14 +64,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1720146061769</updated>
-    </task>
-    <task id="LOCAL-00016" summary="add: loader class">
-      <option name="closed" value="true" />
-      <created>1720173234965</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1720173234965</updated>
     </task>
     <task id="LOCAL-00017" summary="fix: spelling mistakes">
       <option name="closed" value="true" />
@@ -459,11 +449,18 @@
       <option name="project" value="LOCAL" />
       <updated>1720468124481</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="change: tried to fix mouse movement (I failed)">
+      <option name="closed" value="true" />
+      <created>1720482381606</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1720482381607</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added: basic texture support" />
     <MESSAGE value="changed: fixed texture support and replaced depreciated lib" />
     <MESSAGE value="changed: cleaned up dependencies &amp; error removal" />
     <MESSAGE value="added: basic 1D vector logic" />
@@ -488,6 +485,7 @@
     <MESSAGE value="change: method name change" />
     <MESSAGE value="change: fixed casting precision issue" />
     <MESSAGE value="change: fixed casting precision issue (hopefully)" />
-    <option name="LAST_COMMIT_MESSAGE" value="change: fixed casting precision issue (hopefully)" />
+    <MESSAGE value="change: tried to fix mouse movement (I failed)" />
+    <option name="LAST_COMMIT_MESSAGE" value="change: tried to fix mouse movement (I failed)" />
   </component>
 </project>

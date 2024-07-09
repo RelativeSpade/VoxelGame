@@ -21,6 +21,7 @@ public class Mouse {
                     lastX = xpos;
                     lastY = ypos;
                 }
+
                 dx = (float) (xpos - lastX);
                 dy = (float) (ypos - lastY);
                 lastX = xpos;

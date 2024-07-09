@@ -15,6 +15,7 @@ public class Camera {
     float rZ;
     float speed = 0.1f;
     float moveAt = 0;
+    float strafeAt = 0;
     float turnSpeed  = 0.75f;
     float maxTurnSpeed = 5f;
 
@@ -36,9 +37,20 @@ public class Camera {
             moveAt = 0;
         }
 
+        if (glfwGetKey(getWindow(), GLFW_KEY_A) == GLFW_PRESS) {
+            strafeAt = -speed;
+        } else if (glfwGetKey(getWindow(), GLFW_KEY_D) == GLFW_PRESS) {
+            strafeAt = speed;
+        } else {
+            strafeAt = 0;
+        }
+
         float dx = (float) -(moveAt * Math.sin(Math.toRadians(rY)));
         float dy = (float) (moveAt * Math.sin(Math.toRadians(rX)));
         float dz = (float) (moveAt * Math.cos(Math.toRadians(rY)));
+
+        dx += (float) (strafeAt * Math.cos(Math.toRadians(rY)));
+        dz += (float) (strafeAt * Math.sin(Math.toRadians(rY)));
 
         position.x += dx;
         position.y += dy;
