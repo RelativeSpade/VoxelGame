@@ -118,7 +118,7 @@ public class Main {
         RawModel model = loader.loadToVAO(vertices, indices, uvs);
         ModelTexture texture = new ModelTexture(loader.loadTexture("dirt.png"));
         TextureModel textureModel = new TextureModel(model, texture);
-        Entity entity = new Entity(textureModel, new Vec3(0, 0, -1), 0, 0, 0, 1);
+        Entity entity = new Entity(textureModel, new Vec3(0, 0, -1), 0, 0, 0, 0.1f);
 
         long window = DisplayManager.getWindow();
 
@@ -144,7 +144,6 @@ public class Main {
             glfwPollEvents();
             renderer.prepare();
 
-            entity.setScale(0.1f);
             entity.changeRotation(1f,1f,0);
 
             shader.start();
