@@ -8,6 +8,10 @@ out vec4 out_color;
 
 void main(void) {
 
-    out_color = texture(textureSampler, pass_texturecoords);
+    vec4 textureColor = texture(textureSampler, pass_texturecoords);
+    if (textureColor.a < 0.1) {
+        discard; // Discard pixels with low alpha to avoid rendering them
+    }
+    out_color = textureColor;
 
 }

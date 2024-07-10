@@ -97,7 +97,7 @@ public class Main {
 
 
         RawModel model = loader.loadToVAO(vertices, indices, uvs);
-        ModelTexture texture = new ModelTexture(loader.loadTexture("dirt.png"));
+        ModelTexture texture = new ModelTexture(loader.loadTexture("glass.png"));
         TextureModel textureModel = new TextureModel(model, texture);
 
         long window = DisplayManager.getWindow();
