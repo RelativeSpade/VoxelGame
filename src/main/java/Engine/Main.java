@@ -12,6 +12,9 @@ import Textures.ModelTexture;
 import Toolbox.Math.Vec3;
 import Toolbox.Necessities.Mouse;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.lwjgl.glfw.GLFW.*;
 
 public class Main {
@@ -20,6 +23,10 @@ public class Main {
     public static StaticShader shader1 = null;
     public static int FPS = -1;
     public static double previousTime = glfwGetTime();
+
+    static List<Entity> entityList = new ArrayList<>();
+    static Vec3 camPos = new Vec3(0, 0, 0);
+    static List<Vec3> usedPos = new ArrayList<>();
 
     public static void main(String[] args){
 
@@ -118,7 +125,6 @@ public class Main {
         RawModel model = loader.loadToVAO(vertices, indices, uvs);
         ModelTexture texture = new ModelTexture(loader.loadTexture("dirt.png"));
         TextureModel textureModel = new TextureModel(model, texture);
-        Entity entity = new Entity(textureModel, new Vec3(0, 0, -1), 0, 0, 0, 0.1f);
 
         long window = DisplayManager.getWindow();
 
@@ -134,6 +140,20 @@ public class Main {
             Mouse.update();
             camera.move();
 
+            camPos = camera.getPosition();
+
+            for (int x = (int) (camPos.x - 10); x < camPos.x + 10; x++){
+                for (int z = (int) (camPos.z - 10); z < camPos.z + 10; z++) {
+
+                    if(!usedPos.contains(new Vec3(x,0,z))) {
+
+                        entityList.add(new Entity(textureModel, new Vec3(x, 0, z), 0, 0, 0, 1f));
+                        usedPos.add(new Vec3(x,0,z));
+
+                    }
+                }
+            }
+
             if(currentTime - previousTime >= 1.0) {
 
                 DisplayManager.updateWinName(FPS);
@@ -144,11 +164,13 @@ public class Main {
             glfwPollEvents();
             renderer.prepare();
 
-            entity.changeRotation(1f,1f,0);
-
             shader.start();
             shader.loadViewMatrix(camera);
-            renderer.render(entity, shader);
+
+            for (Entity entity : entityList) {
+                renderer.render(entity, shader);
+            }
+
             shader.stop();
 
             if(glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS){

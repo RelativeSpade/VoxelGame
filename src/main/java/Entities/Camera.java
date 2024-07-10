@@ -16,7 +16,7 @@ public class Camera {
     float speed = 0.1f;
     float moveAt = 0;
     float strafeAt = 0;
-    float turnSpeed  = 0.75f;
+    float turnSpeed  = 0.5f;
     float maxTurnSpeed = 5f;
 
     public Camera(Vec3 position, float rX, float rY, float rZ) {
