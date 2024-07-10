@@ -13,6 +13,8 @@ import Toolbox.Math.Vec3;
 import Toolbox.Necessities.Mouse;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 import static org.lwjgl.glfw.GLFW.*;
@@ -23,8 +25,7 @@ public class Main {
     public static StaticShader shader1 = null;
     public static int FPS = -1;
     public static double previousTime = glfwGetTime();
-
-    static List<Entity> entityList = new ArrayList<>();
+    static List<Entity> entityList = Collections.synchronizedList(new ArrayList<>());
     static Vec3 camPos = new Vec3(0, 0, 0);
     static List<Vec3> usedPos = new ArrayList<>();
 
@@ -132,6 +133,75 @@ public class Main {
 
         Camera camera = new Camera(new Vec3(0, 0, 0), 0, 0, 0);
 
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+
+               while(!glfwWindowShouldClose(window)) {
+                   for (int x = (int) (camPos.x - 10); x < camPos.x; x++){
+                       for (int z = (int) (camPos.z); z < (camPos.z + 10); z++) {
+
+                           if(!usedPos.contains(new Vec3(x,0,z))) {
+
+                               entityList.add(new Entity(textureModel, new Vec3(x, 0, z), 0, 0, 0, 1f));
+                               usedPos.add(new Vec3(x,0,z));
+
+                           }
+                       }
+                   }
+
+                   for (int x = (int) (camPos.x); x < (camPos.x + 10); x++){
+                       for (int z = (int) (camPos.z); z < (camPos.z + 10); z++) {
+
+                           if(!usedPos.contains(new Vec3(x,0,z))) {
+
+                               entityList.add(new Entity(textureModel, new Vec3(x, 0, z), 0, 0, 0, 1f));
+                               usedPos.add(new Vec3(x,0,z));
+
+                           }
+                       }
+                   }
+
+
+               }
+            }
+        }).start();
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+
+                while(!glfwWindowShouldClose(window)) {
+                    for (int x = (int) (camPos.x - 10); x < camPos.x; x++){
+                        for (int z = (int) (camPos.z - 10); z < camPos.z; z++) {
+
+                            if(!usedPos.contains(new Vec3(x,0,z))) {
+
+                                entityList.add(new Entity(textureModel, new Vec3(x, 0, z), 0, 0, 0, 1f));
+                                usedPos.add(new Vec3(x,0,z));
+
+                            }
+                        }
+                    }
+
+                    for (int x = (int) (camPos.x); x < (camPos.x + 10); x++){
+                        for (int z = (int) (camPos.z - 10); z < camPos.z; z++) {
+
+                            if(!usedPos.contains(new Vec3(x,0,z))) {
+
+                                entityList.add(new Entity(textureModel, new Vec3(x, 0, z), 0, 0, 0, 1f));
+                                usedPos.add(new Vec3(x,0,z));
+
+                            }
+                        }
+                    }
+
+
+                }
+            }
+        }).start();
+
+
         while (!glfwWindowShouldClose(window)) {
 
             double currentTime = glfwGetTime();
@@ -141,18 +211,6 @@ public class Main {
             camera.move();
 
             camPos = camera.getPosition();
-
-            for (int x = (int) (camPos.x - 10); x < camPos.x + 10; x++){
-                for (int z = (int) (camPos.z - 10); z < camPos.z + 10; z++) {
-
-                    if(!usedPos.contains(new Vec3(x,0,z))) {
-
-                        entityList.add(new Entity(textureModel, new Vec3(x, 0, z), 0, 0, 0, 1f));
-                        usedPos.add(new Vec3(x,0,z));
-
-                    }
-                }
-            }
 
             if(currentTime - previousTime >= 1.0) {
 
@@ -167,8 +225,8 @@ public class Main {
             shader.start();
             shader.loadViewMatrix(camera);
 
-            for (Entity entity : entityList) {
-                renderer.render(entity, shader);
+            for (int i = 0; i < entityList.size(); i++) {
+                renderer.render(entityList.get(i), shader);
             }
 
             shader.stop();

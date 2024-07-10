@@ -1,7 +1,9 @@
 package Render;
 
 import Engine.Main;
+import Toolbox.Necessities.Image;
 import org.lwjgl.BufferUtils;
+import org.lwjgl.glfw.GLFWImage;
 import org.lwjgl.glfw.GLFWVidMode;
 import org.lwjgl.opengl.GL;
 import org.lwjgl.opengl.GL11;
@@ -18,6 +20,7 @@ public class DisplayManager {
     private static final int HEIGHT = 720;
     public static String NAME = "Spades Voxel Project";
     private static long window;
+    private static final Image icon = Image.load_image("C:/Users/Spade/Documents/Voxel/src/main/resources/textures/dirt.png");
 
     public static void createDisplay() {
         if (!glfwInit()) {
@@ -50,6 +53,12 @@ public class DisplayManager {
         IntBuffer width = BufferUtils.createIntBuffer(1);
         IntBuffer height = BufferUtils.createIntBuffer(1);
         glfwGetWindowSize(window, width, height);
+
+        GLFWImage image = GLFWImage.malloc(); GLFWImage.Buffer imagebf = GLFWImage.malloc(1);
+        image.set(icon.get_width(), icon.get_heigh(), icon.get_image());
+        imagebf.put(0, image);
+        glfwSetWindowIcon(window, imagebf);
+
 
         GL.createCapabilities();
 
