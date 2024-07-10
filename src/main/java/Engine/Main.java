@@ -13,7 +13,6 @@ import Toolbox.Math.Vec3;
 import Toolbox.Necessities.Mouse;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
@@ -135,100 +134,92 @@ public class Main {
 
         Camera camera = new Camera(new Vec3(0, 0, 0), 0, 0, 0);
 
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
+        new Thread(() -> {
 
-               while(!glfwWindowShouldClose(window)) {
-                   for (int x = (int) (camPos.x - WORLD_SIZE); x < camPos.x; x++){
-                       for (int z = (int) (camPos.z); z < (camPos.z + WORLD_SIZE); z++) {
+           while(!glfwWindowShouldClose(window)) {
+               for (int x = (int) (camPos.x - WORLD_SIZE); x < camPos.x; x++){
+                   for (int z = (int) (camPos.z); z < (camPos.z + WORLD_SIZE); z++) {
 
-                           if(!usedPos.contains(new Vec3(x,0,z))) {
+                       if(!usedPos.contains(new Vec3(x,0,z))) {
 
-                               entityList.add(new Entity(textureModel, new Vec3(x, 0, z), 0, 0, 0, 1f));
-                               usedPos.add(new Vec3(x,0,z));
+                           entityList.add(new Entity(textureModel, new Vec3(x, 0, z), 0, 0, 0, 1f));
+                           usedPos.add(new Vec3(x,0,z));
 
-                           }
                        }
                    }
-
-                   for (int x = (int) (camPos.x); x < (camPos.x + WORLD_SIZE); x++){
-                       for (int z = (int) (camPos.z); z < (camPos.z + WORLD_SIZE); z++) {
-
-                           if(!usedPos.contains(new Vec3(x,0,z))) {
-
-                               entityList.add(new Entity(textureModel, new Vec3(x, 0, z), 0, 0, 0, 1f));
-                               usedPos.add(new Vec3(x,0,z));
-
-                           }
-                       }
-                   }
-
-
                }
-            }
+
+               for (int x = (int) (camPos.x); x < (camPos.x + WORLD_SIZE); x++){
+                   for (int z = (int) (camPos.z); z < (camPos.z + WORLD_SIZE); z++) {
+
+                       if(!usedPos.contains(new Vec3(x,0,z))) {
+
+                           entityList.add(new Entity(textureModel, new Vec3(x, 0, z), 0, 0, 0, 1f));
+                           usedPos.add(new Vec3(x,0,z));
+
+                       }
+                   }
+               }
+
+
+           }
         }).start();
 
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
+        new Thread(() -> {
 
-                while(!glfwWindowShouldClose(window)) {
-                    for (int x = (int) (camPos.x - WORLD_SIZE); x < camPos.x; x++){
-                        for (int z = (int) (camPos.z - WORLD_SIZE); z < camPos.z; z++) {
+            while(!glfwWindowShouldClose(window)) {
+                for (int x = (int) (camPos.x - WORLD_SIZE); x < camPos.x; x++){
+                    for (int z = (int) (camPos.z - WORLD_SIZE); z < camPos.z; z++) {
 
-                            if(!usedPos.contains(new Vec3(x,0,z))) {
+                        if(!usedPos.contains(new Vec3(x,0,z))) {
 
-                                entityList.add(new Entity(textureModel, new Vec3(x, 0, z), 0, 0, 0, 1f));
-                                usedPos.add(new Vec3(x,0,z));
+                            entityList.add(new Entity(textureModel, new Vec3(x, 0, z), 0, 0, 0, 1f));
+                            usedPos.add(new Vec3(x,0,z));
 
-                            }
                         }
                     }
+                }
 
-                    for (int x = (int) (camPos.x); x < (camPos.x + WORLD_SIZE); x++){
-                        for (int z = (int) (camPos.z - WORLD_SIZE); z < camPos.z; z++) {
+                for (int x = (int) (camPos.x); x < (camPos.x + WORLD_SIZE); x++){
+                    for (int z = (int) (camPos.z - WORLD_SIZE); z < camPos.z; z++) {
 
-                            if(!usedPos.contains(new Vec3(x,0,z))) {
+                        if(!usedPos.contains(new Vec3(x,0,z))) {
 
-                                entityList.add(new Entity(textureModel, new Vec3(x, 0, z), 0, 0, 0, 1f));
-                                usedPos.add(new Vec3(x,0,z));
+                            entityList.add(new Entity(textureModel, new Vec3(x, 0, z), 0, 0, 0, 1f));
+                            usedPos.add(new Vec3(x,0,z));
 
-                            }
                         }
                     }
                 }
             }
         }).start();
 
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
+        new Thread(() -> {
 
-                while (!glfwWindowShouldClose(window)) {
+            while (!glfwWindowShouldClose(window)) {
 
-                    for(int i = 0; i < entityList.size(); i++) {
+                for(int i = 0; i < entityList.size(); i++) {
 
-                        int distX = (int) (camPos.x - entityList.get(i).getPosition().x);
-                        int distZ = (int) (camPos.z - entityList.get(i).getPosition().z);
+                    int distX = (int) (camPos.x - entityList.get(i).getPosition().x);
+                    int distZ = (int) (camPos.z - entityList.get(i).getPosition().z);
 
-                        if (distX < 0) {
-                            distX *= -1;
-                        }
+                    if (distX < 0) {
+                        distX *= -1;
+                    }
 
-                        if (distZ < 0) {
-                            distZ *= -1;
-                        }
+                    if (distZ < 0) {
+                        distZ *= -1;
+                    }
 
-                        if(distX > WORLD_SIZE || distZ > WORLD_SIZE) {
+                    if(distX > WORLD_SIZE || distZ > WORLD_SIZE) {
 
-                            usedPos.remove(entityList.get(i).getPosition());
-                            entityList.remove(i);
+                        usedPos.remove(entityList.get(i).getPosition());
+                        entityList.remove(i);
 
-                        }
-                }
+                    }
             }
-        }}).start();
+        }
+    }).start();
 
 
         while (!glfwWindowShouldClose(window)) {
