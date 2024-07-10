@@ -59,7 +59,6 @@ public class DisplayManager {
         imagebf.put(0, image);
         glfwSetWindowIcon(window, imagebf);
 
-
         GL.createCapabilities();
 
         GL11.glViewport(0, 0, width.get(0), height.get(0));

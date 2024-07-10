@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="840c9104-0bc0-421b-aa50-14bd951f9721" name="Changes" comment="change: added basic flat terrain generation">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Toolbox/Necessities/Image.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+    <list default="true" id="840c9104-0bc0-421b-aa50-14bd951f9721" name="Changes" comment="change: added icon, Image load lib (again), and code base has gotten even messier :)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Engine/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Engine/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Render/DisplayManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Render/DisplayManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -66,14 +63,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1720146061769</updated>
-    </task>
-    <task id="LOCAL-00025" summary="change: aesthetic modifications">
-      <option name="closed" value="true" />
-      <created>1720177829604</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1720177829604</updated>
     </task>
     <task id="LOCAL-00026" summary="add: added comments for clarity’s sake">
       <option name="closed" value="true" />
@@ -459,7 +448,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720585811699</updated>
     </task>
-    <option name="localTasksCounter" value="74" />
+    <task id="LOCAL-00074" summary="change: added icon, Image load lib (again), and code base has gotten even messier :)">
+      <option name="closed" value="true" />
+      <created>1720587710544</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1720587710544</updated>
+    </task>
+    <option name="localTasksCounter" value="75" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -474,7 +471,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add: 3D Vector" />
     <MESSAGE value="add: matrix &amp; 3D Vector Support" />
     <MESSAGE value="add: 2d matrix (math please spare me)" />
     <MESSAGE value="add: 3d matrix &amp; vec 4d (kill me)" />
@@ -499,6 +495,7 @@
     <MESSAGE value="change: code cleanup &amp; organisation" />
     <MESSAGE value="change: removed main code change because it was causing issues." />
     <MESSAGE value="change: added basic flat terrain generation" />
-    <option name="LAST_COMMIT_MESSAGE" value="change: added basic flat terrain generation" />
+    <MESSAGE value="change: added icon, Image load lib (again), and code base has gotten even messier :)" />
+    <option name="LAST_COMMIT_MESSAGE" value="change: added icon, Image load lib (again), and code base has gotten even messier :)" />
   </component>
 </project>
