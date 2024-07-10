@@ -8,7 +8,6 @@ import org.lwjgl.glfw.GLFWVidMode;
 import org.lwjgl.opengl.GL;
 import org.lwjgl.opengl.GL11;
 
-import java.io.IOException;
 import java.nio.IntBuffer;
 
 import static java.sql.Types.NULL;
