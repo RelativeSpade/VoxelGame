@@ -29,6 +29,8 @@ public class Main {
     static Vec3 camPos = new Vec3(0, 0, 0);
     static List<Vec3> usedPos = new ArrayList<>();
 
+    static final int WORLD_SIZE = 15;
+
     public static void main(String[] args){
 
         DisplayManager.createDisplay();
@@ -138,8 +140,8 @@ public class Main {
             public void run() {
 
                while(!glfwWindowShouldClose(window)) {
-                   for (int x = (int) (camPos.x - 10); x < camPos.x; x++){
-                       for (int z = (int) (camPos.z); z < (camPos.z + 10); z++) {
+                   for (int x = (int) (camPos.x - WORLD_SIZE); x < camPos.x; x++){
+                       for (int z = (int) (camPos.z); z < (camPos.z + WORLD_SIZE); z++) {
 
                            if(!usedPos.contains(new Vec3(x,0,z))) {
 
@@ -150,8 +152,8 @@ public class Main {
                        }
                    }
 
-                   for (int x = (int) (camPos.x); x < (camPos.x + 10); x++){
-                       for (int z = (int) (camPos.z); z < (camPos.z + 10); z++) {
+                   for (int x = (int) (camPos.x); x < (camPos.x + WORLD_SIZE); x++){
+                       for (int z = (int) (camPos.z); z < (camPos.z + WORLD_SIZE); z++) {
 
                            if(!usedPos.contains(new Vec3(x,0,z))) {
 
@@ -172,8 +174,8 @@ public class Main {
             public void run() {
 
                 while(!glfwWindowShouldClose(window)) {
-                    for (int x = (int) (camPos.x - 10); x < camPos.x; x++){
-                        for (int z = (int) (camPos.z - 10); z < camPos.z; z++) {
+                    for (int x = (int) (camPos.x - WORLD_SIZE); x < camPos.x; x++){
+                        for (int z = (int) (camPos.z - WORLD_SIZE); z < camPos.z; z++) {
 
                             if(!usedPos.contains(new Vec3(x,0,z))) {
 
@@ -184,8 +186,8 @@ public class Main {
                         }
                     }
 
-                    for (int x = (int) (camPos.x); x < (camPos.x + 10); x++){
-                        for (int z = (int) (camPos.z - 10); z < camPos.z; z++) {
+                    for (int x = (int) (camPos.x); x < (camPos.x + WORLD_SIZE); x++){
+                        for (int z = (int) (camPos.z - WORLD_SIZE); z < camPos.z; z++) {
 
                             if(!usedPos.contains(new Vec3(x,0,z))) {
 
@@ -195,11 +197,38 @@ public class Main {
                             }
                         }
                     }
-
-
                 }
             }
         }).start();
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+
+                while (!glfwWindowShouldClose(window)) {
+
+                    for(int i = 0; i < entityList.size(); i++) {
+
+                        int distX = (int) (camPos.x - entityList.get(i).getPosition().x);
+                        int distZ = (int) (camPos.z - entityList.get(i).getPosition().z);
+
+                        if (distX < 0) {
+                            distX *= -1;
+                        }
+
+                        if (distZ < 0) {
+                            distZ *= -1;
+                        }
+
+                        if(distX > WORLD_SIZE || distZ > WORLD_SIZE) {
+
+                            usedPos.remove(entityList.get(i).getPosition());
+                            entityList.remove(i);
+
+                        }
+                }
+            }
+        }}).start();
 
 
         while (!glfwWindowShouldClose(window)) {

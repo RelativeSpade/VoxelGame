@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="840c9104-0bc0-421b-aa50-14bd951f9721" name="Changes" comment="change: added icon, Image load lib (again), and code base has gotten even messier :)">
+    <list default="true" id="840c9104-0bc0-421b-aa50-14bd951f9721" name="Changes" comment="change: tried to clean up code base (I failed)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Render/DisplayManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Render/DisplayManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Engine/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Engine/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,22 +63,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1720146061769</updated>
-    </task>
-    <task id="LOCAL-00026" summary="add: added comments for clarity’s sake">
-      <option name="closed" value="true" />
-      <created>1720178977121</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1720178977121</updated>
-    </task>
-    <task id="LOCAL-00027" summary="fixed: square wasnt equal">
-      <option name="closed" value="true" />
-      <created>1720179133855</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1720179133855</updated>
     </task>
     <task id="LOCAL-00028" summary="added: implemented indices &amp; added comments">
       <option name="closed" value="true" />
@@ -456,7 +440,23 @@
       <option name="project" value="LOCAL" />
       <updated>1720587710544</updated>
     </task>
-    <option name="localTasksCounter" value="75" />
+    <task id="LOCAL-00075" summary="change: tried to clean up code base (I failed)">
+      <option name="closed" value="true" />
+      <created>1720588189024</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1720588189024</updated>
+    </task>
+    <task id="LOCAL-00076" summary="change: tried to clean up code base (I failed)">
+      <option name="closed" value="true" />
+      <created>1720588206042</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1720588206042</updated>
+    </task>
+    <option name="localTasksCounter" value="77" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -471,7 +471,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add: matrix &amp; 3D Vector Support" />
     <MESSAGE value="add: 2d matrix (math please spare me)" />
     <MESSAGE value="add: 3d matrix &amp; vec 4d (kill me)" />
     <MESSAGE value="add: 4d matrix" />
@@ -496,6 +495,7 @@
     <MESSAGE value="change: removed main code change because it was causing issues." />
     <MESSAGE value="change: added basic flat terrain generation" />
     <MESSAGE value="change: added icon, Image load lib (again), and code base has gotten even messier :)" />
-    <option name="LAST_COMMIT_MESSAGE" value="change: added icon, Image load lib (again), and code base has gotten even messier :)" />
+    <MESSAGE value="change: tried to clean up code base (I failed)" />
+    <option name="LAST_COMMIT_MESSAGE" value="change: tried to clean up code base (I failed)" />
   </component>
 </project>
