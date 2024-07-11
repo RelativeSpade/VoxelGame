@@ -68,15 +68,55 @@ public class Main {
                 0.5f, -0.5f, 0.5f    // 23 (Same as 6)
         };
 
-
             /*
-            (-0.5, 0.5) (0) ┌────────────┐ (3) (0.5, 0.5)
-                            │            │
-                            │            │
-                            │            │
-                            │            │
-            (-0.5,-0.5) (1) └────────────┘ (2) (0.5,-0.5)
-            */
+        Front face:
+        (-0.5, 0.5) (0) ┌────────────┐ (0.5, 0.5) (3)
+                        │            │
+                        │            │
+                        │            │
+                        │            │
+        (-0.5,-0.5) (1) └────────────┘ (0.5,-0.5) (2)
+
+        Back face:
+        (-0.5, 0.5) (4) ┌────────────┐ (0.5, 0.5) (7)
+                        │            │
+                        │            │
+                        │            │
+                        │            │
+        (-0.5,-0.5) (5) └────────────┘ (0.5,-0.5) (6)
+
+        Right face:
+        (0.5, 0.5) (3)  ┌────────────┐ (0.5, 0.5) (7)
+                        │            │
+                        │            │
+                        │            │
+                        │            │
+        (0.5,-0.5) (2)  └────────────┘ (0.5,-0.5) (6)
+
+        Left face:
+        (-0.5, 0.5) (0) ┌────────────┐ (0.5, 0.5) (4)
+                        │            │
+                        │            │
+                        │            │
+                        │            │
+        (-0.5,-0.5) (1) └────────────┘ (0.5,-0.5) (5)
+
+        Top face:
+        (-0.5, 0.5) (0) ┌────────────┐ (0.5, 0.5) (3)
+                        │            │
+                        │            │
+                        │            │
+                        │            │
+        (-0.5,-0.5) (4) └────────────┘ (0.5,-0.5) (7)
+
+        Bottom face:
+        (-0.5,-0.5) (5) ┌────────────┐ (0.5,-0.5) (6)
+                        │            │
+                        │            │
+                        │            │
+                        │            │
+        (-0.5,-0.5) (1) └────────────┘ (0.5,-0.5) (2)
+        */
 
         int[] indices = {
                 0, 1, 3,  3, 1, 2,  // Front face
@@ -109,33 +149,33 @@ public class Main {
 
         new Thread(() -> {
 
-           while(!glfwWindowShouldClose(window)) {
-               for (int x = (int) (camPos.x - WORLD_SIZE); x < camPos.x; x++){
-                   for (int z = (int) (camPos.z); z < (camPos.z + WORLD_SIZE); z++) {
+            while(!glfwWindowShouldClose(window)) {
+                for (int x = (int) (camPos.x - WORLD_SIZE); x < camPos.x; x++){
+                    for (int z = (int) (camPos.z); z < (camPos.z + WORLD_SIZE); z++) {
 
-                       if(!usedPos.contains(new Vec3(x*VOXEL_SIZE,0,z*VOXEL_SIZE))) {
+                        if(!usedPos.contains(new Vec3(x*VOXEL_SIZE,0,z*VOXEL_SIZE))) {
 
-                           entityList.add(new Entity(textureModel, new Vec3(x*VOXEL_SIZE, 0, z*VOXEL_SIZE), 0, 0, 0, VOXEL_SIZE));
-                           usedPos.add(new Vec3(x*VOXEL_SIZE,0,z*VOXEL_SIZE));
+                            entityList.add(new Entity(textureModel, new Vec3(x*VOXEL_SIZE, 0, z*VOXEL_SIZE), 0, 0, 0, VOXEL_SIZE));
+                            usedPos.add(new Vec3(x*VOXEL_SIZE,0,z*VOXEL_SIZE));
 
-                       }
-                   }
-               }
+                        }
+                    }
+                }
 
-               for (int x = (int) (camPos.x); x < (camPos.x + WORLD_SIZE); x++){
-                   for (int z = (int) (camPos.z); z < (camPos.z + WORLD_SIZE); z++) {
+                for (int x = (int) (camPos.x); x < (camPos.x + WORLD_SIZE); x++){
+                    for (int z = (int) (camPos.z); z < (camPos.z + WORLD_SIZE); z++) {
 
-                       if(!usedPos.contains(new Vec3(x*VOXEL_SIZE,0,z*VOXEL_SIZE))) {
+                        if(!usedPos.contains(new Vec3(x*VOXEL_SIZE,0,z*VOXEL_SIZE))) {
 
-                           entityList.add(new Entity(textureModel, new Vec3(x*VOXEL_SIZE, 0, z*VOXEL_SIZE), 0, 0, 0, VOXEL_SIZE));
-                           usedPos.add(new Vec3(x*VOXEL_SIZE,0,z*VOXEL_SIZE));
+                            entityList.add(new Entity(textureModel, new Vec3(x*VOXEL_SIZE, 0, z*VOXEL_SIZE), 0, 0, 0, VOXEL_SIZE));
+                            usedPos.add(new Vec3(x*VOXEL_SIZE,0,z*VOXEL_SIZE));
 
-                       }
-                   }
-               }
+                        }
+                    }
+                }
 
 
-           }
+            }
         }).start();
 
         new Thread(() -> {
@@ -190,9 +230,9 @@ public class Main {
                         entityList.remove(i);
 
                     }
+                }
             }
-        }
-    }).start();
+        }).start();
 
 
         while (!glfwWindowShouldClose(window)) {
