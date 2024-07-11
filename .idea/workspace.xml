@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="840c9104-0bc0-421b-aa50-14bd951f9721" name="Changes" comment="change: made usedPOS multi thread safe">
+    <list default="true" id="840c9104-0bc0-421b-aa50-14bd951f9721" name="Changes" comment="change: attempted (and failed) to optimize vertex count. (will return to this later)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Engine/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Engine/Main.java" afterDir="false" />
     </list>
@@ -63,14 +63,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1720146061769</updated>
-    </task>
-    <task id="LOCAL-00035" summary="added: basic shader support">
-      <option name="closed" value="true" />
-      <created>1720187575351</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1720187575351</updated>
     </task>
     <task id="LOCAL-00036" summary="change: removed excess import">
       <option name="closed" value="true" />
@@ -456,7 +448,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720705457457</updated>
     </task>
-    <option name="localTasksCounter" value="84" />
+    <task id="LOCAL-00084" summary="change: attempted (and failed) to optimize vertex count. (will return to this later)">
+      <option name="closed" value="true" />
+      <created>1720712762710</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1720712762710</updated>
+    </task>
+    <option name="localTasksCounter" value="85" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -471,7 +471,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="change: fixed translation" />
     <MESSAGE value="add: entity rotation, scale, and size change methods" />
     <MESSAGE value="change: removed &quot;d&quot; from math lib name, was annoying me." />
     <MESSAGE value="change: added fps count" />
@@ -496,6 +495,7 @@
     <MESSAGE value="change: attempted face culling ( and failed for now)" />
     <MESSAGE value="change: attempted voxel size implementation for terrain generation" />
     <MESSAGE value="change: made usedPOS multi thread safe" />
-    <option name="LAST_COMMIT_MESSAGE" value="change: made usedPOS multi thread safe" />
+    <MESSAGE value="change: attempted (and failed) to optimize vertex count. (will return to this later)" />
+    <option name="LAST_COMMIT_MESSAGE" value="change: attempted (and failed) to optimize vertex count. (will return to this later)" />
   </component>
 </project>

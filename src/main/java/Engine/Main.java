@@ -119,12 +119,24 @@ public class Main {
         */
 
         int[] indices = {
-                0, 1, 3,  3, 1, 2,  // Front face
-                4, 5, 7,  7, 5, 6,  // Back face
-                8, 9, 11, 11, 9, 10, // Right face
-                12, 13, 15, 15, 13, 14, // Left face
-                16, 17, 19, 19, 17, 18, // Top face
-                20, 21, 23, 23, 21, 22  // Bottom face
+                0, 1, 3,
+                3, 1, 2,  // Front face
+
+                4, 5, 7,
+                7, 5, 6,  // Back face
+
+                8, 9, 11,
+                11, 9, 10, // Right face
+
+                12, 13, 15,
+                15, 13, 14, // Left face
+
+                16, 17, 19,
+                19, 17, 18, // Top face
+
+                20, 21, 23,
+                23, 21, 22  // Bottom face
+
         };
 
         float[] uvs = {
