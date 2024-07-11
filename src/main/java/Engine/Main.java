@@ -24,6 +24,7 @@ public class Main {
     public static StaticShader shader1 = null;
     public static int FPS = -1;
     public static double previousTime = glfwGetTime();
+    public static float VOXEL_SIZE = 1f;
     static List<Entity> entityList = Collections.synchronizedList(new ArrayList<>());
     static Vec3 camPos = new Vec3(0, 0, 0);
     static List<Vec3> usedPos = new ArrayList<>();
@@ -112,10 +113,10 @@ public class Main {
                for (int x = (int) (camPos.x - WORLD_SIZE); x < camPos.x; x++){
                    for (int z = (int) (camPos.z); z < (camPos.z + WORLD_SIZE); z++) {
 
-                       if(!usedPos.contains(new Vec3(x,0,z))) {
+                       if(!usedPos.contains(new Vec3(x*VOXEL_SIZE,0,z*VOXEL_SIZE))) {
 
-                           entityList.add(new Entity(textureModel, new Vec3(x, 0, z), 0, 0, 0, 1f));
-                           usedPos.add(new Vec3(x,0,z));
+                           entityList.add(new Entity(textureModel, new Vec3(x*VOXEL_SIZE, 0, z*VOXEL_SIZE), 0, 0, 0, VOXEL_SIZE));
+                           usedPos.add(new Vec3(x*VOXEL_SIZE,0,z*VOXEL_SIZE));
 
                        }
                    }
@@ -124,10 +125,10 @@ public class Main {
                for (int x = (int) (camPos.x); x < (camPos.x + WORLD_SIZE); x++){
                    for (int z = (int) (camPos.z); z < (camPos.z + WORLD_SIZE); z++) {
 
-                       if(!usedPos.contains(new Vec3(x,0,z))) {
+                       if(!usedPos.contains(new Vec3(x*VOXEL_SIZE,0,z*VOXEL_SIZE))) {
 
-                           entityList.add(new Entity(textureModel, new Vec3(x, 0, z), 0, 0, 0, 1f));
-                           usedPos.add(new Vec3(x,0,z));
+                           entityList.add(new Entity(textureModel, new Vec3(x*VOXEL_SIZE, 0, z*VOXEL_SIZE), 0, 0, 0, VOXEL_SIZE));
+                           usedPos.add(new Vec3(x*VOXEL_SIZE,0,z*VOXEL_SIZE));
 
                        }
                    }
@@ -143,10 +144,10 @@ public class Main {
                 for (int x = (int) (camPos.x - WORLD_SIZE); x < camPos.x; x++){
                     for (int z = (int) (camPos.z - WORLD_SIZE); z < camPos.z; z++) {
 
-                        if(!usedPos.contains(new Vec3(x,0,z))) {
+                        if(!usedPos.contains(new Vec3(x*VOXEL_SIZE,0,z*VOXEL_SIZE))) {
 
-                            entityList.add(new Entity(textureModel, new Vec3(x, 0, z), 0, 0, 0, 1f));
-                            usedPos.add(new Vec3(x,0,z));
+                            entityList.add(new Entity(textureModel, new Vec3(x*VOXEL_SIZE, 0, z*VOXEL_SIZE), 0, 0, 0, VOXEL_SIZE));
+                            usedPos.add(new Vec3(x*VOXEL_SIZE,0,z*VOXEL_SIZE));
 
                         }
                     }
@@ -155,10 +156,10 @@ public class Main {
                 for (int x = (int) (camPos.x); x < (camPos.x + WORLD_SIZE); x++){
                     for (int z = (int) (camPos.z - WORLD_SIZE); z < camPos.z; z++) {
 
-                        if(!usedPos.contains(new Vec3(x,0,z))) {
+                        if(!usedPos.contains(new Vec3(x*VOXEL_SIZE,0,z*VOXEL_SIZE))) {
 
-                            entityList.add(new Entity(textureModel, new Vec3(x, 0, z), 0, 0, 0, 1f));
-                            usedPos.add(new Vec3(x,0,z));
+                            entityList.add(new Entity(textureModel, new Vec3(x*VOXEL_SIZE, 0, z*VOXEL_SIZE), 0, 0, 0, VOXEL_SIZE));
+                            usedPos.add(new Vec3(x*VOXEL_SIZE,0,z*VOXEL_SIZE));
 
                         }
                     }
