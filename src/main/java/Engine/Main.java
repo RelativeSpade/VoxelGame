@@ -27,7 +27,7 @@ public class Main {
     public static float VOXEL_SIZE = 1f;
     static List<Entity> entityList = Collections.synchronizedList(new ArrayList<>());
     static Vec3 camPos = new Vec3(0, 0, 0);
-    static List<Vec3> usedPos = new ArrayList<>();
+    static List<Vec3> usedPos = Collections.synchronizedList(new ArrayList<>());
 
     static final int WORLD_SIZE = 15;
 
