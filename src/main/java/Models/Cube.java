@@ -8,22 +8,27 @@ public class Cube {
             -0.5f, -0.5f, -0.5f, // 1
             0.5f, -0.5f, -0.5f,  // 2
             0.5f, 0.5f, -0.5f,   // 3
+
             -0.5f, 0.5f, 0.5f,   // 4
             -0.5f, -0.5f, 0.5f,  // 5
             0.5f, -0.5f, 0.5f,   // 6
             0.5f, 0.5f, 0.5f,    // 7
+
             0.5f, 0.5f, -0.5f,   // 8 (Same as 3)
             0.5f, -0.5f, -0.5f,  // 9 (Same as 2)
             0.5f, -0.5f, 0.5f,   // 10 (Same as 6)
             0.5f, 0.5f, 0.5f,    // 11 (Same as 7)
+
             -0.5f, 0.5f, -0.5f,  // 12 (Same as 0)
             -0.5f, -0.5f, -0.5f, // 13 (Same as 1)
             -0.5f, -0.5f, 0.5f,  // 14 (Same as 5)
             -0.5f, 0.5f, 0.5f,   // 15 (Same as 4)
+
             -0.5f, 0.5f, 0.5f,   // 16 (Same as 4)
             -0.5f, 0.5f, -0.5f,  // 17 (Same as 0)
             0.5f, 0.5f, -0.5f,   // 18 (Same as 3)
             0.5f, 0.5f, 0.5f,    // 19 (Same as 7)
+
             -0.5f, -0.5f, 0.5f,  // 20 (Same as 5)
             -0.5f, -0.5f, -0.5f, // 21 (Same as 1)
             0.5f, -0.5f, -0.5f,  // 22 (Same as 2)
@@ -84,26 +89,31 @@ public class Cube {
         */
 
     public static int[] indices = {
+            // Front face
+            0, 1, 2,
+            2, 3, 0,
 
-            0, 1, 3,
-            3, 1, 2,  // Front face
+            // Back face
+            4, 5, 6,
+            6, 7, 4,
 
-            4, 5, 7,
-            7, 5, 6,  // Back face
+            // Right face
+            8, 9, 10,
+            10, 11, 8,
 
-            8, 9, 11,
-            11, 9, 10, // Right face
+            // Left face
+            12, 13, 14,
+            14, 15, 12,
 
-            12, 13, 15,
-            15, 13, 14, // Left face
+            // Top face
+            16, 17, 18,
+            18, 19, 16,
 
-            16, 17, 19,
-            19, 17, 18, // Top face
-
-            20, 21, 23,
-            23, 21, 22  // Bottom face
-
+            // Bottom face
+            20, 21, 22,
+            22, 23, 20
     };
+
 
     public static float[] uvs = {
 
