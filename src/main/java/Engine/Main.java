@@ -3,6 +3,7 @@ package Engine;
 import Entities.Camera;
 import Entities.Entity;
 import Models.Chunk;
+import Models.Cube;
 import Models.RawModel;
 import Models.TextureModel;
 import Render.DisplayManager;
@@ -31,8 +32,7 @@ public class Main {
     static Vec3 camPos = new Vec3(0, 0, 0);
     static List<Vec3> usedPos = Collections.synchronizedList(new ArrayList<>());
 
-    static final int WORLD_SIZE = 64;
-
+    static final int WORLD_SIZE = 1 * 16;
     public static void main(String[] args){
 
         DisplayManager.createDisplay();
@@ -41,8 +41,8 @@ public class Main {
         shader1 = new StaticShader();
         MasterRender renderer = new MasterRender();
 
-        RawModel model = loader.loadToVAO(vertices, indices, uvs);
-        ModelTexture texture = new ModelTexture(loader.loadTexture("grass.png"));
+        RawModel model = loader.loadToVAO(Cube.vertices, Cube.indices, Cube.uvs);
+        ModelTexture texture = new ModelTexture(loader.loadTexture("dirt.png"));
         TextureModel textureModel = new TextureModel(model, texture);
 
         long window = DisplayManager.getWindow();

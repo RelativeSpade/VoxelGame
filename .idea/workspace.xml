@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="840c9104-0bc0-421b-aa50-14bd951f9721" name="Changes" comment="change: implemented chunk system">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Models/CubeAtlas.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/textures/grass.png" afterDir="false" />
+    <list default="true" id="840c9104-0bc0-421b-aa50-14bd951f9721" name="Changes" comment="change: added multi texture faced cubes.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Models/TempCube.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Engine/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Engine/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Render/MasterRender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Render/MasterRender.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,12 +55,13 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/Spade/Documents/Voxel/src/main/resources/textures",
+    "last_opened_file_path": "C:/Users/Spade/Documents/Voxel/src/main/java/Models/Cube.java",
     "onboarding.tips.debug.path": "C:/Users/Spade/Documents/Voxel/src/main/java/org/example/Main.java",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.17",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "settings.sync"
+    "settings.editor.selected.configurable": "settings.sync",
+    "two.files.diff.last.used.file": "C:/Users/Spade/Documents/Voxel/src/main/java/Models/Cube.java"
   }
 }]]></component>
   <component name="RebelAgentSelection">
@@ -92,14 +93,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1720146061769</updated>
-    </task>
-    <task id="LOCAL-00046" summary="change: fixed error accidentally pushed">
-      <option name="closed" value="true" />
-      <created>1720338328433</created>
-      <option name="number" value="00046" />
-      <option name="presentableId" value="LOCAL-00046" />
-      <option name="project" value="LOCAL" />
-      <updated>1720338328433</updated>
     </task>
     <task id="LOCAL-00047" summary="change: fixed error accidentally pushed">
       <option name="closed" value="true" />
@@ -485,7 +478,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720806594582</updated>
     </task>
-    <option name="localTasksCounter" value="95" />
+    <task id="LOCAL-00095" summary="change: added multi texture faced cubes.">
+      <option name="closed" value="true" />
+      <created>1720808693823</created>
+      <option name="number" value="00095" />
+      <option name="presentableId" value="LOCAL-00095" />
+      <option name="project" value="LOCAL" />
+      <updated>1720808693823</updated>
+    </task>
+    <option name="localTasksCounter" value="96" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -500,7 +501,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="change: added side to side movement" />
     <MESSAGE value="change: fixed camera rotation flicker" />
     <MESSAGE value="change: finally a rotating cube &lt;3" />
     <MESSAGE value="change: code cleanup &amp; organisation" />
@@ -525,6 +525,7 @@
     <MESSAGE value="change: cleaned up Main" />
     <MESSAGE value="change: inefficient chunk system beginning" />
     <MESSAGE value="change: implemented chunk system" />
-    <option name="LAST_COMMIT_MESSAGE" value="change: implemented chunk system" />
+    <MESSAGE value="change: added multi texture faced cubes." />
+    <option name="LAST_COMMIT_MESSAGE" value="change: added multi texture faced cubes." />
   </component>
 </project>
