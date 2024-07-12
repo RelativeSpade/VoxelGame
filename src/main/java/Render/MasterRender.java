@@ -1,14 +1,29 @@
 package Render;
 
+import Entities.Camera;
 import Entities.Entity;
+import Models.TextureModel;
 import Shaders.StaticShader;
 import Toolbox.Math.Matrix4;
 import org.lwjgl.opengl.GL11;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 @SuppressWarnings("unused")
 public class MasterRender {
+    Matrix4 projectionMatrix;
 
-    public MasterRender(StaticShader shader) {
+    private static final float FOV = 70f;
+    private static final float NEAR_PLANE = 0.1f;
+    private static final float FAR_PLANE = 1000f;
+    StaticShader shader = new StaticShader();
+    EntityRender renderer = new EntityRender();
+    Map<TextureModel, List<Entity>> entities = new HashMap<>();
+
+    public MasterRender() {
 
         createProjectionMatrix();
         shader.start();
@@ -16,12 +31,6 @@ public class MasterRender {
         shader.stop();
 
     }
-
-    Matrix4 projectionMatrix;
-
-    private static float FOV = 70f;
-    private static float NEAR_PLANE = 0.1f;
-    private static float FAR_PLANE = 1000f;
 
     public void prepare() {
 
@@ -39,9 +48,36 @@ public class MasterRender {
 
     }
 
-    public void render(Entity model, StaticShader shader) {
+    public void render(Camera camera) {
 
-        EntityRender.render(model, shader);
+        prepare();
+        shader.start();
+        shader.loadViewMatrix(camera);
+
+        renderer.render(entities);
+
+        shader.stop();
+        entities.clear();
+
+    }
+
+    public void addEntity(Entity entity) {
+
+        TextureModel model = entity.getModel();
+
+        List<Entity> batch = entities.get(model);
+
+        if(batch != null) {
+
+            batch.add(entity);
+
+        } else {
+
+            List<Entity> newBatch = new ArrayList<>();
+            newBatch.add(entity);
+            entities.put(model, newBatch);
+
+        }
 
     }
 

@@ -29,7 +29,7 @@ public class Main {
     static Vec3 camPos = new Vec3(0, 0, 0);
     static List<Vec3> usedPos = Collections.synchronizedList(new ArrayList<>());
 
-    static final int WORLD_SIZE = 10;
+    static final int WORLD_SIZE = 50;
 
     public static void main(String[] args){
 
@@ -38,7 +38,7 @@ public class Main {
         loader1 = loader;
         StaticShader shader = new StaticShader();
         shader1 = shader;
-        MasterRender renderer = new MasterRender(shader1);
+        MasterRender renderer = new MasterRender();
 
 
         float[] vertices = {
@@ -272,16 +272,12 @@ public class Main {
             }
 
             glfwPollEvents();
-            renderer.prepare();
-
-            shader.start();
-            shader.loadViewMatrix(camera);
 
             for (int i = 0; i < entityList.size(); i++) {
-                renderer.render(entityList.get(i), shader);
+                renderer.addEntity(entityList.get(i));
             }
 
-            shader.stop();
+            renderer.render(camera);
 
             if(glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS){
                 DisplayManager.closeDisplay();
