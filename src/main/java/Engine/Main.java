@@ -29,7 +29,7 @@ public class Main {
     static Vec3 camPos = new Vec3(0, 0, 0);
     static List<Vec3> usedPos = Collections.synchronizedList(new ArrayList<>());
 
-    static final int WORLD_SIZE = 15;
+    static final int WORLD_SIZE = 10;
 
     public static void main(String[] args){
 
@@ -157,7 +157,7 @@ public class Main {
 
 
         RawModel model = loader.loadToVAO(vertices, indices, uvs);
-        ModelTexture texture = new ModelTexture(loader.loadTexture("glass.png"));
+        ModelTexture texture = new ModelTexture(loader.loadTexture("dirt.png"));
         TextureModel textureModel = new TextureModel(model, texture);
 
         long window = DisplayManager.getWindow();

@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="840c9104-0bc0-421b-aa50-14bd951f9721" name="Changes" comment="change: ughhh the fact I cant get these indices to optimize erks me so bad.">
+    <list default="true" id="840c9104-0bc0-421b-aa50-14bd951f9721" name="Changes" comment="change: :p no work, guess ill really move on then">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Engine/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Engine/Main.java" afterDir="false" />
     </list>
@@ -77,14 +77,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1720146061769</updated>
-    </task>
-    <task id="LOCAL-00037" summary="change: added null check">
-      <option name="closed" value="true" />
-      <created>1720188080111</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1720188080111</updated>
     </task>
     <task id="LOCAL-00038" summary="fix: got shader working, had to change alot around">
       <option name="closed" value="true" />
@@ -470,7 +462,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720713254713</updated>
     </task>
-    <option name="localTasksCounter" value="86" />
+    <task id="LOCAL-00086" summary="change: :p no work, guess ill really move on then">
+      <option name="closed" value="true" />
+      <created>1720764184744</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1720764184744</updated>
+    </task>
+    <option name="localTasksCounter" value="87" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -485,7 +485,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="change: removed &quot;d&quot; from math lib name, was annoying me." />
     <MESSAGE value="change: added fps count" />
     <MESSAGE value="change: error suppression" />
     <MESSAGE value="add: basic (albeit buggy) camera movement" />
@@ -510,6 +509,7 @@
     <MESSAGE value="change: made usedPOS multi thread safe" />
     <MESSAGE value="change: attempted (and failed) to optimize vertex count. (will return to this later)" />
     <MESSAGE value="change: ughhh the fact I cant get these indices to optimize erks me so bad." />
-    <option name="LAST_COMMIT_MESSAGE" value="change: ughhh the fact I cant get these indices to optimize erks me so bad." />
+    <MESSAGE value="change: :p no work, guess ill really move on then" />
+    <option name="LAST_COMMIT_MESSAGE" value="change: :p no work, guess ill really move on then" />
   </component>
 </project>
