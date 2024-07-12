@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="840c9104-0bc0-421b-aa50-14bd951f9721" name="Changes" comment="change: added batch rendering">
+    <list default="true" id="840c9104-0bc0-421b-aa50-14bd951f9721" name="Changes" comment="change: cleaned up Main">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Models/Chunk.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Engine/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Engine/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Models/CubeModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Cube.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,30 +79,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1720146061769</updated>
-    </task>
-    <task id="LOCAL-00040" summary="change: aesthetic change">
-      <option name="closed" value="true" />
-      <created>1720190216356</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1720190216356</updated>
-    </task>
-    <task id="LOCAL-00041" summary="added: basic texture support">
-      <option name="closed" value="true" />
-      <created>1720295246713</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1720295246713</updated>
-    </task>
-    <task id="LOCAL-00042" summary="changed: fixed texture support and replaced depreciated lib">
-      <option name="closed" value="true" />
-      <created>1720330568191</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1720330568191</updated>
     </task>
     <task id="LOCAL-00043" summary="changed: cleaned up dependencies &amp; error removal">
       <option name="closed" value="true" />
@@ -469,7 +448,31 @@
       <option name="project" value="LOCAL" />
       <updated>1720777078893</updated>
     </task>
-    <option name="localTasksCounter" value="89" />
+    <task id="LOCAL-00089" summary="change: fixed visual block rendering issues at large render distances">
+      <option name="closed" value="true" />
+      <created>1720777280063</created>
+      <option name="number" value="00089" />
+      <option name="presentableId" value="LOCAL-00089" />
+      <option name="project" value="LOCAL" />
+      <updated>1720777280063</updated>
+    </task>
+    <task id="LOCAL-00090" summary="change: better to leave that low.">
+      <option name="closed" value="true" />
+      <created>1720777304718</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1720777304718</updated>
+    </task>
+    <task id="LOCAL-00091" summary="change: cleaned up Main">
+      <option name="closed" value="true" />
+      <created>1720777527697</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1720777527697</updated>
+    </task>
+    <option name="localTasksCounter" value="92" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -484,9 +487,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add: basic (albeit buggy) camera movement" />
-    <MESSAGE value="change: method name change" />
-    <MESSAGE value="change: fixed casting precision issue" />
     <MESSAGE value="change: fixed casting precision issue (hopefully)" />
     <MESSAGE value="change: tried to fix mouse movement (I failed)" />
     <MESSAGE value="change: added side to side movement" />
@@ -509,6 +509,9 @@
     <MESSAGE value="change: :p no work, guess ill really move on then" />
     <MESSAGE value="change: performance testing" />
     <MESSAGE value="change: added batch rendering" />
-    <option name="LAST_COMMIT_MESSAGE" value="change: added batch rendering" />
+    <MESSAGE value="change: fixed visual block rendering issues at large render distances" />
+    <MESSAGE value="change: better to leave that low." />
+    <MESSAGE value="change: cleaned up Main" />
+    <option name="LAST_COMMIT_MESSAGE" value="change: cleaned up Main" />
   </component>
 </project>

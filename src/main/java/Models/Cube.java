@@ -1,6 +1,6 @@
 package Models;
 
-public class CubeModel {
+public class Cube {
 
     public static float[] vertices = {
 

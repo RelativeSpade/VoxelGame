@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import static Models.CubeModel.*;
+import static Models.Cube.*;
 import static org.lwjgl.glfw.GLFW.*;
 
 public class Main {
