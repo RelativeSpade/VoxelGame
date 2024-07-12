@@ -228,29 +228,8 @@ public class Main {
 
         new Thread(() -> {
 
-            while (!glfwWindowShouldClose(window)) {
 
-                for(int i = 0; i < entityList.size(); i++) {
 
-                    int distX = (int) (camPos.x - entityList.get(i).getPosition().x);
-                    int distZ = (int) (camPos.z - entityList.get(i).getPosition().z);
-
-                    if (distX < 0) {
-                        distX *= -1;
-                    }
-
-                    if (distZ < 0) {
-                        distZ *= -1;
-                    }
-
-                    if(distX > WORLD_SIZE || distZ > WORLD_SIZE) {
-
-                        usedPos.remove(entityList.get(i).getPosition());
-                        entityList.remove(i);
-
-                    }
-                }
-            }
         }).start();
 
 
@@ -274,7 +253,23 @@ public class Main {
             glfwPollEvents();
 
             for (int i = 0; i < entityList.size(); i++) {
-                renderer.addEntity(entityList.get(i));
+
+                int distX = (int) (camPos.x - entityList.get(i).getPosition().x);
+                int distZ = (int) (camPos.z - entityList.get(i).getPosition().z);
+
+                if (distX < 0) {
+                    distX *= -1;
+                }
+
+                if (distZ < 0) {
+                    distZ *= -1;
+                }
+
+                if((distX <= WORLD_SIZE) && (distZ <= WORLD_SIZE)) {
+
+                    renderer.addEntity(entityList.get(i));
+
+                }
             }
 
             renderer.render(camera);
