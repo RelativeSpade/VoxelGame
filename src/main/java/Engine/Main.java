@@ -42,6 +42,7 @@ public class Main {
 
 
         float[] vertices = {
+
                 -0.5f, 0.5f, -0.5f,  // 0
                 -0.5f, -0.5f, -0.5f, // 1
                 0.5f, -0.5f, -0.5f,  // 2
@@ -66,6 +67,7 @@ public class Main {
                 -0.5f, -0.5f, -0.5f, // 21 (Same as 1)
                 0.5f, -0.5f, -0.5f,  // 22 (Same as 2)
                 0.5f, -0.5f, 0.5f    // 23 (Same as 6)
+
         };
 
             /*
@@ -116,9 +118,12 @@ public class Main {
                         │            │
                         │            │
         (-0.5,-0.5) (1) └────────────┘ (0.5,-0.5) (2)
+
+        https://www.desmos.com/3d/vp6mbo4xlf
         */
 
         int[] indices = {
+
                 0, 1, 3,
                 3, 1, 2,  // Front face
 
@@ -140,12 +145,14 @@ public class Main {
         };
 
         float[] uvs = {
+
                 0, 0,  0, 1,  1, 1,  1, 0,
                 0, 0,  0, 1,  1, 1,  1, 0,
                 0, 0,  0, 1,  1, 1,  1, 0,
                 0, 0,  0, 1,  1, 1,  1, 0,
                 0, 0,  0, 1,  1, 1,  1, 0,
                 0, 0,  0, 1,  1, 1,  1, 0
+
         };
 
 
