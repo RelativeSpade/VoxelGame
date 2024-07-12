@@ -2,6 +2,7 @@ package Engine;
 
 import Entities.Camera;
 import Entities.Entity;
+import Models.Chunk;
 import Models.RawModel;
 import Models.TextureModel;
 import Render.DisplayManager;
@@ -26,11 +27,11 @@ public class Main {
     public static int FPS = -1;
     public static double previousTime = glfwGetTime();
     public static float VOXEL_SIZE = 1f;
-    static List<Entity> entityList = Collections.synchronizedList(new ArrayList<>());
+    static List<Chunk> chunks = Collections.synchronizedList(new ArrayList<>());
     static Vec3 camPos = new Vec3(0, 0, 0);
     static List<Vec3> usedPos = Collections.synchronizedList(new ArrayList<>());
 
-    static final int WORLD_SIZE = 10;
+    static final int WORLD_SIZE = 64;
 
     public static void main(String[] args){
 
@@ -53,69 +54,29 @@ public class Main {
         new Thread(() -> {
 
             while(!glfwWindowShouldClose(window)) {
-                for (int x = (int) (camPos.x - WORLD_SIZE); x < camPos.x; x++){
-                    for (int z = (int) (camPos.z); z < (camPos.z + WORLD_SIZE); z++) {
+                for (int x = (int) ((camPos.x - WORLD_SIZE) / 16); x < ((camPos.x + WORLD_SIZE) / 16); x++){
+                    for (int z = (int) ((camPos.z - WORLD_SIZE) / 16); z < ((camPos.z + WORLD_SIZE) / 16); z++) {
 
-                        if(!usedPos.contains(new Vec3(x*VOXEL_SIZE,0,z*VOXEL_SIZE))) {
+                        if(!usedPos.contains(new Vec3(x*16, 0,z*16))) {
 
-                            entityList.add(new Entity(textureModel, new Vec3(x*VOXEL_SIZE, 0, z*VOXEL_SIZE), 0, 0, 0, VOXEL_SIZE));
-                            usedPos.add(new Vec3(x*VOXEL_SIZE,0,z*VOXEL_SIZE));
+                            List<Entity> blocks = new ArrayList<>();
 
-                        }
-                    }
-                }
+                            for(int i =0; i < 16; i++){
+                                for(int j = 0; j < 16; j++){
 
-                for (int x = (int) (camPos.x); x < (camPos.x + WORLD_SIZE); x++){
-                    for (int z = (int) (camPos.z); z < (camPos.z + WORLD_SIZE); z++) {
+                                    blocks.add(new Entity(textureModel, new Vec3((x*16)+i, 0, (z*16)+j), 0, 0, 0, VOXEL_SIZE));
 
-                        if(!usedPos.contains(new Vec3(x*VOXEL_SIZE,0,z*VOXEL_SIZE))) {
+                                }
+                            }
 
-                            entityList.add(new Entity(textureModel, new Vec3(x*VOXEL_SIZE, 0, z*VOXEL_SIZE), 0, 0, 0, VOXEL_SIZE));
-                            usedPos.add(new Vec3(x*VOXEL_SIZE,0,z*VOXEL_SIZE));
-
-                        }
-                    }
-                }
-
-
-            }
-        }).start();
-
-        new Thread(() -> {
-
-            while(!glfwWindowShouldClose(window)) {
-                for (int x = (int) (camPos.x - WORLD_SIZE); x < camPos.x; x++){
-                    for (int z = (int) (camPos.z - WORLD_SIZE); z < camPos.z; z++) {
-
-                        if(!usedPos.contains(new Vec3(x*VOXEL_SIZE,0,z*VOXEL_SIZE))) {
-
-                            entityList.add(new Entity(textureModel, new Vec3(x*VOXEL_SIZE, 0, z*VOXEL_SIZE), 0, 0, 0, VOXEL_SIZE));
-                            usedPos.add(new Vec3(x*VOXEL_SIZE,0,z*VOXEL_SIZE));
-
-                        }
-                    }
-                }
-
-                for (int x = (int) (camPos.x); x < (camPos.x + WORLD_SIZE); x++){
-                    for (int z = (int) (camPos.z - WORLD_SIZE); z < camPos.z; z++) {
-
-                        if(!usedPos.contains(new Vec3(x*VOXEL_SIZE,0,z*VOXEL_SIZE))) {
-
-                            entityList.add(new Entity(textureModel, new Vec3(x*VOXEL_SIZE, 0, z*VOXEL_SIZE), 0, 0, 0, VOXEL_SIZE));
-                            usedPos.add(new Vec3(x*VOXEL_SIZE,0,z*VOXEL_SIZE));
+                            chunks.add(new Chunk(blocks, new Vec3(x*16, 0, z*16)));
+                            usedPos.add(new Vec3(x*16, 0,z*16));
 
                         }
                     }
                 }
             }
         }).start();
-
-        new Thread(() -> {
-
-
-
-        }).start();
-
 
         while (!glfwWindowShouldClose(window)) {
 
@@ -136,10 +97,12 @@ public class Main {
 
             glfwPollEvents();
 
-            for (int i = 0; i < entityList.size(); i++) {
+            for (int i = 0; i < chunks.size(); i++) {
 
-                int distX = (int) (camPos.x - entityList.get(i).getPosition().x);
-                int distZ = (int) (camPos.z - entityList.get(i).getPosition().z);
+                Vec3 origin = chunks.get(i).getOrigin();
+
+                int distX = (int) (camPos.x - origin.x);
+                int distZ = (int) (camPos.z - origin.z);
 
                 if (distX < 0) {
                     distX *= -1;
@@ -151,7 +114,11 @@ public class Main {
 
                 if((distX <= WORLD_SIZE) && (distZ <= WORLD_SIZE)) {
 
-                    renderer.addEntity(entityList.get(i));
+                    for(int j = 0; j < chunks.get(i).getBlocks().size(); j++) {
+
+                        renderer.addEntity(chunks.get(i).getBlocks().get(j));
+
+                    }
 
                 }
             }
