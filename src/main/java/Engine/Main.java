@@ -16,6 +16,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import static Models.CubeModel.*;
 import static org.lwjgl.glfw.GLFW.*;
 
 public class Main {
@@ -36,125 +37,8 @@ public class Main {
         DisplayManager.createDisplay();
         Loader loader = new Loader();
         loader1 = loader;
-        StaticShader shader = new StaticShader();
-        shader1 = shader;
+        shader1 = new StaticShader();
         MasterRender renderer = new MasterRender();
-
-
-        float[] vertices = {
-
-                -0.5f, 0.5f, -0.5f,  // 0
-                -0.5f, -0.5f, -0.5f, // 1
-                0.5f, -0.5f, -0.5f,  // 2
-                0.5f, 0.5f, -0.5f,   // 3
-                -0.5f, 0.5f, 0.5f,   // 4
-                -0.5f, -0.5f, 0.5f,  // 5
-                0.5f, -0.5f, 0.5f,   // 6
-                0.5f, 0.5f, 0.5f,    // 7
-                0.5f, 0.5f, -0.5f,   // 8 (Same as 3)
-                0.5f, -0.5f, -0.5f,  // 9 (Same as 2)
-                0.5f, -0.5f, 0.5f,   // 10 (Same as 6)
-                0.5f, 0.5f, 0.5f,    // 11 (Same as 7)
-                -0.5f, 0.5f, -0.5f,  // 12 (Same as 0)
-                -0.5f, -0.5f, -0.5f, // 13 (Same as 1)
-                -0.5f, -0.5f, 0.5f,  // 14 (Same as 5)
-                -0.5f, 0.5f, 0.5f,   // 15 (Same as 4)
-                -0.5f, 0.5f, 0.5f,   // 16 (Same as 4)
-                -0.5f, 0.5f, -0.5f,  // 17 (Same as 0)
-                0.5f, 0.5f, -0.5f,   // 18 (Same as 3)
-                0.5f, 0.5f, 0.5f,    // 19 (Same as 7)
-                -0.5f, -0.5f, 0.5f,  // 20 (Same as 5)
-                -0.5f, -0.5f, -0.5f, // 21 (Same as 1)
-                0.5f, -0.5f, -0.5f,  // 22 (Same as 2)
-                0.5f, -0.5f, 0.5f    // 23 (Same as 6)
-
-        };
-
-            /*
-        Front face:
-        (-0.5, 0.5) (0) ┌────────────┐ (0.5, 0.5) (3)
-                        │            │
-                        │            │
-                        │            │
-                        │            │
-        (-0.5,-0.5) (1) └────────────┘ (0.5,-0.5) (2)
-
-        Back face:
-        (-0.5, 0.5) (4) ┌────────────┐ (0.5, 0.5) (7)
-                        │            │
-                        │            │
-                        │            │
-                        │            │
-        (-0.5,-0.5) (5) └────────────┘ (0.5,-0.5) (6)
-
-        Right face:
-        (0.5, 0.5) (3)  ┌────────────┐ (0.5, 0.5) (7)
-                        │            │
-                        │            │
-                        │            │
-                        │            │
-        (0.5,-0.5) (2)  └────────────┘ (0.5,-0.5) (6)
-
-        Left face:
-        (-0.5, 0.5) (0) ┌────────────┐ (0.5, 0.5) (4)
-                        │            │
-                        │            │
-                        │            │
-                        │            │
-        (-0.5,-0.5) (1) └────────────┘ (0.5,-0.5) (5)
-
-        Top face:
-        (-0.5, 0.5) (0) ┌────────────┐ (0.5, 0.5) (3)
-                        │            │
-                        │            │
-                        │            │
-                        │            │
-        (-0.5,-0.5) (4) └────────────┘ (0.5,-0.5) (7)
-
-        Bottom face:
-        (-0.5,-0.5) (5) ┌────────────┐ (0.5,-0.5) (6)
-                        │            │
-                        │            │
-                        │            │
-                        │            │
-        (-0.5,-0.5) (1) └────────────┘ (0.5,-0.5) (2)
-
-        https://www.desmos.com/3d/vp6mbo4xlf
-        */
-
-        int[] indices = {
-
-                0, 1, 3,
-                3, 1, 2,  // Front face
-
-                4, 5, 7,
-                7, 5, 6,  // Back face
-
-                8, 9, 11,
-                11, 9, 10, // Right face
-
-                12, 13, 15,
-                15, 13, 14, // Left face
-
-                16, 17, 19,
-                19, 17, 18, // Top face
-
-                20, 21, 23,
-                23, 21, 22  // Bottom face
-
-        };
-
-        float[] uvs = {
-
-                0, 0,  0, 1,  1, 1,  1, 0,
-                0, 0,  0, 1,  1, 1,  1, 0,
-                0, 0,  0, 1,  1, 1,  1, 0,
-                0, 0,  0, 1,  1, 1,  1, 0,
-                0, 0,  0, 1,  1, 1,  1, 0,
-                0, 0,  0, 1,  1, 1,  1, 0
-
-        };
-
 
         RawModel model = loader.loadToVAO(vertices, indices, uvs);
         ModelTexture texture = new ModelTexture(loader.loadTexture("dirt.png"));
