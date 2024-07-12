@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import static Models.Cube.*;
+import static Models.CubeAtlas.*;
 import static org.lwjgl.glfw.GLFW.*;
 
 public class Main {
@@ -42,7 +42,7 @@ public class Main {
         MasterRender renderer = new MasterRender();
 
         RawModel model = loader.loadToVAO(vertices, indices, uvs);
-        ModelTexture texture = new ModelTexture(loader.loadTexture("dirt.png"));
+        ModelTexture texture = new ModelTexture(loader.loadTexture("grass.png"));
         TextureModel textureModel = new TextureModel(model, texture);
 
         long window = DisplayManager.getWindow();

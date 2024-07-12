@@ -5,9 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="840c9104-0bc0-421b-aa50-14bd951f9721" name="Changes" comment="change: implemented chunk system">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Models/CubeAtlas.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/textures/grass.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Models/Cube.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Cube.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Render/MasterRender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Render/MasterRender.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Engine/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Engine/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,6 +55,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/Spade/Documents/Voxel/src/main/resources/textures",
     "onboarding.tips.debug.path": "C:/Users/Spade/Documents/Voxel/src/main/java/org/example/Main.java",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.17",
@@ -65,6 +67,9 @@
     <selection>jr</selection>
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Spade\Documents\Voxel\src\main\resources\textures" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Spade\Documents\Voxel\src\main\resources\shaders" />
       <recent name="C:\Users\Spade\Documents\Voxel\src\main\resources" />
@@ -87,14 +92,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1720146061769</updated>
-    </task>
-    <task id="LOCAL-00045" summary="added: basic 2D vector logic">
-      <option name="closed" value="true" />
-      <created>1720338301787</created>
-      <option name="number" value="00045" />
-      <option name="presentableId" value="LOCAL-00045" />
-      <option name="project" value="LOCAL" />
-      <updated>1720338301787</updated>
     </task>
     <task id="LOCAL-00046" summary="change: fixed error accidentally pushed">
       <option name="closed" value="true" />
@@ -480,7 +477,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720783304627</updated>
     </task>
-    <option name="localTasksCounter" value="94" />
+    <task id="LOCAL-00094" summary="change: implemented chunk system">
+      <option name="closed" value="true" />
+      <created>1720806594582</created>
+      <option name="number" value="00094" />
+      <option name="presentableId" value="LOCAL-00094" />
+      <option name="project" value="LOCAL" />
+      <updated>1720806594582</updated>
+    </task>
+    <option name="localTasksCounter" value="95" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
