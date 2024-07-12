@@ -29,7 +29,7 @@ public class Main {
     static Vec3 camPos = new Vec3(0, 0, 0);
     static List<Vec3> usedPos = Collections.synchronizedList(new ArrayList<>());
 
-    static final int WORLD_SIZE = 1 * 16;
+    static final int WORLD_SIZE = 4 * 16;
     public static void main(String[] args){
 
         DisplayManager.createDisplay();
@@ -38,7 +38,7 @@ public class Main {
         shader1 = new StaticShader();
         MasterRender renderer = new MasterRender();
 
-        RawModel model = loader.loadToVAO(TempCube.vertices, TempCube.indices, TempCube.uvs);
+        RawModel model = loader.loadToVAO(Cube.vertices, Cube.indices, Cube.uvs);
         ModelTexture texture = new ModelTexture(loader.loadTexture("dirt.png"));
         TextureModel textureModel = new TextureModel(model, texture);
 
