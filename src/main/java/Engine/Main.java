@@ -2,10 +2,7 @@ package Engine;
 
 import Entities.Camera;
 import Entities.Entity;
-import Models.Chunk;
-import Models.Cube;
-import Models.RawModel;
-import Models.TextureModel;
+import Models.*;
 import Render.DisplayManager;
 import Render.Loader;
 import Render.MasterRender;
@@ -41,7 +38,7 @@ public class Main {
         shader1 = new StaticShader();
         MasterRender renderer = new MasterRender();
 
-        RawModel model = loader.loadToVAO(Cube.vertices, Cube.indices, Cube.uvs);
+        RawModel model = loader.loadToVAO(TempCube.vertices, TempCube.indices, TempCube.uvs);
         ModelTexture texture = new ModelTexture(loader.loadTexture("dirt.png"));
         TextureModel textureModel = new TextureModel(model, texture);
 

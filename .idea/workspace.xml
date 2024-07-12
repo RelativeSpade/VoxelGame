@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="840c9104-0bc0-421b-aa50-14bd951f9721" name="Changes" comment="change: added multi texture faced cubes.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Models/TempCube.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="840c9104-0bc0-421b-aa50-14bd951f9721" name="Changes" comment="change: narrowed down error range for reduced vertice model, ideally face culling will work aswell after fixing.">
       <change beforePath="$PROJECT_DIR$/src/main/java/Engine/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Engine/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Render/MasterRender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Render/MasterRender.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Models/TempCube.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/TempCube.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,14 +91,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1720146061769</updated>
-    </task>
-    <task id="LOCAL-00047" summary="change: fixed error accidentally pushed">
-      <option name="closed" value="true" />
-      <created>1720338349910</created>
-      <option name="number" value="00047" />
-      <option name="presentableId" value="LOCAL-00047" />
-      <option name="project" value="LOCAL" />
-      <updated>1720338349910</updated>
     </task>
     <task id="LOCAL-00048" summary="change: suppressed unused">
       <option name="closed" value="true" />
@@ -486,7 +476,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720808693823</updated>
     </task>
-    <option name="localTasksCounter" value="96" />
+    <task id="LOCAL-00096" summary="change: narrowed down error range for reduced vertice model, ideally face culling will work aswell after fixing.">
+      <option name="closed" value="true" />
+      <created>1720818097202</created>
+      <option name="number" value="00096" />
+      <option name="presentableId" value="LOCAL-00096" />
+      <option name="project" value="LOCAL" />
+      <updated>1720818097202</updated>
+    </task>
+    <option name="localTasksCounter" value="97" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -501,7 +499,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="change: fixed camera rotation flicker" />
     <MESSAGE value="change: finally a rotating cube &lt;3" />
     <MESSAGE value="change: code cleanup &amp; organisation" />
     <MESSAGE value="change: removed main code change because it was causing issues." />
@@ -526,6 +523,7 @@
     <MESSAGE value="change: inefficient chunk system beginning" />
     <MESSAGE value="change: implemented chunk system" />
     <MESSAGE value="change: added multi texture faced cubes." />
-    <option name="LAST_COMMIT_MESSAGE" value="change: added multi texture faced cubes." />
+    <MESSAGE value="change: narrowed down error range for reduced vertice model, ideally face culling will work aswell after fixing." />
+    <option name="LAST_COMMIT_MESSAGE" value="change: narrowed down error range for reduced vertice model, ideally face culling will work aswell after fixing." />
   </component>
 </project>
