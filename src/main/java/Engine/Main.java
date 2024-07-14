@@ -38,8 +38,8 @@ public class Main {
         shader1 = new StaticShader();
         MasterRender renderer = new MasterRender();
 
-        RawModel model = loader.loadToVAO(Cube.vertices, Cube.indices, Cube.uvs);
-        ModelTexture texture = new ModelTexture(loader.loadTexture("dirt.png"));
+        RawModel model = loader.loadToVAO(CubeAtlas.vertices, CubeAtlas.indices, CubeAtlas.uvs);
+        ModelTexture texture = new ModelTexture(loader.loadTexture("grass.png"));
         TextureModel textureModel = new TextureModel(model, texture);
 
         long window = DisplayManager.getWindow();
