@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="840c9104-0bc0-421b-aa50-14bd951f9721" name="Changes" comment="change: reimplemented multi threading, and cleaned up main.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Toolbox/Necessities/PerlinNoiseGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Engine/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Engine/Main.java" afterDir="false" />
+    <list default="true" id="840c9104-0bc0-421b-aa50-14bd951f9721" name="Changes" comment="change: implemented perlin noise and cleaned main up some more.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Chunks/ChunkMesh.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Chunks/ChunkMesh.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,14 +91,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1720146061769</updated>
-    </task>
-    <task id="LOCAL-00052" summary="add: 4d matrix">
-      <option name="closed" value="true" />
-      <created>1720340472584</created>
-      <option name="number" value="00052" />
-      <option name="presentableId" value="LOCAL-00052" />
-      <option name="project" value="LOCAL" />
-      <updated>1720340472584</updated>
     </task>
     <task id="LOCAL-00053" summary="add: bool">
       <option name="closed" value="true" />
@@ -484,7 +476,15 @@
       <option name="project" value="LOCAL" />
       <updated>1721033178313</updated>
     </task>
-    <option name="localTasksCounter" value="101" />
+    <task id="LOCAL-00101" summary="change: implemented perlin noise and cleaned main up some more.">
+      <option name="closed" value="true" />
+      <created>1721033636050</created>
+      <option name="number" value="00101" />
+      <option name="presentableId" value="LOCAL-00101" />
+      <option name="project" value="LOCAL" />
+      <updated>1721033636050</updated>
+    </task>
+    <option name="localTasksCounter" value="102" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -499,7 +499,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="change: added basic flat terrain generation" />
     <MESSAGE value="change: added icon, Image load lib (again), and code base has gotten even messier :)" />
     <MESSAGE value="change: tried to clean up code base (I failed)" />
     <MESSAGE value="change: added WORLD_SIZE variable to terrain" />
@@ -524,6 +523,7 @@
     <MESSAGE value="change: debugging issues with new model" />
     <MESSAGE value="change: implemented chunk meshing. (and made the code base even messier :sob:)" />
     <MESSAGE value="change: reimplemented multi threading, and cleaned up main." />
-    <option name="LAST_COMMIT_MESSAGE" value="change: reimplemented multi threading, and cleaned up main." />
+    <MESSAGE value="change: implemented perlin noise and cleaned main up some more." />
+    <option name="LAST_COMMIT_MESSAGE" value="change: implemented perlin noise and cleaned main up some more." />
   </component>
 </project>

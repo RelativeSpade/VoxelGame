@@ -99,6 +99,10 @@ public class ChunkMesh {
         positions = convertListToArray(positionsList);
         uvs = convertListToArray(uvsList);
         normals = convertListToArray(normalsList);
+
+        positionsList.clear();
+        uvsList.clear();
+        normalsList.clear();
     }
 
     private float[] convertListToArray(List<Float> list) {
