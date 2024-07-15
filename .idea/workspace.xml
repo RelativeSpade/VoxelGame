@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="840c9104-0bc0-421b-aa50-14bd951f9721" name="Changes" comment="change: implemented perlin noise and cleaned main up some more.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Chunks/ChunkMesh.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Chunks/ChunkMesh.java" afterDir="false" />
+    <list default="true" id="840c9104-0bc0-421b-aa50-14bd951f9721" name="Changes" comment="change: garbage collection cleanup">
+      <change beforePath="$PROJECT_DIR$/src/main/java/Engine/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Engine/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,30 +90,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1720146061769</updated>
-    </task>
-    <task id="LOCAL-00053" summary="add: bool">
-      <option name="closed" value="true" />
-      <created>1720340973069</created>
-      <option name="number" value="00053" />
-      <option name="presentableId" value="LOCAL-00053" />
-      <option name="project" value="LOCAL" />
-      <updated>1720340973069</updated>
-    </task>
-    <task id="LOCAL-00054" summary="change: moved stuff around">
-      <option name="closed" value="true" />
-      <created>1720341339979</created>
-      <option name="number" value="00054" />
-      <option name="presentableId" value="LOCAL-00054" />
-      <option name="project" value="LOCAL" />
-      <updated>1720341339979</updated>
-    </task>
-    <task id="LOCAL-00055" summary="add: transformation stuff.">
-      <option name="closed" value="true" />
-      <created>1720342184334</created>
-      <option name="number" value="00055" />
-      <option name="presentableId" value="LOCAL-00055" />
-      <option name="project" value="LOCAL" />
-      <updated>1720342184335</updated>
     </task>
     <task id="LOCAL-00056" summary="add: finish transformation (kinda, doesnt work)">
       <option name="closed" value="true" />
@@ -484,7 +459,31 @@
       <option name="project" value="LOCAL" />
       <updated>1721033636050</updated>
     </task>
-    <option name="localTasksCounter" value="102" />
+    <task id="LOCAL-00102" summary="change: fixed minor performance issue.">
+      <option name="closed" value="true" />
+      <created>1721033989370</created>
+      <option name="number" value="00102" />
+      <option name="presentableId" value="LOCAL-00102" />
+      <option name="project" value="LOCAL" />
+      <updated>1721033989370</updated>
+    </task>
+    <task id="LOCAL-00103" summary="change: fixed minor performance issue x2.">
+      <option name="closed" value="true" />
+      <created>1721034034249</created>
+      <option name="number" value="00103" />
+      <option name="presentableId" value="LOCAL-00103" />
+      <option name="project" value="LOCAL" />
+      <updated>1721034034249</updated>
+    </task>
+    <task id="LOCAL-00104" summary="change: garbage collection cleanup">
+      <option name="closed" value="true" />
+      <created>1721034204874</created>
+      <option name="number" value="00104" />
+      <option name="presentableId" value="LOCAL-00104" />
+      <option name="project" value="LOCAL" />
+      <updated>1721034204874</updated>
+    </task>
+    <option name="localTasksCounter" value="105" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -499,9 +498,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="change: added icon, Image load lib (again), and code base has gotten even messier :)" />
-    <MESSAGE value="change: tried to clean up code base (I failed)" />
-    <MESSAGE value="change: added WORLD_SIZE variable to terrain" />
     <MESSAGE value="change: added WORLD_SIZE variable to terrain &amp; Implemented basic Frustum Culling." />
     <MESSAGE value="change: code optimization" />
     <MESSAGE value="change: added proper alpha implementation." />
@@ -524,6 +520,9 @@
     <MESSAGE value="change: implemented chunk meshing. (and made the code base even messier :sob:)" />
     <MESSAGE value="change: reimplemented multi threading, and cleaned up main." />
     <MESSAGE value="change: implemented perlin noise and cleaned main up some more." />
-    <option name="LAST_COMMIT_MESSAGE" value="change: implemented perlin noise and cleaned main up some more." />
+    <MESSAGE value="change: fixed minor performance issue." />
+    <MESSAGE value="change: fixed minor performance issue x2." />
+    <MESSAGE value="change: garbage collection cleanup" />
+    <option name="LAST_COMMIT_MESSAGE" value="change: garbage collection cleanup" />
   </component>
 </project>

@@ -42,11 +42,7 @@ public class Main {
         loader1 = loader;
         shader1 = new StaticShader();
         MasterRender renderer = new MasterRender();
-
-        RawModel model = loader.loadToVAO(CubeModel.vertices, CubeModel.indices, CubeModel.uvs);
         ModelTexture texture = new ModelTexture(loader.loadTexture("dirt.png"));
-        TextureModel textureModel = new TextureModel(model, texture);
-
         long window = DisplayManager.getWindow();
 
         Mouse.init();
