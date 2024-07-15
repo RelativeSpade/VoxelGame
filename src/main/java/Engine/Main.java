@@ -42,7 +42,7 @@ public class Main {
         loader1 = loader;
         shader1 = new StaticShader();
         MasterRender renderer = new MasterRender();
-        ModelTexture texture = new ModelTexture(loader.loadTexture("dirt.png"));
+        ModelTexture texture = new ModelTexture(loader.loadTexture("Atlas.png"));
         long window = DisplayManager.getWindow();
 
         Mouse.init();
@@ -65,7 +65,7 @@ public class Main {
                             for(int i = 0; i < CHUNK_SIZE; i++){
                                 for(int j = 0; j < CHUNK_SIZE; j++){
 
-                                    blocks.add(new Block(i, (int) perlin.generateHeight(i + (x * CHUNK_SIZE), j + (z * CHUNK_SIZE)),j, Block.TYPE.DIRT));
+                                    blocks.add(new Block(i, (int) perlin.generateHeight(i + (x * CHUNK_SIZE), j + (z * CHUNK_SIZE)),j, Block.TREEBARK));
 
                                 }
                             }
