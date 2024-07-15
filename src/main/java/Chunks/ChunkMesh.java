@@ -9,17 +9,15 @@ import Toolbox.Math.Vec3;
 
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 
 public class ChunkMesh {
 
-    private List<Vertex> vertices;
-    private List<Float> positionsList;
-    private List<Float> uvsList;
-    private List<Float> normalsList;
+    private final List<Vertex> vertices;
+    private final List<Float> positionsList;
+    private final List<Float> uvsList;
+    private final List<Float> normalsList;
 
     public float[] positions, uvs, normals;
     public Chunk chunk;
