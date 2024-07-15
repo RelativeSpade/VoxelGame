@@ -5,8 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="840c9104-0bc0-421b-aa50-14bd951f9721" name="Changes" comment="change: debugging issues with new model">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Chunks/ChunkMesh.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Cube/Block.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Cube/Vertex.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Engine/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Engine/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Models/Chunk.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Chunks/Chunk.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Models/Cube.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/CubeModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Models/TempCube.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Render/EntityRender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Render/EntityRender.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Render/Loader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Render/Loader.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +61,7 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Spade/Documents/Voxel/src/main/java/Models/Cube.java&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Spade/Documents/JunhyungMod/junhyung-mod&quot;,
     &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/Spade/Documents/Voxel/src/main/java/org/example/Main.java&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.17&quot;,
@@ -91,14 +99,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1720146061769</updated>
-    </task>
-    <task id="LOCAL-00049" summary="add: matrix &amp; 3D Vector Support">
-      <option name="closed" value="true" />
-      <created>1720339101876</created>
-      <option name="number" value="00049" />
-      <option name="presentableId" value="LOCAL-00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1720339101876</updated>
     </task>
     <task id="LOCAL-00050" summary="add: 2d matrix (math please spare me)">
       <option name="closed" value="true" />
@@ -484,7 +484,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720818295173</updated>
     </task>
-    <option name="localTasksCounter" value="98" />
+    <task id="LOCAL-00098" summary="change: debugging issues with new model">
+      <option name="closed" value="true" />
+      <created>1720961609392</created>
+      <option name="number" value="00098" />
+      <option name="presentableId" value="LOCAL-00098" />
+      <option name="project" value="LOCAL" />
+      <updated>1720961609392</updated>
+    </task>
+    <option name="localTasksCounter" value="99" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

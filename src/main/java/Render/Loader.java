@@ -33,6 +33,15 @@ public class Loader {
         return new RawModel(vaoID, indices.length); // Return the model with its VAO ID and vertex count
     }
 
+    public RawModel loadToVAO(float[] vertices, float[] uv) {
+        int vaoID = createVAO(); // Create and bind a new VAO
+        storeDataInAttributeList(vertices, 0, 3); // Store vertex data in a VBO and link to VAO attribute 0
+        storeDataInAttributeList(uv, 1, 2); // Store texture mapping data in VBO and link to VAO attribute 1
+        GL30.glBindVertexArray(0); // Unbind the current VAO
+
+        return new RawModel(vaoID, vertices.length); // Return the model with its VAO ID and vertex count
+    }
+
     private int createVAO() {
         int vaoID = GL30.glGenVertexArrays(); // Generate a new VAO ID
         vaos.add(vaoID); // Add the new VAO ID to the list

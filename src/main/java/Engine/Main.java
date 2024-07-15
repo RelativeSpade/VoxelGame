@@ -1,5 +1,8 @@
 package Engine;
 
+import Chunks.Chunk;
+import Chunks.ChunkMesh;
+import Cube.Block;
 import Entities.Camera;
 import Entities.Entity;
 import Models.*;
@@ -15,7 +18,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import static Models.CubeAtlas.*;
 import static org.lwjgl.glfw.GLFW.*;
 
 public class Main {
@@ -38,8 +40,8 @@ public class Main {
         shader1 = new StaticShader();
         MasterRender renderer = new MasterRender();
 
-        RawModel model = loader.loadToVAO(CubeAtlas.vertices, CubeAtlas.indices, CubeAtlas.uvs);
-        ModelTexture texture = new ModelTexture(loader.loadTexture("grass.png"));
+        RawModel model = loader.loadToVAO(CubeModel.vertices, CubeModel.indices, CubeModel.uvs);
+        ModelTexture texture = new ModelTexture(loader.loadTexture("dirt.png"));
         TextureModel textureModel = new TextureModel(model, texture);
 
         long window = DisplayManager.getWindow();
@@ -48,9 +50,10 @@ public class Main {
 
         Camera camera = new Camera(new Vec3(0, 0, 0), 0, 0, 0);
 
-        new Thread(() -> {
+        /*new Thread(() -> {
 
             while(!glfwWindowShouldClose(window)) {
+
                 for (int x = (int) ((camPos.x - WORLD_SIZE) / 16); x < ((camPos.x + WORLD_SIZE) / 16); x++){
                     for (int z = (int) ((camPos.z - WORLD_SIZE) / 16); z < ((camPos.z + WORLD_SIZE) / 16); z++) {
 
@@ -73,7 +76,26 @@ public class Main {
                     }
                 }
             }
-        }).start();
+        }).start();*/
+
+        List<Block> blocks = new ArrayList<>();
+
+        for (int x = 0; x < 10; x++) {
+            for (int y = 0; y < 10; y++) {
+                for (int z = 0; z < 10; z++) {
+
+                    blocks.add(new Block(x,y,z, Block.TYPE.DIRT));
+
+                }
+            }
+        }
+
+        Chunk chunk = new Chunk(blocks, new Vec3(0,0,0));
+        ChunkMesh chunkMesh = new ChunkMesh(chunk);
+
+        RawModel tempModel = loader.loadToVAO(chunkMesh.positions, chunkMesh.uvs);
+        TextureModel textureModel1 = new TextureModel(tempModel, texture);
+        Entity entity = new Entity(textureModel1, new Vec3(0,0,0), 0, 0, 0, 1f);
 
         while (!glfwWindowShouldClose(window)) {
 
@@ -94,7 +116,7 @@ public class Main {
 
             glfwPollEvents();
 
-            for (int i = 0; i < chunks.size(); i++) {
+            /*for (int i = 0; i < chunks.size(); i++) {
 
                 Vec3 origin = chunks.get(i).getOrigin();
 
@@ -118,7 +140,9 @@ public class Main {
                     }
 
                 }
-            }
+            }*/
+
+            renderer.addEntity(entity);
 
             renderer.render(camera);
 

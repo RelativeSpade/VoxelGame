@@ -35,7 +35,7 @@ public class EntityRender {
                 Matrix4 transformationMatrix = createTransformationMatrix(entity.getPosition(), entity.getrX(), entity.getrY(), entity.getrZ(), entity.getScale());
                 shader.loadTransformationMatrix(transformationMatrix);
 
-                GL11.glDrawElements(GL11.GL_TRIANGLES, model.getModel().getVertexCount(), GL11.GL_UNSIGNED_INT, 0);
+                GL11.glDrawArrays(GL11.GL_TRIANGLES, 0, model.getModel().getVertexCount());
 
             }
 
