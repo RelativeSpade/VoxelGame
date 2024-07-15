@@ -109,6 +109,10 @@ public class Main {
                 Entity entity = new Entity(textureModel1, chunkMesh.chunk.getOrigin(), 0, 0, 0, VOXEL_SIZE);
                 entities.add(entity);
 
+                chunks.get(index).positions = null;
+                chunks.get(index).normals = null;
+                chunks.get(index).uvs = null;
+
                 index++;
             }
 
