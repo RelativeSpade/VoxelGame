@@ -27,7 +27,8 @@ public class Main {
     public static int FPS = -1;
     public static double previousTime = glfwGetTime();
     public static float VOXEL_SIZE = 1f;
-    static List<Chunk> chunks = Collections.synchronizedList(new ArrayList<>());
+    static List<ChunkMesh> chunks = Collections.synchronizedList(new ArrayList<>());
+    static List<Entity> entities = new ArrayList<>();
     static Vec3 camPos = new Vec3(0, 0, 0);
     static List<Vec3> usedPos = Collections.synchronizedList(new ArrayList<>());
 
@@ -50,7 +51,7 @@ public class Main {
 
         Camera camera = new Camera(new Vec3(0, 0, 0), 0, 0, 0);
 
-        /*new Thread(() -> {
+        new Thread(() -> {
 
             while(!glfwWindowShouldClose(window)) {
 
@@ -59,44 +60,26 @@ public class Main {
 
                         if(!usedPos.contains(new Vec3(x*16, 0,z*16))) {
 
-                            List<Entity> blocks = new ArrayList<>();
+                            List<Block> blocks = new ArrayList<>();
 
                             for(int i =0; i < 16; i++){
                                 for(int j = 0; j < 16; j++){
 
-                                    blocks.add(new Entity(textureModel, new Vec3((x*16)+i, 0, (z*16)+j), 0, 0, 0, VOXEL_SIZE));
+                                    blocks.add(new Block(i,0,j, Block.TYPE.DIRT));
 
                                 }
                             }
-
-                            chunks.add(new Chunk(blocks, new Vec3(x*16, 0, z*16)));
+                            Chunk tempChunk = new Chunk(blocks, new Vec3(x*16, 0, z*16));
+                            chunks.add(new ChunkMesh(tempChunk));
                             usedPos.add(new Vec3(x*16, 0,z*16));
 
                         }
                     }
                 }
             }
-        }).start();*/
+        }).start();
 
-        List<Block> blocks = new ArrayList<>();
-
-        for (int x = 0; x < 10; x++) {
-            for (int y = 0; y < 10; y++) {
-                for (int z = 0; z < 10; z++) {
-
-                    blocks.add(new Block(x,y,z, Block.TYPE.DIRT));
-
-                }
-            }
-        }
-
-        Chunk chunk = new Chunk(blocks, new Vec3(0,0,0));
-        ChunkMesh chunkMesh = new ChunkMesh(chunk);
-
-        RawModel tempModel = loader.loadToVAO(chunkMesh.positions, chunkMesh.uvs);
-        TextureModel textureModel1 = new TextureModel(tempModel, texture);
-        Entity entity = new Entity(textureModel1, new Vec3(0,0,0), 0, 0, 0, 1f);
-
+        int index = 0;
         while (!glfwWindowShouldClose(window)) {
 
             double currentTime = glfwGetTime();
@@ -114,11 +97,23 @@ public class Main {
                 previousTime = currentTime;
             }
 
+            if(index < chunks.size()){
+
+                ChunkMesh chunkMesh = chunks.get(index);
+
+                RawModel tempModel = loader.loadToVAO(chunkMesh.positions, chunkMesh.uvs);
+                TextureModel textureModel1 = new TextureModel(tempModel, texture);
+                Entity entity = new Entity(textureModel1, chunkMesh.chunk.getOrigin(), 0, 0, 0, VOXEL_SIZE);
+                entities.add(entity);
+
+                index++;
+            }
+
             glfwPollEvents();
 
-            /*for (int i = 0; i < chunks.size(); i++) {
+            for (int i = 0; i < entities.size(); i++) {
 
-                Vec3 origin = chunks.get(i).getOrigin();
+                Vec3 origin = entities.get(i).getPosition();
 
                 int distX = (int) (camPos.x - origin.x);
                 int distZ = (int) (camPos.z - origin.z);
@@ -133,16 +128,10 @@ public class Main {
 
                 if((distX <= WORLD_SIZE) && (distZ <= WORLD_SIZE)) {
 
-                    for(int j = 0; j < chunks.get(i).getBlocks().size(); j++) {
-
-                        renderer.addEntity(chunks.get(i).getBlocks().get(j));
-
-                    }
+                    renderer.addEntity(entities.get(i));
 
                 }
-            }*/
-
-            renderer.addEntity(entity);
+            }
 
             renderer.render(camera);
 

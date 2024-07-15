@@ -51,7 +51,6 @@ public class ChunkMesh {
         for (Block block : chunk.getBlocks()) {
             blockPositions.add(new Vec3(block.x, block.y, block.z));
         }
-        System.out.println(blockPositions);
 
         for (Block block : chunk.getBlocks()) {
             boolean px = blockPositions.contains(new Vec3(block.x + 1, block.y, block.z));
