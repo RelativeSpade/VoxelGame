@@ -6,19 +6,25 @@ import Cube.Block;
 import Entities.Camera;
 import Entities.Entity;
 import Models.*;
+import Render.CrosshairRender;
 import Render.DisplayManager;
 import Render.Loader;
 import Render.MasterRender;
 import Shaders.StaticShader;
 import Textures.ModelTexture;
+import Toolbox.Math.Matrix4;
 import Toolbox.Math.Vec3;
 import Toolbox.Necessities.Mouse;
 import Toolbox.Necessities.PerlinNoiseGenerator;
+import org.lwjgl.BufferUtils;
 
+import java.nio.IntBuffer;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import static Toolbox.Math.Transformation.createOrthographicMatrix;
+import static Toolbox.Math.Transformation.createViewMatrix;
 import static org.lwjgl.glfw.GLFW.*;
 
 public class Main {
@@ -31,6 +37,7 @@ public class Main {
     public static int CHUNK_SIZE = 32;
     static List<ChunkMesh> chunks = Collections.synchronizedList(new ArrayList<>());
     static List<Entity> entities = new ArrayList<>();
+    static CrosshairRender crosshairRender = null;
     static Vec3 camPos = new Vec3(0, 0, 0);
     static List<Vec3> usedPos = Collections.synchronizedList(new ArrayList<>());
 
@@ -42,7 +49,7 @@ public class Main {
         loader1 = loader;
         shader1 = new StaticShader();
         MasterRender renderer = new MasterRender();
-        ModelTexture texture = new ModelTexture(loader.loadTexture("Atlas.png"));
+        ModelTexture textureAtlas = new ModelTexture(loader.loadTexture("Atlas.png"));
         long window = DisplayManager.getWindow();
 
         Mouse.init();
@@ -50,6 +57,20 @@ public class Main {
         Camera camera = new Camera(new Vec3(0, 0, 0), 0, 0, 0);
 
         PerlinNoiseGenerator perlin = new PerlinNoiseGenerator();
+
+        crosshairRender = new CrosshairRender();
+
+        IntBuffer widthBuffer = BufferUtils.createIntBuffer(1);
+        IntBuffer heightBuffer = BufferUtils.createIntBuffer(1);
+        glfwGetWindowSize(window, widthBuffer, heightBuffer);
+
+        int width = widthBuffer.get(0);
+        int height = heightBuffer.get(0);
+
+        float floatWidth = (float) width;
+        float floatHeight = (float) height;
+
+        Matrix4 orthoMatrix = createOrthographicMatrix(0, floatWidth, floatHeight, 0, -1, 1);
 
         new Thread(() -> {
 
@@ -101,7 +122,7 @@ public class Main {
 
                 ChunkMesh chunkMesh = chunks.get(index);
                 RawModel tempModel = loader.loadToVAO(chunkMesh.positions, chunkMesh.uvs);
-                TextureModel textureModel1 = new TextureModel(tempModel, texture);
+                TextureModel textureModel1 = new TextureModel(tempModel, textureAtlas);
                 Entity entity = new Entity(textureModel1, chunkMesh.chunk.getOrigin(), 0, 0, 0, VOXEL_SIZE);
                 entities.add(entity);
 
@@ -138,8 +159,18 @@ public class Main {
 
             renderer.render(camera);
 
+            shader1.loadProjectionMatrix(orthoMatrix);
+
+            crosshairRender.render();
+
+            //shader1.loadProjectionMatrix(renderer.projectionMatrix);
+
             if(glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS){
                 DisplayManager.closeDisplay();
+            }
+
+            if(glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_2) == GLFW_PRESS){
+                //TODO: Implement Block Placement Logic
             }
 
             DisplayManager.updateDisplay();

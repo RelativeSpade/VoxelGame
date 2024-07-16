@@ -14,7 +14,7 @@ import java.util.Map;
 
 @SuppressWarnings("unused")
 public class MasterRender {
-    Matrix4 projectionMatrix;
+    public Matrix4 projectionMatrix;
 
     private static final float FOV = 70f;
     private static final float NEAR_PLANE = 0.1f;
