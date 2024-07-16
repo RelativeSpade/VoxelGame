@@ -14,18 +14,15 @@ import org.lwjgl.opengl.GL30;
 import java.nio.IntBuffer;
 
 import static Engine.Main.loader1;
-import static Engine.Main.shader1;
 import static Toolbox.Math.Transformation.createOrthographicMatrix;
 import static org.lwjgl.glfw.GLFW.glfwGetWindowSize;
 import static org.lwjgl.opengl.GL11.GL_DEPTH_TEST;
 
 public class CrosshairRender {
 
-        private StaticShader shader;
-        private RawModel crosshair;
-        private ModelTexture crosshairTexture;
-        private TextureModel textureCrosshair;
-        private Matrix4 orthoMatrix;
+        private final StaticShader shader;
+        private final TextureModel textureCrosshair;
+        private final Matrix4 orthoMatrix;
 
         public CrosshairRender(StaticShader shader2) {
             shader = shader2;
@@ -45,9 +42,9 @@ public class CrosshairRender {
             };
 
 
-            crosshair = loader1.loadToVAO(vertices, textureCoords);
+            RawModel crosshair = loader1.loadToVAO(vertices, textureCoords);
 
-            crosshairTexture = new ModelTexture(loader1.loadTexture("crosshair.png"));
+            ModelTexture crosshairTexture = new ModelTexture(loader1.loadTexture("crosshair.png"));
 
             textureCrosshair = new TextureModel(crosshair, crosshairTexture);
 
@@ -68,6 +65,11 @@ public class CrosshairRender {
             shader.start();
 
             shader.loadProjectionMatrix(orthoMatrix);
+
+            Matrix4 test = new Matrix4();
+            shader.getProjectionMatrix(test);
+
+            System.out.println("Current CrosshairRender: " + test);
 
             GL11.glDisable(GL_DEPTH_TEST);
 

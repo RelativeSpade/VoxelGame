@@ -12,6 +12,7 @@ import Render.Loader;
 import Render.MasterRender;
 import Shaders.StaticShader;
 import Textures.ModelTexture;
+import Toolbox.Math.Matrix4;
 import Toolbox.Math.Vec3;
 import Toolbox.Necessities.Mouse;
 import Toolbox.Necessities.PerlinNoiseGenerator;
@@ -147,6 +148,12 @@ public class Main {
             renderer.shader.start();
             renderer.shader.loadProjectionMatrix(renderer.projectionMatrix);
             renderer.shader.stop();
+
+            Matrix4 test = new Matrix4();
+            renderer.shader.getProjectionMatrix(test);
+
+            System.out.println("Current Main: " + test);
+
 
             if(glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS){
                 DisplayManager.closeDisplay();

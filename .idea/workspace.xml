@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="840c9104-0bc0-421b-aa50-14bd951f9721" name="Changes" comment="change: broken unworking crosshair">
+    <list default="true" id="840c9104-0bc0-421b-aa50-14bd951f9721" name="Changes" comment="change: crosshair doesnt render anywhere now ;-;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Engine/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Engine/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Render/CrosshairRender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Render/CrosshairRender.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Shaders/ShaderProgram.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Shaders/ShaderProgram.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Shaders/StaticShader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Shaders/StaticShader.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,14 +93,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1720146061769</updated>
-    </task>
-    <task id="LOCAL-00061" summary="change: error suppression">
-      <option name="closed" value="true" />
-      <created>1720427718292</created>
-      <option name="number" value="00061" />
-      <option name="presentableId" value="LOCAL-00061" />
-      <option name="project" value="LOCAL" />
-      <updated>1720427718292</updated>
     </task>
     <task id="LOCAL-00062" summary="add: basic (albeit buggy) camera movement">
       <option name="closed" value="true" />
@@ -488,7 +478,15 @@
       <option name="project" value="LOCAL" />
       <updated>1721107495712</updated>
     </task>
-    <option name="localTasksCounter" value="110" />
+    <task id="LOCAL-00110" summary="change: crosshair doesnt render anywhere now ;-;">
+      <option name="closed" value="true" />
+      <created>1721135400646</created>
+      <option name="number" value="00110" />
+      <option name="presentableId" value="LOCAL-00110" />
+      <option name="project" value="LOCAL" />
+      <updated>1721135400646</updated>
+    </task>
+    <option name="localTasksCounter" value="111" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -503,7 +501,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="change: attempted voxel size implementation for terrain generation" />
     <MESSAGE value="change: made usedPOS multi thread safe" />
     <MESSAGE value="change: attempted (and failed) to optimize vertex count. (will return to this later)" />
     <MESSAGE value="change: ughhh the fact I cant get these indices to optimize erks me so bad." />
@@ -528,6 +525,7 @@
     <MESSAGE value="change: implemented texture atlas" />
     <MESSAGE value="change: fixed cube model issue" />
     <MESSAGE value="change: broken unworking crosshair" />
-    <option name="LAST_COMMIT_MESSAGE" value="change: broken unworking crosshair" />
+    <MESSAGE value="change: crosshair doesnt render anywhere now ;-;" />
+    <option name="LAST_COMMIT_MESSAGE" value="change: crosshair doesnt render anywhere now ;-;" />
   </component>
 </project>
