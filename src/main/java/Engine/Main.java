@@ -12,19 +12,14 @@ import Render.Loader;
 import Render.MasterRender;
 import Shaders.StaticShader;
 import Textures.ModelTexture;
-import Toolbox.Math.Matrix4;
 import Toolbox.Math.Vec3;
 import Toolbox.Necessities.Mouse;
 import Toolbox.Necessities.PerlinNoiseGenerator;
-import org.lwjgl.BufferUtils;
 
-import java.nio.IntBuffer;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import static Toolbox.Math.Transformation.createOrthographicMatrix;
-import static Toolbox.Math.Transformation.createViewMatrix;
 import static org.lwjgl.glfw.GLFW.*;
 
 public class Main {
@@ -41,7 +36,7 @@ public class Main {
     static Vec3 camPos = new Vec3(0, 0, 0);
     static List<Vec3> usedPos = Collections.synchronizedList(new ArrayList<>());
 
-    static final int WORLD_SIZE = 4 * CHUNK_SIZE;
+    static final int WORLD_SIZE = 8 * CHUNK_SIZE;
     public static void main(String[] args){
 
         DisplayManager.createDisplay();
@@ -59,18 +54,6 @@ public class Main {
         PerlinNoiseGenerator perlin = new PerlinNoiseGenerator();
 
         crosshairRender = new CrosshairRender(renderer.shader);
-
-        IntBuffer widthBuffer = BufferUtils.createIntBuffer(1);
-        IntBuffer heightBuffer = BufferUtils.createIntBuffer(1);
-        glfwGetWindowSize(window, widthBuffer, heightBuffer);
-
-        int width = widthBuffer.get(0);
-        int height = heightBuffer.get(0);
-
-        float floatWidth = (float) width;
-        float floatHeight = (float) height;
-
-        Matrix4 orthoMatrix = createOrthographicMatrix(0, floatWidth, floatHeight, 0, -1, 1);
 
         new Thread(() -> {
 
@@ -159,11 +142,11 @@ public class Main {
 
             renderer.render(camera);
 
-            renderer.shader.loadProjectionMatrix(orthoMatrix);
-
             crosshairRender.render();
 
+            renderer.shader.start();
             renderer.shader.loadProjectionMatrix(renderer.projectionMatrix);
+            renderer.shader.stop();
 
             if(glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS){
                 DisplayManager.closeDisplay();

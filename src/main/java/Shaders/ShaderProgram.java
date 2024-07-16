@@ -149,4 +149,10 @@ public abstract class ShaderProgram {
 
         return shaderID;
     }
+
+    protected void getMatrix(int location, Matrix4 matrix) {
+        FloatBuffer buffer = BufferUtils.createFloatBuffer(16);
+        GL20.glGetUniformfv(programID, location, buffer);
+        matrix.load(buffer);
+    }
 }
