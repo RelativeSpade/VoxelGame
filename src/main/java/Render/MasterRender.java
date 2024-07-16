@@ -19,7 +19,7 @@ public class MasterRender {
     private static final float FOV = 70f;
     private static final float NEAR_PLANE = 0.1f;
     private static final float FAR_PLANE = 1000f;
-    StaticShader shader = new StaticShader();
+    public StaticShader shader = new StaticShader();
     EntityRender renderer = new EntityRender();
     Map<TextureModel, List<Entity>> entities = new HashMap<>();
 

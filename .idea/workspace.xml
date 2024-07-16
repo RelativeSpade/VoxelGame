@@ -4,13 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="840c9104-0bc0-421b-aa50-14bd951f9721" name="Changes" comment="change: fixed cube model issue">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Render/CrosshairRender.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/textures/crosshair.png" afterDir="false" />
+    <list default="true" id="840c9104-0bc0-421b-aa50-14bd951f9721" name="Changes" comment="change: broken unworking crosshair">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Engine/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Engine/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Render/CrosshairRender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Render/CrosshairRender.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Render/MasterRender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Render/MasterRender.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Toolbox/Math/Transformation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Toolbox/Math/Transformation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/textures/crosshair.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/textures/crosshair.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,14 +95,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1720146061769</updated>
-    </task>
-    <task id="LOCAL-00059" summary="change: removed &quot;d&quot; from math lib name, was annoying me.">
-      <option name="closed" value="true" />
-      <created>1720426901316</created>
-      <option name="number" value="00059" />
-      <option name="presentableId" value="LOCAL-00059" />
-      <option name="project" value="LOCAL" />
-      <updated>1720426901316</updated>
     </task>
     <task id="LOCAL-00060" summary="change: added fps count">
       <option name="closed" value="true" />
@@ -489,7 +480,15 @@
       <option name="project" value="LOCAL" />
       <updated>1721057716601</updated>
     </task>
-    <option name="localTasksCounter" value="108" />
+    <task id="LOCAL-00108" summary="change: broken unworking crosshair">
+      <option name="closed" value="true" />
+      <created>1721106409242</created>
+      <option name="number" value="00108" />
+      <option name="presentableId" value="LOCAL-00108" />
+      <option name="project" value="LOCAL" />
+      <updated>1721106409242</updated>
+    </task>
+    <option name="localTasksCounter" value="109" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -504,7 +503,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="change: attempted face culling ( and failed for now)" />
     <MESSAGE value="change: attempted voxel size implementation for terrain generation" />
     <MESSAGE value="change: made usedPOS multi thread safe" />
     <MESSAGE value="change: attempted (and failed) to optimize vertex count. (will return to this later)" />
@@ -529,21 +527,7 @@
     <MESSAGE value="change: cleaned up class" />
     <MESSAGE value="change: implemented texture atlas" />
     <MESSAGE value="change: fixed cube model issue" />
-    <option name="LAST_COMMIT_MESSAGE" value="change: fixed cube model issue" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/Render/CrosshairRender.java</url>
-          <line>20</line>
-          <properties class="Render.CrosshairRender" method="&lt;init&gt;">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="change: broken unworking crosshair" />
+    <option name="LAST_COMMIT_MESSAGE" value="change: broken unworking crosshair" />
   </component>
 </project>

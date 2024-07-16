@@ -58,19 +58,12 @@ public class Main {
 
         PerlinNoiseGenerator perlin = new PerlinNoiseGenerator();
 
-        crosshairRender = new CrosshairRender();
+        crosshairRender = new CrosshairRender(renderer.shader);
 
         IntBuffer widthBuffer = BufferUtils.createIntBuffer(1);
         IntBuffer heightBuffer = BufferUtils.createIntBuffer(1);
         glfwGetWindowSize(window, widthBuffer, heightBuffer);
 
-        int width = widthBuffer.get(0);
-        int height = heightBuffer.get(0);
-
-        float floatWidth = (float) width;
-        float floatHeight = (float) height;
-
-        Matrix4 orthoMatrix = createOrthographicMatrix(0, floatWidth, floatHeight, 0, -1, 1);
 
         new Thread(() -> {
 
@@ -159,11 +152,20 @@ public class Main {
 
             renderer.render(camera);
 
-            shader1.loadProjectionMatrix(orthoMatrix);
+            int width = widthBuffer.get(0);
+            int height = heightBuffer.get(0);
+
+            float floatWidth = (float) width;
+            float floatHeight = (float) height;
+
+            Matrix4 orthoMatrix = createOrthographicMatrix(0, floatWidth, floatHeight, 0, -1, 1);
+
+
+            renderer.shader.loadProjectionMatrix(orthoMatrix);
 
             crosshairRender.render();
 
-            //shader1.loadProjectionMatrix(renderer.projectionMatrix);
+            renderer.shader.loadProjectionMatrix(renderer.projectionMatrix);
 
             if(glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS){
                 DisplayManager.closeDisplay();
