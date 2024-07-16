@@ -1,6 +1,7 @@
 package Render;
 
 import Models.RawModel;
+import Models.TextureModel;
 import Shaders.StaticShader;
 import Textures.ModelTexture;
 import org.lwjgl.opengl.GL13;
@@ -17,6 +18,7 @@ public class CrosshairRender {
         private StaticShader shader;
         private RawModel crosshair;
         private ModelTexture crosshairTexture;
+        private TextureModel textureCrosshair;
 
         public CrosshairRender(StaticShader shader2) {
             shader = shader2;
@@ -39,6 +41,8 @@ public class CrosshairRender {
             crosshair = loader1.loadToVAO(vertices, textureCoords);
 
             crosshairTexture = new ModelTexture(loader1.loadTexture("crosshair.png"));
+
+            textureCrosshair = new TextureModel(crosshair, crosshairTexture);
         }
 
         public void render() {
@@ -46,15 +50,15 @@ public class CrosshairRender {
 
             GL11.glDisable(GL_DEPTH_TEST);
 
-            GL30.glBindVertexArray(crosshair.getVaoID());
+            GL30.glBindVertexArray(textureCrosshair.getModel().getVaoID());
 
             GL20.glEnableVertexAttribArray(0); // Position
             GL20.glEnableVertexAttribArray(1); // UVs
 
             GL13.glActiveTexture(GL13.GL_TEXTURE0);
-            GL11.glBindTexture(GL11.GL_TEXTURE_2D, crosshairTexture.getTextureID());
+            GL11.glBindTexture(GL11.GL_TEXTURE_2D, textureCrosshair.getTexture().getTextureID());
 
-            GL11.glDrawArrays(GL11.GL_TRIANGLE_STRIP, 0, crosshair.getVertexCount());
+            GL11.glDrawArrays(GL11.GL_TRIANGLE_STRIP, 0, textureCrosshair.getModel().getVertexCount());
 
             GL20.glDisableVertexAttribArray(0);
             GL20.glDisableVertexAttribArray(1);

@@ -22,12 +22,14 @@ public class Transformation {
     public static Matrix4 createOrthographicMatrix(float left, float right, float bottom, float top, float near, float far) {
         Matrix4 orthoMatrix = new Matrix4();
         orthoMatrix.setIdentity();
+
         orthoMatrix.m00 = 2.0f / (right - left);
         orthoMatrix.m11 = 2.0f / (top - bottom);
         orthoMatrix.m22 = -2.0f / (far - near);
         orthoMatrix.m30 = -(right + left) / (right - left);
         orthoMatrix.m31 = -(top + bottom) / (top - bottom);
         orthoMatrix.m32 = -(far + near) / (far - near);
+
         return orthoMatrix;
     }
 
